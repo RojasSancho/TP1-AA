@@ -16,7 +16,9 @@ class ColaArregloCircular {
     vector<int> numeros;
     
     public:
-    void Iniciar();
+    void Iniciar(int M);
+    void Encolar(int elemento);
+    int Desencolar();
 };
 
 #endif
