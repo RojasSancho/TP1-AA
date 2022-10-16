@@ -10,10 +10,13 @@ class ColaArregloCircular {
 
     int frente;
     int final;
-    int contador;
+    int contadorElementos;
     int M; //Tamaño maximo de la cola
 
     vector<int> numeros;
+    
+    public:
+    void Iniciar();
 };
 
 #endif
