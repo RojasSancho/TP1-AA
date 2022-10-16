@@ -6,19 +6,23 @@
 
 using namespace std;
 
-class ColaArregloCircular {
-
+class ColaArregloCircular 
+{
     int frente;
     int final;
     int contadorElementos;
     int M; //Tamaño maximo de la cola
 
-    vector<int> numeros;
+    
     
     public:
+    vector<int> numeros;
+    //ColaArregloCircular();
+
     void Iniciar(int M);
     void Encolar(int elemento);
     int Desencolar();
+    int NumElem();
 };
 
 #endif

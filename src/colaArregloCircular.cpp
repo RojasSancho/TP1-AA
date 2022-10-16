@@ -28,6 +28,7 @@ int ColaArregloCircular::Desencolar()
 {
     int desencolado = numeros[frente];
     numeros.erase(numeros.begin() + frente);
+    contadorElementos--;
     
     if(frente == (M-1)){
         frente == 0;
@@ -36,4 +37,9 @@ int ColaArregloCircular::Desencolar()
     }
       
     return desencolado;
+}
+
+int ColaArregloCircular::NumElem()
+{
+    return contadorElementos;
 }
