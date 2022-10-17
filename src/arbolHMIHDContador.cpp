@@ -42,3 +42,43 @@ int ArbolHMIHDContador::NumNodos()
 {
     return this->contador;
 }
+
+Nodo* ArbolHMIHDContador::AgregarHijo(Nodo* nodo, int etiqueta)
+{
+    if(nodo->HijoMasIzquierdo() == nullptr) 
+    {
+        Nodo *nuevoHijo = new Nodo(nullptr, nullptr, etiqueta);
+        nodo->ModificarHMI(nuevoHijo);
+        this->contador++;
+        return nuevoHijo;
+    } else 
+    {
+        Nodo* antiguoHMI = nodo->HijoMasIzquierdo();
+        Nodo* nuevoHijo = new Nodo(nullptr, antiguoHMI, etiqueta);
+        nodo->ModificarHMI(nuevoHijo);
+        this->contador++;
+        return nuevoHijo;
+    }
+}
+
+Nodo* ArbolHMIHDContador::AgregarHijoMasDerecho(Nodo* nodo, int etiqueta)
+{
+    if(nodo->HijoMasIzquierdo() == nullptr) 
+    {
+        Nodo *nuevoHijo = new Nodo(nullptr, nullptr, etiqueta);
+        nodo->ModificarHMI(nuevoHijo);
+        this->contador++;
+        return nuevoHijo;
+    } else 
+    {
+        Nodo *hijoActual = nodo->HijoMasIzquierdo();
+        while((hijoActual->HermanoDerecho()) != nullptr)
+        {
+            hijoActual = hijoActual->HermanoDerecho();
+        }
+        Nodo *nuevoHijo = new Nodo(nullptr, nullptr, etiqueta);
+        hijoActual->ModificarHD(nuevoHijo);
+        this->contador++;
+        return nuevoHijo;
+    }
+}

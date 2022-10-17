@@ -18,6 +18,9 @@ class Nodo
     int Etiqueta();
     Nodo* HijoMasIzquierdo();
     Nodo* HermanoDerecho();
+
+    void ModificarHMI(Nodo* nuevoHMI); //Modificar Hijo Mas Izquierdo
+    void ModificarHD(Nodo* nuevoHD); //Modificar HermanoDerecho
 };  
 
 #endif

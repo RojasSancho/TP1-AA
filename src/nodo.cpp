@@ -34,3 +34,13 @@ Nodo *Nodo::HermanoDerecho()
 {
     return this->hermanoDerecho;
 }
+
+void Nodo::ModificarHMI(Nodo* nuevoHMI)
+{
+    this->hijoMasIzquierdo = nuevoHMI;
+}
+
+void Nodo::ModificarHD(Nodo* nuevoHD)
+{
+    this->hermanoDerecho = nuevoHD;
+}

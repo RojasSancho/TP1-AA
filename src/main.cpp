@@ -5,7 +5,7 @@ using namespace std;
 
 int main()
 {
-    ColaArregloCircular *cola = new ColaArregloCircular ();
+    ColaArregloCircular *cola = new ColaArregloCircular();
     cola->Iniciar(5);
     cola->Encolar(5);
     cola->Encolar(20);

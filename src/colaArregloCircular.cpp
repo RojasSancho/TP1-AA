@@ -2,7 +2,7 @@
 
 using namespace std;
 /*
-INICIAR
+INICIAR (M=Numero maximo de elementos)
 
 Efecto: Inicializa una cola y la deja sin elementos, 
 esta puede ser utilizada desde ese momento.
@@ -20,7 +20,7 @@ void ColaArregloCircular::Iniciar(int M)
 
 
 /*
-ENCOLAR (elemento)
+ENCOLAR (elemento a encolar)
 
 Efecto: Introduce un nuevo elemento (entero) 
 en el extremo final de la cola.

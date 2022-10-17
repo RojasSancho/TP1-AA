@@ -20,6 +20,9 @@ class ArbolHMIHDContador
     int Etiqueta(Nodo *nodo);
     void ModificarEtiqueta(Nodo *nodo, int etiqueta);
     int NumNodos();
+
+    Nodo *AgregarHijo(Nodo *nodo, int etiqueta);
+    Nodo *AgregarHijoMasDerecho(Nodo *nodo, int etiqueta);
 };
 
 #endif
