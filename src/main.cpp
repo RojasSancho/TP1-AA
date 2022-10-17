@@ -30,4 +30,6 @@ int main()
     cout << cola->numeros[4] << "\n";
     cout << cola->numeros[5] << "\n";
     cout << cola->numeros[7] << "\n";
+    
+    delete cola;
 }
