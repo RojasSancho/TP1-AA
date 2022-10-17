@@ -19,10 +19,8 @@ int main()
     cola->Encolar(7);
     cola->Encolar(8);
     cola->Encolar(9);
-    //cout << cola->Desencolar();
     
-
-   // cout << cola->numeros[0] << "\n";
+    /*
     cout << cola->numeros[0] << "\n";
     cout << cola->numeros[1] << "\n";
     cout << cola->numeros[2] << "\n";
@@ -30,6 +28,7 @@ int main()
     cout << cola->numeros[4] << "\n";
     cout << cola->numeros[5] << "\n";
     cout << cola->numeros[7] << "\n";
+    */
     
     delete cola;
 }
