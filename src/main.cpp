@@ -14,9 +14,11 @@ int main()
     cola->Encolar(6);
     
     cola->Desencolar();
-    cola->Encolar(7);
     cola->Desencolar();
+    
+    cola->Encolar(7);
     cola->Encolar(8);
+    cola->Encolar(9);
     //cout << cola->Desencolar();
     
 
