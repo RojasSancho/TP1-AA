@@ -36,8 +36,14 @@ int main()
     arbol->Iniciar();
     arbol->PonerRaiz(1);
     arbol->AgregarHijo(arbol->Raiz(), 2);
+    arbol->AgregarHijoMasDerecho(arbol->Raiz(), 3);
+
+    Nodo *nodo = arbol->Raiz()->HijoMasIzquierdo()->HermanoDerecho();
+    Nodo *nodo2 = arbol->AgregarHijo(nodo, 4);
     
-    arbol->Padre(arbol->Raiz()->HijoMasIzquierdo());
+    Nodo *padre = arbol->Padre(nodo2);
+
+    
 
 
 }

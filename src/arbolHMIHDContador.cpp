@@ -5,11 +5,12 @@ using namespace std;
 void ArbolHMIHDContador::Iniciar()
 {
     this->contador = 0;
+    
 }
 
 void ArbolHMIHDContador::PonerRaiz(int etiqueta)
 {
-    this->raiz->ModificarEtiqueta(etiqueta);
+    this->raiz = new Nodo(nullptr, nullptr, etiqueta);
     this->contador = 1;
 }
 
@@ -88,23 +89,39 @@ Nodo* ArbolHMIHDContador::Padre(Nodo *nodo)
     PadreRecursivo(nodo, raiz);   
 }
 
-Nodo* ArbolHMIHDContador::PadreRecursivo(Nodo *nodo, Nodo *inicio)
+Nodo* ArbolHMIHDContador::PadreRecursivo(Nodo* nodo, Nodo* inicio)
 {
+    
+    Nodo* padre2;
+    Nodo* nh = nullptr;
+    Nodo* padre;
+    Nodo* padreFinal;
+    if(nh == nodo)
+    {
+        Nodo* padreFinal = padre;
+        return padreFinal;
+    }
+    
     if(nodo == this->raiz) 
     {
         return nullptr;
     }
 
-    Nodo *padre = inicio;
-    Nodo *nh = inicio->HijoMasIzquierdo();
+
+    padre = inicio;
+    nh = inicio->HijoMasIzquierdo();
+
+    if(nh == nodo)
+    {
+        Nodo* padreFinal = padre;
+        return padreFinal;
+    }
 
     while (nh != nullptr)
     {
-        PadreRecursivo(nodo, nh);
-        nh = nh->HermanoDerecho();
-        if(nh == nodo)
-        {
-            return padre;
-        }
+        Nodo* padre2 = PadreRecursivo(nodo, nh); 
+        nh = nh->HermanoDerecho();          
+        
     }
+    return padre2;
 }
