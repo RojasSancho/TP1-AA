@@ -11,6 +11,8 @@ class ArbolHMIHDContador
     
     int contador;
 
+    Nodo *PadreRecursivo(Nodo *nodo, Nodo *inicio);
+    
     public:
     void Iniciar();
     void PonerRaiz(int etiqueta);
@@ -23,6 +25,8 @@ class ArbolHMIHDContador
 
     Nodo *AgregarHijo(Nodo *nodo, int etiqueta);
     Nodo *AgregarHijoMasDerecho(Nodo *nodo, int etiqueta);
+    Nodo *Padre(Nodo *nodo);
+    
 };
 
 #endif

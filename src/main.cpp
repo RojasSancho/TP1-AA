@@ -1,10 +1,12 @@
 #include "colaArregloCircular.h"
+#include "arbolHMIHDContador.h"
 #include <iostream>
 
 using namespace std;
 
 int main()
 {
+    /*
     ColaArregloCircular *cola = new ColaArregloCircular();
     cola->Iniciar(5);
     cola->Encolar(5);
@@ -20,7 +22,7 @@ int main()
     cola->Encolar(8);
     cola->Encolar(9);
     
-    /*
+    
     cout << cola->numeros[0] << "\n";
     cout << cola->numeros[1] << "\n";
     cout << cola->numeros[2] << "\n";
@@ -30,5 +32,12 @@ int main()
     cout << cola->numeros[7] << "\n";
     */
     
-    delete cola;
+    ArbolHMIHDContador *arbol = new ArbolHMIHDContador();
+    arbol->Iniciar();
+    arbol->PonerRaiz(1);
+    arbol->AgregarHijo(arbol->Raiz(), 2);
+    
+    arbol->Padre(arbol->Raiz()->HijoMasIzquierdo());
+
+
 }

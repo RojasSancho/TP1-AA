@@ -82,3 +82,29 @@ Nodo* ArbolHMIHDContador::AgregarHijoMasDerecho(Nodo* nodo, int etiqueta)
         return nuevoHijo;
     }
 }
+
+Nodo* ArbolHMIHDContador::Padre(Nodo *nodo)
+{
+    PadreRecursivo(nodo, raiz);   
+}
+
+Nodo* ArbolHMIHDContador::PadreRecursivo(Nodo *nodo, Nodo *inicio)
+{
+    if(nodo == this->raiz) 
+    {
+        return nullptr;
+    }
+
+    Nodo *padre = inicio;
+    Nodo *nh = inicio->HijoMasIzquierdo();
+
+    while (nh != nullptr)
+    {
+        PadreRecursivo(nodo, nh);
+        nh = nh->HermanoDerecho();
+        if(nh == nodo)
+        {
+            return padre;
+        }
+    }
+}
