@@ -1,12 +1,28 @@
-FLAGS = -g -c --std=c++17
+# C++ Compiler
+XC=g++
 
-all:
-		mkdir -p bin
-		g++ $(FLAGS) src/colaArregloCircular.cpp -o bin/colaArregloCircular.o
-		g++ $(FLAGS) src/arbolHMIHDContador.cpp -o bin/arbolHMIHDContador.o
-		g++ $(FLAGS) src/nodo.cpp -o bin/nodo.o
-		g++ $(FLAGS) src/main.cpp -o bin/main.o
-		g++ -g -o bin/main bin/colaArregloCircular.o bin/arbolHMIHDContador.o bin/nodo.o bin/main.o 
+# Directories
+OBJ_DIR=build
+BIN_DIR=bin
+SRC_DIR=src
 
+
+# Compilation flags
+INCLUDES= -I include -I src
+FLAGS= $(strip -g -std=c++11 -Wall -Wextra $(INCLUDES))
+
+# Get list of all .cpp files in SRC_DIR
+SOURCE_FILES=$(wildcard $(SRC_DIR)/*.cpp)
+# For each element in SOURCE_FILES that looks like '$(SRC_DIR)/%.cpp' transform to '$(OBJ_DIR)/%.o'
+OBJECT_FILES=$(SOURCE_FILES:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
+
+
+$(BIN_DIR)/program.exe: $(OBJECT_FILES)
+	mkdir -p $(@D)
+	$(XC) $(OBJECT_FILES) -o $(BIN_DIR)/program.exe
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
+	mkdir -p $(@D)
+	$(XC) $(FLAGS) -c $< -o $@
 clean:
-		rm -Rf bin
+	rm -rf $(OBJ_DIR)
+	rm -rf $(BIN_DIR)
