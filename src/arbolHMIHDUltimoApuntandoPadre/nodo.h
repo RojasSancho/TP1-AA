@@ -7,7 +7,6 @@ class Nodo
 {
     Nodo *hijoMasIzquierdo;
     Nodo *hermanoDerecho;
-    Nodo *hermanoIzquierdo;
     Nodo *padre;
 
     int etiqueta;
@@ -21,7 +20,6 @@ class Nodo
     int Etiqueta();
     Nodo* HijoMasIzquierdo();
     Nodo* HermanoDerecho();
-    Nodo* HermanoIzquierdo();
     Nodo* Padre();
 
     void SetearHMI(Nodo* HMI); //Modificar Hijo Mas Izquierdo
