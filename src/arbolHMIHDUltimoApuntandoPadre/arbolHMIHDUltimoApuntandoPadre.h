@@ -1,11 +1,11 @@
-#ifndef ARBOLHMIHDCONPUNTEROS_H
-#define ARBOLHMIHDCONPUNTEROS_H
+#ifndef ARBOLHMIHDULTIMOAPUNTANDOPADRE_H
+#define ARBOLHMIHDULTIMOAPUNTANDOPADRE_H
 
 #include "nodo.h"
 
 using namespace std;
 
-class arbolHMIHDConPunteros
+class arbolHMIHDUltimoApuntandoPadre
 {
     Nodo *raiz; 
 
@@ -18,7 +18,6 @@ class arbolHMIHDConPunteros
     Nodo *Raiz();
     Nodo *HijoMasIzquierdo(Nodo *nodo);
     Nodo *HermanoDerecho(Nodo *nodo);
-    Nodo *HermanoIzquierdo(Nodo *nodo);
 
     int Etiqueta(Nodo *nodo);
     void ModificarEtiqueta(Nodo *nodo, int etiqueta);
