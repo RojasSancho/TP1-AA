@@ -39,7 +39,6 @@ int main()
     //arbolHMIHDUltimoApuntandoPadre *arbol = new arbolHMIHDUltimoApuntandoPadre();
     arbol->Iniciar();
     arbol->PonerRaiz(1);
-    cout << "hola";
     arbol->AgregarHijo(arbol->Raiz(), 2);
     arbol->AgregarHijoMasDerecho(arbol->Raiz(), 3);
 
