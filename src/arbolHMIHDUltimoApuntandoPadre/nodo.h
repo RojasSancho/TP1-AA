@@ -27,6 +27,6 @@ class Nodo
     void SetearPadre(Nodo* padre);  
     void SetearHI(Nodo* HI);
 
-}
+};
 
 #endif

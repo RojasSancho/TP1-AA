@@ -9,7 +9,7 @@ class arbolHMIHDConPunteros
 {
     Nodo *raiz; 
 
-    Nodo *Padre(Nodo *nodo);
+    int NumNodosRecursivo(Nodo *nodo);
     
     public:
     void Iniciar();

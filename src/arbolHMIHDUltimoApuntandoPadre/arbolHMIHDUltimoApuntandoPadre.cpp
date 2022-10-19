@@ -17,8 +17,20 @@ Nodo *arbolHMIHDUltimoApuntandoPadre::Raiz()
     return this->raiz;
 }
 
-Nodo arbolHMIHDUltimoApuntandoPadre::Padre(){
+Nodo *arbolHMIHDUltimoApuntandoPadre::Padre(Nodo *nodo){
+    Nodo *padre;
+    if (nodo->HermanoDerecho() == nullptr){
+        padre = nodo->Padre();
+    }
+    else {
+        Nodo *nodoTemp = HermanoDerecho(nodo);
+        while (HermanoDerecho(nodoTemp) != nullptr){
+            nodoTemp = HermanoDerecho(nodo);
+        }
+        padre = Padre(nodoTemp);
+    }
     //ir al hermano más derecho para conseguir padre
+    return padre;
 }
 
 Nodo *arbolHMIHDUltimoApuntandoPadre::HijoMasIzquierdo(Nodo *nodo)
@@ -44,9 +56,9 @@ void arbolHMIHDUltimoApuntandoPadre::ModificarEtiqueta(Nodo *nodo, int etiqueta)
 int arbolHMIHDUltimoApuntandoPadre::NumNodosRecursivo(Nodo *nodo)
 {
     int cantidad = 1;
-    Nodo *nodoTemp = *nodo->HijoMasIzquierdo();
+    Nodo *nodoTemp = nodo->HijoMasIzquierdo();
     while (nodoTemp != nullptr){
-        cantidad+=this->NumNodosRecursivo();
+        cantidad+=this->NumNodosRecursivo(nodoTemp);
         *nodoTemp = *nodo->HermanoDerecho();
     }
     return cantidad;
@@ -100,8 +112,4 @@ Nodo* arbolHMIHDUltimoApuntandoPadre::AgregarHijoMasDerecho(Nodo* nodo, int etiq
     }
 }
 
-Nodo* arbolHMIHDUltimoApuntandoPadre::Padre(Nodo *nodo)
-{
-    return nodo->Padre();  
-}
 

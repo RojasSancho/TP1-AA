@@ -1,5 +1,7 @@
 #include "colaArregloCircular.h"
 #include "arbolHMIHDContador.h"
+//#include "arbolHMIHDConPunteros.h"
+//#include "arbolHMIHDUltimoApuntandoPadre.h"
 #include <iostream>
 
 using namespace std;
@@ -33,17 +35,19 @@ int main()
     */
     
     ArbolHMIHDContador *arbol = new ArbolHMIHDContador();
+    //arbolHMIHDConPunteros *arbol = new arbolHMIHDConPunteros();
+    //arbolHMIHDUltimoApuntandoPadre *arbol = new arbolHMIHDUltimoApuntandoPadre();
     arbol->Iniciar();
     arbol->PonerRaiz(1);
     arbol->AgregarHijo(arbol->Raiz(), 2);
     arbol->AgregarHijoMasDerecho(arbol->Raiz(), 3);
 
-    Nodo *nodo = arbol->Raiz()->HijoMasIzquierdo()->HermanoDerecho();
-    Nodo *nodo2 = arbol->AgregarHijo(nodo, 4);
+    //Nodo *nodo = arbol->Raiz()->HijoMasIzquierdo()->HermanoDerecho();
+    //Nodo *nodo2 = arbol->AgregarHijo(nodo, 4);
     
-    Nodo *padre = arbol->Padre(nodo2);
+    //Nodo *padre = arbol->Padre(nodo2);
+    
 
-    
 
 
 }

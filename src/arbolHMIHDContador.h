@@ -25,7 +25,7 @@ class ArbolHMIHDContador
 
     Nodo *AgregarHijo(Nodo *nodo, int etiqueta);
     Nodo *AgregarHijoMasDerecho(Nodo *nodo, int etiqueta);
-    Nodo *Padre(Nodo *nodo);
+    //Nodo *Padre(Nodo *nodo);
     
 };
 

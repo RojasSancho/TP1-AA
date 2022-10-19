@@ -42,19 +42,19 @@ void arbolHMIHDConPunteros::ModificarEtiqueta(Nodo *nodo, int etiqueta)
     nodo->ModificarEtiqueta(etiqueta);
 }
 
-int arbolHMIHDUltimoApuntandoPadre::NumNodosRecursivo(Nodo *nodo)
+int arbolHMIHDConPunteros::NumNodosRecursivo(Nodo *nodo)
 {
     int cantidad = 1;
-    Nodo *nodoTemp = *nodo->HijoMasIzquierdo();
+    Nodo *nodoTemp = nodo->HijoMasIzquierdo();
     while (nodoTemp != nullptr){
-        cantidad+=this->NumNodosRecursivo();
+        cantidad+=this->NumNodosRecursivo(nodoTemp);
         *nodoTemp = *nodo->HermanoDerecho();
     }
     return cantidad;
     //recorrer arbol 
 }
 
-int arbolHMIHDUltimoApuntandoPadre::NumNodos(){
+int arbolHMIHDConPunteros::NumNodos(){
     int cantidad = 0;
     if (this->Raiz() != nullptr){
         cantidad=this->NumNodosRecursivo(this->Raiz());

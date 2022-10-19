@@ -18,12 +18,10 @@ class arbolHMIHDUltimoApuntandoPadre
     Nodo *Raiz();
     Nodo *HijoMasIzquierdo(Nodo *nodo);
     Nodo *HermanoDerecho(Nodo *nodo);
-    Nodo *Padre(Nodo *nodo);
 
     int Etiqueta(Nodo *nodo);
     void ModificarEtiqueta(Nodo *nodo, int etiqueta);
     int NumNodos();
-    
 
     Nodo *AgregarHijo(Nodo *nodo, int etiqueta);
     Nodo *AgregarHijoMasDerecho(Nodo *nodo, int etiqueta);

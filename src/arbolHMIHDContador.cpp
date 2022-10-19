@@ -5,7 +5,6 @@ using namespace std;
 void ArbolHMIHDContador::Iniciar()
 {
     this->contador = 0;
-    
 }
 
 void ArbolHMIHDContador::PonerRaiz(int etiqueta)
@@ -44,36 +43,38 @@ int ArbolHMIHDContador::NumNodos()
     return this->contador;
 }
 
-Nodo* ArbolHMIHDContador::AgregarHijo(Nodo* nodo, int etiqueta)
+Nodo *ArbolHMIHDContador::AgregarHijo(Nodo *nodo, int etiqueta)
 {
-    if(nodo->HijoMasIzquierdo() == nullptr) 
+    if (nodo->HijoMasIzquierdo() == nullptr)
     {
         Nodo *nuevoHijo = new Nodo(nullptr, nullptr, etiqueta);
         nodo->ModificarHMI(nuevoHijo);
         this->contador++;
         return nuevoHijo;
-    } else 
+    }
+    else
     {
-        Nodo* antiguoHMI = nodo->HijoMasIzquierdo();
-        Nodo* nuevoHijo = new Nodo(nullptr, antiguoHMI, etiqueta);
+        Nodo *antiguoHMI = nodo->HijoMasIzquierdo();
+        Nodo *nuevoHijo = new Nodo(nullptr, antiguoHMI, etiqueta);
         nodo->ModificarHMI(nuevoHijo);
         this->contador++;
         return nuevoHijo;
     }
 }
 
-Nodo* ArbolHMIHDContador::AgregarHijoMasDerecho(Nodo* nodo, int etiqueta)
+Nodo *ArbolHMIHDContador::AgregarHijoMasDerecho(Nodo *nodo, int etiqueta)
 {
-    if(nodo->HijoMasIzquierdo() == nullptr) 
+    if (nodo->HijoMasIzquierdo() == nullptr)
     {
         Nodo *nuevoHijo = new Nodo(nullptr, nullptr, etiqueta);
         nodo->ModificarHMI(nuevoHijo);
         this->contador++;
         return nuevoHijo;
-    } else 
+    }
+    else
     {
         Nodo *hijoActual = nodo->HijoMasIzquierdo();
-        while((hijoActual->HermanoDerecho()) != nullptr)
+        while ((hijoActual->HermanoDerecho()) != nullptr)
         {
             hijoActual = hijoActual->HermanoDerecho();
         }
@@ -84,44 +85,42 @@ Nodo* ArbolHMIHDContador::AgregarHijoMasDerecho(Nodo* nodo, int etiqueta)
     }
 }
 
-Nodo* ArbolHMIHDContador::Padre(Nodo *nodo)
-{
-    PadreRecursivo(nodo, raiz);   
-}
+// Nodo* ArbolHMIHDContador::Padre(Nodo *nodo)
+//{
+//     PadreRecursivo(nodo, raiz);
+// }
 
-Nodo* ArbolHMIHDContador::PadreRecursivo(Nodo* nodo, Nodo* inicio)
-{
-    
-    Nodo* padre2;
-    Nodo* nh = nullptr;
-    Nodo* padre;
-    Nodo* padreFinal;
-    if(nh == nodo)
-    {
-        Nodo* padreFinal = padre;
-        return padreFinal;
-    }
-    
-    if(nodo == this->raiz) 
-    {
-        return nullptr;
-    }
+// Nodo *ArbolHMIHDContador::PadreRecursivo(Nodo *nodo, Nodo *inicio)
+// {
 
+//     Nodo *padre2;
+//     Nodo *nh = nullptr;
+//     Nodo *padre;
+//     Nodo *padreFinal;
+//     if (nh == nodo)
+//     {
+//         Nodo *padreFinal = padre;
+//         return padreFinal;
+//     }
 
-    padre = inicio;
-    nh = inicio->HijoMasIzquierdo();
+//     if (nodo == this->raiz)
+//     {
+//         return nullptr;
+//     }
 
-    if(nh == nodo)
-    {
-        Nodo* padreFinal = padre;
-        return padreFinal;
-    }
+//     padre = inicio;
+//     nh = inicio->HijoMasIzquierdo();
 
-    while (nh != nullptr)
-    {
-        Nodo* padre2 = PadreRecursivo(nodo, nh); 
-        nh = nh->HermanoDerecho();          
-        
-    }
-    return padre2;
-}
+//     if (nh == nodo)
+//     {
+//         Nodo *padreFinal = padre;
+//         return padreFinal;
+//     }
+
+//     while (nh != nullptr)
+//     {
+//         Nodo *padre2 = PadreRecursivo(nodo, nh);
+//         nh = nh->HermanoDerecho();
+//     }
+//     return padre2;
+// }
