@@ -33,10 +33,11 @@ int arbolArregloConSenaladorPadre::Etiqueta(Nodo *nodo){
 }
 
 void arbolArregloConSenaladorPadre::ModificarEtiqueta(Nodo *nodo, int etiqueta){
-    
+    nodo->ModificarEtiqueta(etiqueta);
 }
+
 int arbolArregloConSenaladorPadre::NumNodos(){
-    
+    return n;
 }
 
 Nodo *arbolArregloConSenaladorPadre::AgregarHijo(Nodo *nodo, int etiqueta){
@@ -44,9 +45,11 @@ Nodo *arbolArregloConSenaladorPadre::AgregarHijo(Nodo *nodo, int etiqueta){
     this->nodosArreglo[nodosArreglo.size()] = raiz;
     this->n+=1; 
 }
+
 Nodo *arbolArregloConSenaladorPadre::AgregarHijoMasDerecho(Nodo *nodo, int etiqueta){
     
 }
+
 Nodo *arbolArregloConSenaladorPadre::Padre(Nodo *nodo){
     return nodo->Padre();
 }
