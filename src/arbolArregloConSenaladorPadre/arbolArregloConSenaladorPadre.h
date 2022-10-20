@@ -11,7 +11,7 @@ class arbolArregloConSenaladorPadre
 {
     Nodo *raiz; 
 
-    std::vector<int> Nodos;
+    Nodo * nodosArreglo;
 
     int n;
     

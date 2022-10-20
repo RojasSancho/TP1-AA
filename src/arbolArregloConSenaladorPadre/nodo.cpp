@@ -2,17 +2,10 @@
 
 using namespace std;
 
-Nodo::Nodo(Nodo *hijoMasIzquierdo, Nodo *hermanoDerecho, int etiqueta)
+Nodo::Nodo(Nodo *padre, int etiqueta)
 {
-    this->hijoMasIzquierdo = hijoMasIzquierdo;
-    this->hermanoDerecho = hermanoDerecho;
-    this->etiqueta = etiqueta;
-    
-}
-
-Nodo::Nodo(int etiqueta)
-{
-    this->etiqueta = etiqueta;  
+    this->padre = padre;
+    this->etiqueta = etiqueta;   
 }
 
 Nodo::Nodo()

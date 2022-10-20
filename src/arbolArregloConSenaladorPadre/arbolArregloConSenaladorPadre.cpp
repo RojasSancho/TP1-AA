@@ -4,12 +4,13 @@ using namespace std;
 
 void arbolArregloConSenaladorPadre::Iniciar(int tamano){
     this->n = tamano;
-    this->nodos = new Nodo[tamano];
+    this->nodosArreglo = new Nodo[tamano];
 }
 
 void arbolArregloConSenaladorPadre::PonerRaiz(int etiqueta){
-    
+        
 }
+
 void arbolArregloConSenaladorPadre::BorrarHoja(Nodo *nodo){
     
 }

@@ -5,8 +5,6 @@ using namespace std;
 
 class Nodo
 {
-    Nodo *hijoMasIzquierdo;
-    Nodo *hermanoDerecho;
     Nodo *padre;
 
     int posicion;
@@ -16,18 +14,12 @@ class Nodo
     public:
 
     Nodo();
-    Nodo(Nodo *hijoMasIzquierdo, Nodo *hermanoDerecho, int etiqueta);
-    Nodo(int etiqueta);
+    Nodo(Nodo *nodo, int etiqueta);
     void ModificarEtiqueta(int etiqueta);
     int Etiqueta();
-    Nodo* HijoMasIzquierdo();
-    Nodo* HermanoDerecho();
     Nodo* Padre();
 
-    void SetearHMI(Nodo* HMI); //Modificar Hijo Mas Izquierdo
-    void SetearHD(Nodo* HD); //Modificar HermanoDerecho
     void SetearPadre(Nodo* padre);  
-    void SetearHI(Nodo* HI);
 
 }
 
