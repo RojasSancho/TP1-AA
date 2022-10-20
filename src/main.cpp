@@ -247,8 +247,8 @@ int main()
                 cout<<"9. HijoMásIzquierdo\n";
                 cout<<"10. HeramnoDerecho\n";
                 cout<<"11. Raiz\n";
-                cout<<"12. Raiz\n";
-                cout<<"13. NumElem (Numero actual de nodos en el árbol)\n";
+                cout<<"12. Modifica Etiqueta\n";
+                cout<<"13. NumNodos (Numero actual de nodos en el árbol)\n";
                 cout<<"\n14. Salir al menu principal\n";
                 cin>>opcionLista;
 
@@ -261,23 +261,36 @@ int main()
                 {
                 case 1:
                 {   
-                    
+                    //arbolArregloConSenaladorPadre *arbolUsuario = new arbolArregloConSenaladorPadre();
+                    arbolHMIHDContador *arbolUsuario = new arbolHMIHDContador();
+                    //arbolHMIHDconPunteros *arbolUsuario = new arbolHMIHDconPunteros();
+                    //arbolHMIHDUltimoApuntandoPadre *arbolUsuario = new arbolHMIHDUltimoApuntandoPadre();
+                    cout<<"\nÁrbol iniciado!";
+                    break;
                 }
                 case 2:
                 {    
-                    
+                    break;
                 }
                 case 3:
                 {
-                   
+                    int elemento = 0;
+                    cout<<"\nIngrese el elemento entero a insertar: ";
+                    cin>>elemento;
+                    arbolUsuario->PonerRaiz(elemento);
+                    break;
                 }
                 case 4:
                 {
-                    
+                    int elemento = 0;
+                    cout<<"\nIngrese hijo: ";
+                    cin>>elemento;
+                    arbolUsuario->AgregarHijo(arbolUsuario->Raiz(), elemento);
+                    break;
                 }
                 case 5:
                 {
-                    
+                    break;
                 }
                 // case 6:
                 // {
@@ -285,7 +298,8 @@ int main()
                 // }
                 case 7:
                 {
-                    
+                    cout<<"\n"<<arbolUsuario->Raiz();
+                    break;
                 }
                 // case 8:
                 // {
@@ -293,23 +307,24 @@ int main()
                 // }
                 case 9:
                 {
-                    
+                    break;
                 }
                 case 10:
                 {
-                    
+                    break;
                 }
                 case 11:
                 {
-                    
+                    break;
                 }
                 case 12:
                 {
-                    
+                    break;
                 }
                 case 13:
                 {
-                    
+                    arbolUsuario->NumNodos();
+                    break;
                 }
                 default:
                     break;

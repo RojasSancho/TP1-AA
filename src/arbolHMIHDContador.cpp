@@ -2,48 +2,48 @@
 
 using namespace std;
 
-void ArbolHMIHDContador::Iniciar()
+void arbolHMIHDContador::Iniciar()
 {
     this->contador = 0;
 }
 
-void ArbolHMIHDContador::PonerRaiz(int etiqueta)
+void arbolHMIHDContador::PonerRaiz(int etiqueta)
 {
     this->raiz = new Nodo(nullptr, nullptr, etiqueta);
     this->contador = 1;
 }
 
-Nodo *ArbolHMIHDContador::Raiz()
+Nodo *arbolHMIHDContador::Raiz()
 {
     return this->raiz;
 }
 
-Nodo *ArbolHMIHDContador::HijoMasIzquierdo(Nodo *nodo)
+Nodo *arbolHMIHDContador::HijoMasIzquierdo(Nodo *nodo)
 {
     return nodo->HijoMasIzquierdo();
 }
 
-Nodo *ArbolHMIHDContador::HermanoDerecho(Nodo *nodo)
+Nodo *arbolHMIHDContador::HermanoDerecho(Nodo *nodo)
 {
     return nodo->HermanoDerecho();
 }
 
-int ArbolHMIHDContador::Etiqueta(Nodo *nodo)
+int arbolHMIHDContador::Etiqueta(Nodo *nodo)
 {
     return nodo->Etiqueta();
 }
 
-void ArbolHMIHDContador::ModificarEtiqueta(Nodo *nodo, int etiqueta)
+void arbolHMIHDContador::ModificarEtiqueta(Nodo *nodo, int etiqueta)
 {
     nodo->ModificarEtiqueta(etiqueta);
 }
 
-int ArbolHMIHDContador::NumNodos()
+int arbolHMIHDContador::NumNodos()
 {
     return this->contador;
 }
 
-Nodo *ArbolHMIHDContador::AgregarHijo(Nodo *nodo, int etiqueta)
+Nodo *arbolHMIHDContador::AgregarHijo(Nodo *nodo, int etiqueta)
 {
     if (nodo->HijoMasIzquierdo() == nullptr)
     {
@@ -62,7 +62,7 @@ Nodo *ArbolHMIHDContador::AgregarHijo(Nodo *nodo, int etiqueta)
     }
 }
 
-Nodo *ArbolHMIHDContador::AgregarHijoMasDerecho(Nodo *nodo, int etiqueta)
+Nodo *arbolHMIHDContador::AgregarHijoMasDerecho(Nodo *nodo, int etiqueta)
 {
     if (nodo->HijoMasIzquierdo() == nullptr)
     {
