@@ -8,16 +8,19 @@ void arbolArregloConSenaladorPadre::Iniciar(int tamano){
 }
 
 void arbolArregloConSenaladorPadre::PonerRaiz(int etiqueta){
-        
+    Nodo *raiz = new Nodo(nullptr, etiqueta);
+    this->nodosArreglo[0] = raiz;
+    this->n+=1; 
 }
 
 void arbolArregloConSenaladorPadre::BorrarHoja(Nodo *nodo){
-    
+    this->n-=1;
 }
 
 Nodo *arbolArregloConSenaladorPadre::Raiz(){
-    
+    return this->nodosArreglo[0];
 }
+
 Nodo *arbolArregloConSenaladorPadre::HijoMasIzquierdo(Nodo *nodo){
     
 }
@@ -26,8 +29,9 @@ Nodo *arbolArregloConSenaladorPadre::HermanoDerecho(Nodo *nodo){
 }
 
 int arbolArregloConSenaladorPadre::Etiqueta(Nodo *nodo){
-    
+    return nodo->Etiqueta();
 }
+
 void arbolArregloConSenaladorPadre::ModificarEtiqueta(Nodo *nodo, int etiqueta){
     
 }
@@ -36,11 +40,13 @@ int arbolArregloConSenaladorPadre::NumNodos(){
 }
 
 Nodo *arbolArregloConSenaladorPadre::AgregarHijo(Nodo *nodo, int etiqueta){
-    
+    Nodo *nuevoHijo = new Nodo(nodo, etiqueta);
+    this->nodosArreglo[nodosArreglo.size()] = raiz;
+    this->n+=1; 
 }
 Nodo *arbolArregloConSenaladorPadre::AgregarHijoMasDerecho(Nodo *nodo, int etiqueta){
     
 }
 Nodo *arbolArregloConSenaladorPadre::Padre(Nodo *nodo){
-    
+    return nodo->Padre();
 }
