@@ -222,7 +222,12 @@ int main()
         }
         case 3: //Modelo Arbol n-ario
         { 
+
             bool salirAMenuPrin = false;
+            //arbolArregloConSenaladorPadre *arbolUsuario = new arbolArregloConSenaladorPadre();
+            arbolHMIHDContador *arbolUsuario = new arbolHMIHDContador();
+            //arbolHMIHDconPunteros *arbolUsuario = new arbolHMIHDconPunteros();
+            //arbolHMIHDUltimoApuntandoPadre *arbolUsuario = new arbolHMIHDUltimoApuntandoPadre();
             while(!salirAMenuPrin)
             {
                 system("clear");
@@ -274,18 +279,18 @@ int main()
                 {
                     
                 }
-                case 6:
-                {
+                // case 6:
+                // {
                     
-                }
+                // }
                 case 7:
                 {
                     
                 }
-                case 8:
-                {
+                // case 8:
+                // {
                     
-                }
+                // }
                 case 9:
                 {
                     
