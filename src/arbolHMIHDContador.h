@@ -5,7 +5,7 @@
 
 using namespace std;
 
-class ArbolHMIHDContador
+class arbolHMIHDContador
 {
     Nodo *raiz; 
     

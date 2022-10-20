@@ -228,51 +228,83 @@ int main()
                 system("clear");
                 int opcionArbol = 0;
 
-                cout<<"Elija entre las siguiente estrcturas digitando uno de los numeros:\n";
-                cout<<"\n1. Arreglo con senalador al padre \n";
-                cout<<"2. Hijo Más Izquierdo-Hermano Derecho con contador\n";
-                cout<<"3. Hijo Más Izquierdo-Hermano Derecho con puntero al padre y al hermano izquierdo sin contador\n";
-                cout<<"4. Hijo Más Izquierdo-Hermano Derecho tal que el último hijo de un nodo apunta al padre sin contador\n";
-                cout<<"\n5. Salir\n";
-                cin>>opcionArbol;
+                system("clear");
+                int opcionLista = 0;
+                cout<<"\n\nLISTA INDEXADA\nDigite alguna de las opciones para utilizar el operador basico u 8 para volver al menu principal:\n\n";
+                cout<<"1. Iniciar\n";
+                cout<<"2. Destruir\n";
+                cout<<"3. PonerRaiz\n";
+                cout<<"4. AgregarHijo\n";
+                cout<<"5. AgregarHijoMásDerecho\n";
+                //cout<<"6. BorrarHoja\n";
+                cout<<"7. Raiz\n";
+                //cout<<"8. Padre\n";
+                cout<<"9. HijoMásIzquierdo\n";
+                cout<<"10. HeramnoDerecho\n";
+                cout<<"11. Raiz\n";
+                cout<<"12. Raiz\n";
+                cout<<"13. NumElem (Numero actual de nodos en el árbol)\n";
+                cout<<"\n14. Salir al menu principal\n";
+                cin>>opcionLista;
+
+                if(opcionArbol == 14)
+                {
+                    salirAMenuPrin = true;
+                }
 
                 switch (opcionArbol)
                 {
                 case 1:
-                {
-                    bool salirAMenuPrin = false;
-                    arbolArregloConSenaladorPadre *arbolUsuario = new arbolArregloConSenaladorPadre();
-                    while(!salirAMenuPrin)
-                    {
-
-                    }
+                {   
+                    
                 }
                 case 2:
                 {    
-                    bool salirAMenuPrin = false;
-                    arbolHMIHDContador *arbolUsuario = new arbolHMIHDContador();
-                    while(!salirAMenuPrin)
-                    {
-
-                    }
+                    
                 }
                 case 3:
                 {
-                    bool salirAMenuPrin = false;
-                    arbolHMIHDconPunteros *arbolUsuario = new arbolHMIHDconPunteros();
-                    while(!salirAMenuPrin)
-                    {
-
-                    }
+                   
                 }
                 case 4:
                 {
-                    bool salirAMenuPrin = false;
-                    arbolHMIHDUltimoApuntandoPadre *arbolUsuario = new arbolHMIHDUltimoApuntandoPadre();
-                    while(!salirAMenuPrin)
-                    {
-
-                    }
+                    
+                }
+                case 5:
+                {
+                    
+                }
+                case 6:
+                {
+                    
+                }
+                case 7:
+                {
+                    
+                }
+                case 8:
+                {
+                    
+                }
+                case 9:
+                {
+                    
+                }
+                case 10:
+                {
+                    
+                }
+                case 11:
+                {
+                    
+                }
+                case 12:
+                {
+                    
+                }
+                case 13:
+                {
+                    
                 }
                 default:
                     break;

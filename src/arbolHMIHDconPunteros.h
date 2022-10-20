@@ -5,7 +5,7 @@
 
 using namespace std;
 
-class arbolHMIHDConPunteros
+class arbolHMIHDconPunteros
 {
     Nodo4 *raiz; 
 
