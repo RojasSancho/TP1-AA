@@ -10,9 +10,9 @@ Sánchez Cárdenas Carlos David C17235
 #include "listaIndexada.h"
 
 #include "arbolHMIHDContador.h"
-#include "./arbolHMIHDconPunteros/arbolHMIHDconPunteros.h"
+#include "arbolHMIHDconPunteros.h"
 #include "./arbolArregloConSenaladorPadre/arbolArregloConSenaladorPadre.h"
-#include "./arbolHMIHDUltimoApuntandoPadre/arbolHMIHDUltimoApuntandoPadre.h
+#include "arbolHMIHDUltimoApuntandoPadre.h"
 
 #include <iostream>
 
