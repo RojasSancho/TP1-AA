@@ -11,7 +11,7 @@ Sánchez Cárdenas Carlos David C17235
 
 #include "arbolHMIHDContador.h"
 #include "arbolHMIHDconPunteros.h"
-#include "./arbolArregloConSenaladorPadre/arbolArregloConSenaladorPadre.h"
+#include "arbolArregloConSenaladorPadre.h"
 #include "arbolHMIHDUltimoApuntandoPadre.h"
 
 #include <iostream>
