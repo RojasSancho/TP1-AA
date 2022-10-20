@@ -1,8 +1,18 @@
+/*
+Integrantes:
+
+Rojas Sancho Hermes Josue C16882
+Alfaro Mayorga Andrés Mauricio C10210
+Sánchez Cárdenas Carlos David C17235
+*/
+
 #include "colaArregloCircular.h"
-#include "arbolHMIHDContador.h"
 #include "listaIndexada.h"
-//#include "arbolHMIHDConPunteros.h"
-//#include "arbolHMIHDUltimoApuntandoPadre.h"
+#include "arbolHMIHDContador.h"
+#include "./arbolHMIHDconPunteros/arbolHMIHDconPunteros.h"
+#include "./arbolArregloConSenaladorPadre/arbolArregloConSenaladorPadre.h"
+#include "./arbolHMIHDUltimoApuntandoPadre/arbolHMIHDUltimoApuntandoPadre.h"
+
 #include <iostream>
 
 using namespace std;
@@ -13,6 +23,7 @@ int main()
 
     while(!terminar)
     {
+        system("clear");
         int opcionMenuPrin = 0;
 
         cout<< "\n\nBienvenido! Este programa esta hecho para probar diferentes modelos matematicos como lo son la Cola, la Lista Indexada y el Arbol n-ario.\n"; 
@@ -38,13 +49,14 @@ int main()
             ColaArregloCircular *colaUsuario = new ColaArregloCircular();
             while(!salirAMenuPrin) 
             {
+                system("clear");
                 int opcionCola = 0;
                 cout<<"\n\nCOLA\nDigite alguna de las opciones para utilizar el operador basico o 6 para volver al menu principal:\n\n";
                 cout<<"1. Iniciar\n";
                 cout<<"2. Destruir\n";
                 cout<<"3. Encolar\n";
                 cout<<"4. Desencolar\n";
-                cout<<"5. NumElem (Numero de elementos en la cola)\n";
+                cout<<"5. NumElem (Numero actual de elementos en la cola)\n";
                 cout<<"\n6. Salir al menu principal\n";
                 cin>>opcionCola;
 
@@ -98,10 +110,115 @@ int main()
             }
             break;
         }
-        case 2: //Modelo Lista
+        case 2: //Modelo Lista (Los indices comienzan en 0)
+        {
+            bool salirAMenuPrin = false;
+            ListaIndexada *listaUsuario = new ListaIndexada();
+            while(!salirAMenuPrin)
+            {
+                system("clear");
+                int opcionLista = 0;
+                cout<<"\n\nLISTA INDEXADA\nDigite alguna de las opciones para utilizar el operador basico u 8 para volver al menu principal:\n\n";
+                cout<<"1. Iniciar\n";
+                cout<<"2. Destruir\n";
+                cout<<"3. AgregarAlFinal\n";
+                cout<<"4. Insertar\n";
+                cout<<"5. Borrar\n";
+                cout<<"6. Recuperar\n";
+                cout<<"7. Modificar\n";
+                cout<<"8. NumElem (Numero actual de elementos en la lista)\n";
+                cout<<"\n9. Salir al menu principal\n";
+                cin>>opcionLista;
 
+                if(opcionLista == 9)
+                {
+                    salirAMenuPrin = true;
+                    delete listaUsuario;
+                }
+
+                switch (opcionLista)
+                {
+                case 1:
+                {
+                    ListaIndexada *listaUsuario = new ListaIndexada();
+                    cout<<"\nLista iniciada!";
+                    break;
+                }
+                case 2:
+                {    
+                    listaUsuario->~ListaIndexada();
+                    delete listaUsuario;
+                    break;
+                }
+                case 3:
+                {    
+                    int elemento = 0;
+                    cout<<"\nIngrese el elemento entero a insertar: ";
+                    cin>>elemento;
+                    listaUsuario->agregarAlFinal(elemento);
+
+                    cout<<"\nElemento insertado";
+                    break;
+                }    
+                case 4:
+                {    
+                    int elemento = 0;
+                    int indice = 0;
+                    cout<<"\nIngrese el elemento entero a insertar: ";
+                    cin>>elemento;
+                    cout<<"\nIngrese el indice donde se insertara: ";
+                    cin>>indice;
+                    listaUsuario->Insertar(indice, elemento);
+
+                    cout<<"\nElemento insertado";
+                    break;
+                }     
+                case 5:
+                {  
+                    int indice = 0;
+                    cout<<"\nIngrese el indice donde se encuentra el elemento que desea borrar: ";
+                    cin>>indice;
+                    listaUsuario->Borrar(indice);
+
+                    cout<<"\nElemento del indice "<<indice<<" borrado";
+                    break;
+                } 
+                case 6:
+                {
+                    int indice = 0;
+                    cout<<"Ingrese el indice en el que se encuentra el elemento que desea recuperar: ";
+                    cin>>indice;
+                    NodoLista *nodoRecuperado = listaUsuario->Recuperar(indice);
+                    int elementoRecuperado = nodoRecuperado->getElemento();
+
+                    cout<<"\nEl elemento recuperado es: " << elementoRecuperado;
+                    break;
+                }       
+                case 7:
+                {
+                    int indice = 0;
+                    int elementoParaModificar = 0;
+                    cout<<"Ingrese el entero con el que se va a modificar: ";
+                    cin>>elementoParaModificar;
+                    cout<<"Ingrese el indice que se va a modificar: ";
+                    cin>>indice;
+                    listaUsuario->Modificar(indice, elementoParaModificar);
+
+                    cout<<"Indice "<<indice<<" modificado";
+                    break;
+                } 
+                case 8:
+                {
+                    int numElem = listaUsuario->NumElem();
+                    cout<<"El numero actual de elementos en la lista es: "<<numElem;
+                    break;
+                } 
+                default:
+                    break;
+                }
+            }
             break;
-
+        }
         case 3: //Modelo Arbol n-ario
             break; 
 
