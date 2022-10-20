@@ -226,7 +226,7 @@ int main()
             while(!salirAMenuPrin)
             {
                 system("clear");
-                int opcionMenuPrin = 0;
+                int opcionArbol = 0;
 
                 cout<<"Elija entre las siguiente estrcturas digitando uno de los numeros:\n";
                 cout<<"\n1. Arreglo con senalador al padre \n";
@@ -234,9 +234,9 @@ int main()
                 cout<<"3. Hijo Más Izquierdo-Hermano Derecho con puntero al padre y al hermano izquierdo sin contador\n";
                 cout<<"4. Hijo Más Izquierdo-Hermano Derecho tal que el último hijo de un nodo apunta al padre sin contador\n";
                 cout<<"\n5. Salir\n";
-                cin>>opcionMenuPrin;
+                cin>>opcionArbol;
 
-                switch (opcionLista)
+                switch (opcionArbol)
                 {
                 case 1:
                 {
