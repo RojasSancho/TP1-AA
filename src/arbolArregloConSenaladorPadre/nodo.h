@@ -5,27 +5,22 @@ using namespace std;
 
 class Nodo
 {
-    Nodo *hijoMasIzquierdo;
-    Nodo *hermanoDerecho;
     Nodo *padre;
 
+    int posicion;
     int etiqueta;
+    int padre;
 
     public:
 
     Nodo();
-    Nodo(Nodo *hijoMasIzquierdo, Nodo *hermanoDerecho, int etiqueta);
-    Nodo(int etiqueta);
+    Nodo(Nodo *nodo, int etiqueta, int posicion);
     void ModificarEtiqueta(int etiqueta);
     int Etiqueta();
-    Nodo* HijoMasIzquierdo();
-    Nodo* HermanoDerecho();
-    Nodo* Padre();
+    int Posicion();
+    int Padre();
 
-    void SetearHMI(Nodo* HMI); //Modificar Hijo Mas Izquierdo
-    void SetearHD(Nodo* HD); //Modificar HermanoDerecho
     void SetearPadre(Nodo* padre);  
-    void SetearHI(Nodo* HI);
 
 }
 

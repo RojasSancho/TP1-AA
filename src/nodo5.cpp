@@ -1,8 +1,8 @@
-#include "nodo.h"
+#include "nodo5.h"
 
 using namespace std;
 
-Nodo::Nodo(Nodo *hijoMasIzquierdo, Nodo *hermanoDerecho, int etiqueta)
+Nodo5::Nodo5(Nodo5 *hijoMasIzquierdo, Nodo5 *hermanoDerecho, int etiqueta)
 {
     this->hijoMasIzquierdo = hijoMasIzquierdo;
     this->hermanoDerecho = hermanoDerecho;
@@ -10,54 +10,54 @@ Nodo::Nodo(Nodo *hijoMasIzquierdo, Nodo *hermanoDerecho, int etiqueta)
     
 }
 
-Nodo::Nodo(int etiqueta)
+Nodo5::Nodo5(int etiqueta)
 {
     this->etiqueta = etiqueta;  
 }
 
-Nodo::Nodo()
+Nodo5::Nodo5()
 {
     this->hijoMasIzquierdo = nullptr;
     this->hermanoDerecho = nullptr;
     this->padre = nullptr;
 }
 
-void Nodo::ModificarEtiqueta(int etiqueta) 
+void Nodo5::ModificarEtiqueta(int etiqueta) 
 {
     this->etiqueta = etiqueta;
 }
 
-int Nodo::Etiqueta() 
+int Nodo5::Etiqueta() 
 {
     return this->etiqueta;
 }
 
-Nodo *Nodo::HijoMasIzquierdo() 
+Nodo5 *Nodo5::HijoMasIzquierdo() 
 {
     return this->hijoMasIzquierdo;
 }
 
-Nodo *Nodo::HermanoDerecho()
+Nodo5 *Nodo5::HermanoDerecho()
 {
     return this->hermanoDerecho;
 }
 
-Nodo *Nodo::Padre()
+Nodo5 *Nodo5::Padre()
 {
     return this->padre;
 }
 
-void Nodo::SetearHMI(Nodo* HMI)
+void Nodo5::SetearHMI(Nodo5* HMI)
 {
     this->hijoMasIzquierdo = HMI;
 }
 
-void Nodo::SetearHD(Nodo* HD)
+void Nodo5::SetearHD(Nodo5* HD)
 {
     this->hermanoDerecho = HD;
 }
 
-void Nodo::SetearPadre(Nodo* padre)
+void Nodo5::SetearPadre(Nodo5* padre)
 {
     this->padre = padre;
 } 

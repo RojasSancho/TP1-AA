@@ -9,43 +9,43 @@ void arbolHMIHDConPunteros::Iniciar()
 
 void arbolHMIHDConPunteros::PonerRaiz(int etiqueta)
 {
-    this->raiz = new Nodo(nullptr, nullptr, etiqueta);
+    this->raiz = new Nodo4(nullptr, nullptr, etiqueta);
 }
 
-Nodo *arbolHMIHDConPunteros::Raiz()
+Nodo4 *arbolHMIHDConPunteros::Raiz()
 {
     return this->raiz;
 }
 
-Nodo *arbolHMIHDConPunteros::HijoMasIzquierdo(Nodo *nodo)
+Nodo4 *arbolHMIHDConPunteros::HijoMasIzquierdo(Nodo4 *nodo)
 {
     return nodo->HijoMasIzquierdo();
 }
 
-Nodo *arbolHMIHDConPunteros::HermanoDerecho(Nodo *nodo)
+Nodo4 *arbolHMIHDConPunteros::HermanoDerecho(Nodo4 *nodo)
 {
     return nodo->HermanoDerecho();
 }
 
-Nodo *arbolHMIHDConPunteros::HermanoIzquierdo(Nodo *nodo)
+Nodo4 *arbolHMIHDConPunteros::HermanoIzquierdo(Nodo4 *nodo)
 {
     return nodo->HermanoIzquierdo();
 }
 
-int arbolHMIHDConPunteros::Etiqueta(Nodo *nodo)
+int arbolHMIHDConPunteros::Etiqueta(Nodo4 *nodo)
 {
     return nodo->Etiqueta();
 }
 
-void arbolHMIHDConPunteros::ModificarEtiqueta(Nodo *nodo, int etiqueta)
+void arbolHMIHDConPunteros::ModificarEtiqueta(Nodo4 *nodo, int etiqueta)
 {
     nodo->ModificarEtiqueta(etiqueta);
 }
 
-int arbolHMIHDConPunteros::NumNodosRecursivo(Nodo *nodo)
+int arbolHMIHDConPunteros::NumNodosRecursivo(Nodo4 *nodo)
 {
     int cantidad = 1;
-    Nodo *nodoTemp = nodo->HijoMasIzquierdo();
+    Nodo4 *nodoTemp = nodo->HijoMasIzquierdo();
     while (nodoTemp != nullptr){
         cantidad+=this->NumNodosRecursivo(nodoTemp);
         *nodoTemp = *nodo->HermanoDerecho();
@@ -62,18 +62,18 @@ int arbolHMIHDConPunteros::NumNodos(){
     return cantidad;
 }
 
-Nodo* arbolHMIHDConPunteros::AgregarHijo(Nodo* nodo, int etiqueta)
+Nodo4* arbolHMIHDConPunteros::AgregarHijo(Nodo4* nodo, int etiqueta)
 {
     if(nodo->HijoMasIzquierdo() == nullptr) 
     {
-        Nodo *nuevoHijo = new Nodo(nullptr, nullptr, etiqueta);
+        Nodo4 *nuevoHijo = new Nodo4(nullptr, nullptr, etiqueta);
         nodo->SetearHMI(nuevoHijo);
         nuevoHijo->SetearPadre(nodo);
         return nuevoHijo;
     } else 
     {
-        Nodo* antiguoHMI = nodo->HijoMasIzquierdo();
-        Nodo* nuevoHijo = new Nodo(nullptr, antiguoHMI, etiqueta);
+        Nodo4* antiguoHMI = nodo->HijoMasIzquierdo();
+        Nodo4* nuevoHijo = new Nodo4(nullptr, antiguoHMI, etiqueta);
         nuevoHijo->SetearPadre(nodo);
         antiguoHMI->SetearHI(nuevoHijo);
         nodo->SetearHMI(nuevoHijo);
@@ -81,22 +81,22 @@ Nodo* arbolHMIHDConPunteros::AgregarHijo(Nodo* nodo, int etiqueta)
     }
 }
 
-Nodo* arbolHMIHDConPunteros::AgregarHijoMasDerecho(Nodo* nodo, int etiqueta)
+Nodo4* arbolHMIHDConPunteros::AgregarHijoMasDerecho(Nodo4* nodo, int etiqueta)
 {
     if(nodo->HijoMasIzquierdo() == nullptr) 
     {
-        Nodo *nuevoHijo = new Nodo(nullptr, nullptr, etiqueta);
+        Nodo4 *nuevoHijo = new Nodo4(nullptr, nullptr, etiqueta);
         nodo->SetearHMI(nuevoHijo);
         nuevoHijo->SetearPadre(nodo);
         return nuevoHijo;
     } else 
     {
-        Nodo *hijoActual = nodo->HijoMasIzquierdo();
+        Nodo4 *hijoActual = nodo->HijoMasIzquierdo();
         while((hijoActual->HermanoDerecho()) != nullptr)
         {
             hijoActual = hijoActual->HermanoDerecho();
         }
-        Nodo *nuevoHijo = new Nodo(nullptr, nullptr, etiqueta);
+        Nodo4 *nuevoHijo = new Nodo4(nullptr, nullptr, etiqueta);
         hijoActual->SetearHD(nuevoHijo);
         nuevoHijo->SetearHI(hijoActual);
         nuevoHijo->SetearPadre(nodo);
@@ -104,7 +104,7 @@ Nodo* arbolHMIHDConPunteros::AgregarHijoMasDerecho(Nodo* nodo, int etiqueta)
     }
 }
 
-Nodo* arbolHMIHDConPunteros::Padre(Nodo *nodo)
+Nodo4* arbolHMIHDConPunteros::Padre(Nodo4 *nodo)
 {
     return nodo->Padre();  
 }
