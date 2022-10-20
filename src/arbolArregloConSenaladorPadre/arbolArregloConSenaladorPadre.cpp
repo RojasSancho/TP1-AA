@@ -34,10 +34,10 @@ Nodo *arbolArregloConSenaladorPadre::HijoMasIzquierdo(Nodo *nodo){
 }
 
 Nodo *arbolArregloConSenaladorPadre::HermanoDerecho(Nodo *nodo){
-    int pos = nodo->Padre();
+    int posPadre = nodo->Padre();
     cont = nodo->Posicion()-1;
     Nodo *nodoTemp = nodosArreglo[cont];
-    while (nodoTemp->Padre() != pos){
+    while (nodoTemp->Padre() != posPadre){
         cont-=1;
         nodoTemp = nodosArreglo[cont];
     }
