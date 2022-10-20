@@ -9,15 +9,16 @@ class Nodo
 
     int posicion;
     int etiqueta;
-    int senaladorPadre;
+    int padre;
 
     public:
 
     Nodo();
-    Nodo(Nodo *nodo, int etiqueta);
+    Nodo(Nodo *nodo, int etiqueta, int posicion);
     void ModificarEtiqueta(int etiqueta);
     int Etiqueta();
-    Nodo* Padre();
+    int Posicion();
+    int Padre();
 
     void SetearPadre(Nodo* padre);  
 

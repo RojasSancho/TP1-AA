@@ -3,13 +3,13 @@
 
 #include "nodo.h"
 #include <vector>
+#include <array> 
 
 
 using namespace std;
 
 class arbolArregloConSenaladorPadre
 {
-    Nodo *raiz; 
 
     Nodo * nodosArreglo;
 

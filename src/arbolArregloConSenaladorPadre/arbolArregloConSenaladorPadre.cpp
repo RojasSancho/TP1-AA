@@ -1,4 +1,5 @@
 #include "arbolArregloConSenaladorPadre.h"
+#include <array> 
 
 using namespace std;
 
@@ -8,7 +9,7 @@ void arbolArregloConSenaladorPadre::Iniciar(int tamano){
 }
 
 void arbolArregloConSenaladorPadre::PonerRaiz(int etiqueta){
-    Nodo *raiz = new Nodo(nullptr, etiqueta);
+    Nodo *raiz = new Nodo(nullptr, etiqueta, 0);
     this->nodosArreglo[0] = raiz;
     this->n+=1; 
 }
@@ -41,15 +42,24 @@ int arbolArregloConSenaladorPadre::NumNodos(){
 }
 
 Nodo *arbolArregloConSenaladorPadre::AgregarHijo(Nodo *nodo, int etiqueta){
-    Nodo *nuevoHijo = new Nodo(nodo, etiqueta);
-    this->nodosArreglo[nodosArreglo.size()] = raiz;
+    Nodo *nuevoHijo = new Nodo(nodo, etiqueta, n);
+    this->nodosArreglo[n] = raiz;
     this->n+=1; 
 }
 
 Nodo *arbolArregloConSenaladorPadre::AgregarHijoMasDerecho(Nodo *nodo, int etiqueta){
-    
+    int pos = nodo->Posicion();
+    int cont = 1;
+    Nodo *nuevoHijo = new Nodo(nodo, etiqueta, n);
+    Nodo *nodoTemp = nodosArreglo[1];
+    while (nodoTemp->Padre() != pos){
+        cont+=1;
+        nodoTemp = nodosArreglo[cont];
+    }
+    nodosArreglo[cont]->ModificarEtiqueta(etiqueta);
+    Nodo *nuevoHijo = new Nodo(nodo, nodoTemp->Etiqueta(), n);
 }
 
 Nodo *arbolArregloConSenaladorPadre::Padre(Nodo *nodo){
-    return nodo->Padre();
+    return nodosArreglo[nodo->Padre()];
 }
