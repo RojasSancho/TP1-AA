@@ -2,7 +2,7 @@
 #include "arbolHMIHDContador.h"
 #include "listaIndexada.h"
 //#include "arbolHMIHDConPunteros.h"
-//#include "arbolHMIHDUltimoApuntandoPadre.h"
+#include "arbolHMIHDUltimoApuntandoPadre.h"
 #include <iostream>
 
 using namespace std;
