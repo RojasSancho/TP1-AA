@@ -1,5 +1,10 @@
-void arbolArregloConSenaladorPadre::Iniciar(int tamano){
+#include "arbolArregloConSenaladorPadre.h"
 
+using namespace std;
+
+void arbolArregloConSenaladorPadre::Iniciar(int tamano){
+    this->n = tamano;
+    this->nodos = new Nodo[tamano];
 }
 
 void arbolArregloConSenaladorPadre::PonerRaiz(int etiqueta){

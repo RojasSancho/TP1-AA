@@ -2,6 +2,8 @@
 #define ARBOLARREGLOCONSENALADORPADRE_H
 
 #include "nodo.h"
+#include <vector>
+
 
 using namespace std;
 
@@ -9,13 +11,13 @@ class arbolArregloConSenaladorPadre
 {
     Nodo *raiz; 
 
-    vector<Nodo> nodos;
+    std::vector<int> Nodos;
 
-    int tamano;
-    Nodo *Padre(Nodo *nodo);
+    int n;
     
     public:
-    void Iniciar(int tamano);
+
+    void Iniciar(int n);
     void PonerRaiz(int etiqueta);
     void BorrarHoja(Nodo *nodo);
 

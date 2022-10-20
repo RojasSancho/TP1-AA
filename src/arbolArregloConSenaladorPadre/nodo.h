@@ -9,7 +9,9 @@ class Nodo
     Nodo *hermanoDerecho;
     Nodo *padre;
 
+    int posicion;
     int etiqueta;
+    int senaladorPadre;
 
     public:
 
