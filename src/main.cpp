@@ -221,7 +221,46 @@ int main()
             break;
         }
         case 3: //Modelo Arbol n-ario
+        { 
+            bool salirAMenuPrin = false;
+            while(!salirAMenuPrin)
+            {
+                system("clear");
+                int opcionMenuPrin = 0;
+
+                cout<<"Elija entre las siguiente estrcturas digitando uno de los numeros:\n";
+                cout<<"\n1. Arreglo con senalador al padre \n";
+                cout<<"2. Hijo Más Izquierdo-Hermano Derecho con contador\n";
+                cout<<"3. Hijo Más Izquierdo-Hermano Derecho con puntero al padre y al hermano izquierdo sin contador\n";
+                cout<<"4. Hijo Más Izquierdo-Hermano Derecho tal que el último hijo de un nodo apunta al padre sin contador\n";
+                cout<<"\n5. Salir\n";
+                cin>>opcionMenuPrin;
+
+                switch (opcionLista)
+                {
+                case 1:
+                {
+                    
+                }
+                case 2:
+                {    
+                    
+                }
+                case 3:
+                {
+
+                }
+                case 4:
+                {
+                    
+                }
+                default:
+                    break;
+                }
+
+            }
             break; 
+        }
 
         default:
             break;
