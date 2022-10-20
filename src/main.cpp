@@ -223,12 +223,12 @@ int main()
         case 3: //Modelo Arbol n-ario
         { 
 
-            bool salirAMenuPrin = false;
+            bool salirAMenuPrin2 = false;
             //arbolArregloConSenaladorPadre *arbolUsuario = new arbolArregloConSenaladorPadre();
             arbolHMIHDContador *arbolUsuario = new arbolHMIHDContador();
             //arbolHMIHDconPunteros *arbolUsuario = new arbolHMIHDconPunteros();
             //arbolHMIHDUltimoApuntandoPadre *arbolUsuario = new arbolHMIHDUltimoApuntandoPadre();
-            while(!salirAMenuPrin)
+            while(!salirAMenuPrin2)
             {
                 system("clear");
                 int opcionArbol = 0;
@@ -254,7 +254,7 @@ int main()
 
                 if(opcionArbol == 14)
                 {
-                    salirAMenuPrin = true;
+                    salirAMenuPrin2 = true;
                 }
 
                 switch (opcionArbol)
