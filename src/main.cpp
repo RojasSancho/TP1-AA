@@ -10,9 +10,9 @@ Sánchez Cárdenas Carlos David C17235
 #include "listaIndexada.h"
 
 #include "arbolHMIHDContador.h"
-//#include "arbolHMIHDconPunteros.h"
-//#include "arbolArregloConSenaladorPadre.h"
-//#include "arbolHMIHDUltimoApuntandoPadre.h"
+#include "arbolHMIHDconPunteros.h"
+#include "arbolArregloConSenaladorPadre.h"
+#include "arbolHMIHDUltimoApuntandoPadre.h"
 
 #include <iostream>
 
@@ -240,19 +240,39 @@ int main()
                 {
                 case 1:
                 {
-                    
+                    bool salirAMenuPrin = false;
+                    arbolArregloConSenaladorPadre *arbolUsuario = new arbolArregloConSenaladorPadre();
+                    while(!salirAMenuPrin)
+                    {
+
+                    }
                 }
                 case 2:
                 {    
-                    
+                    bool salirAMenuPrin = false;
+                    arbolHMIHDContador *arbolUsuario = new arbolHMIHDContador();
+                    while(!salirAMenuPrin)
+                    {
+
+                    }
                 }
                 case 3:
                 {
+                    bool salirAMenuPrin = false;
+                    arbolHMIHDconPunteros *arbolUsuario = new arbolHMIHDconPunteros();
+                    while(!salirAMenuPrin)
+                    {
 
+                    }
                 }
                 case 4:
                 {
-                    
+                    bool salirAMenuPrin = false;
+                    arbolHMIHDUltimoApuntandoPadre *arbolUsuario = new arbolHMIHDUltimoApuntandoPadre();
+                    while(!salirAMenuPrin)
+                    {
+
+                    }
                 }
                 default:
                     break;
