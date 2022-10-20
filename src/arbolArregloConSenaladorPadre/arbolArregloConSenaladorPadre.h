@@ -1,11 +1,11 @@
-#ifndef ARBOLHMIHDULTIMOAPUNTANDOPADRE_H
-#define ARBOLHMIHDULTIMOAPUNTANDOPADRE_H
+#ifndef ARBOLARREGLOCONSENALADORPADRE_H
+#define ARBOLARREGLOCONSENALADORPADRE_H
 
 #include "nodo.h"
 
 using namespace std;
 
-class arbolHMIHDUltimoApuntandoPadre
+class arbolArregloConSenaladorPadre
 {
     Nodo *raiz; 
 
@@ -17,6 +17,7 @@ class arbolHMIHDUltimoApuntandoPadre
     public:
     void Iniciar(int tamano);
     void PonerRaiz(int etiqueta);
+    void BorrarHoja(Nodo *nodo);
 
     Nodo *Raiz();
     Nodo *HijoMasIzquierdo(Nodo *nodo);

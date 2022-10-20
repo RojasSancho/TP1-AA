@@ -11,7 +11,7 @@ class ArbolHMIHDContador
     
     int contador;
 
-    Nodo *PadreRecursivo(Nodo *nodo, Nodo *inicio);
+    //Nodo *PadreRecursivo(Nodo *nodo, Nodo *inicio);
     
     public:
     void Iniciar();
