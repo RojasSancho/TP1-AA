@@ -14,12 +14,34 @@ Sánchez Cárdenas Carlos David C17235
 #include "arbolArregloConSenaladorPadre.h"
 #include "arbolHMIHDUltimoApuntandoPadre.h"
 
+#include "nodo.h"
+#include "nodo1.h"
+#include "nodo4.h"
+#include "nodo5.h"
+#include "nodoLista.h"
+
+#include "./algoritmosArbol/listarEtiquetasPreorden.cpp"
+
 #include <iostream>
 
 using namespace std;
 
 int main()
 {
+    
+
+    arbolHMIHDconPunteros *arbol = new arbolHMIHDconPunteros();
+
+    arbol->Iniciar();
+    arbol->PonerRaiz(1);
+    Nodo4 *raiz = arbol->Raiz();
+    Nodo4 *hijoDeRaiz = arbol->AgregarHijo(raiz, 2);
+    arbol->AgregarHijo(hijoDeRaiz, 3);
+
+    //ListarEtiquetasPreorden(arbol);
+
+
+    /*
     bool terminar = false;
 
     while(!terminar)
@@ -339,4 +361,5 @@ int main()
         }
 
     }  
+    */
 }

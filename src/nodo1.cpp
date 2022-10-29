@@ -14,6 +14,11 @@ Nodo1::Nodo1()
 
 }
 
+Nodo1::Nodo1(int etiqueta)
+{
+    this->etiqueta = etiqueta;  
+}
+
 void Nodo1::ModificarEtiqueta(int etiqueta) 
 {
     this->etiqueta = etiqueta;

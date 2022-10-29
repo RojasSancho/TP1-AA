@@ -14,6 +14,7 @@ class Nodo1
 
     Nodo1();
     Nodo1(int padre, int etiqueta, int posicion);
+    Nodo1(int etiqueta);
     void ModificarEtiqueta(int etiqueta);
     int Etiqueta();
     int Posicion();

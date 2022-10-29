@@ -56,13 +56,14 @@ int arbolArregloConSenaladorPadre::NumNodos(){
     return n;
 }
 
-void arbolArregloConSenaladorPadre::AgregarHijo(Nodo1 *nodo, int etiqueta){
+Nodo1 arbolArregloConSenaladorPadre::AgregarHijo(Nodo1 *nodo, int etiqueta){
     Nodo1 *nuevoHijo = new Nodo1(nodo->Posicion(), etiqueta, n);
     this->nodosArreglo[n] = *nuevoHijo;
     this->n+=1; 
+    return nodosArreglo[n];
 }
 
-void arbolArregloConSenaladorPadre::AgregarHijoMasDerecho(Nodo1 *nodo, int etiqueta){
+Nodo1 arbolArregloConSenaladorPadre::AgregarHijoMasDerecho(Nodo1 *nodo, int etiqueta){
     int pos = nodo->Posicion();
     int cont = 1;
     Nodo1 nodoTemp = nodosArreglo[1];
@@ -74,6 +75,7 @@ void arbolArregloConSenaladorPadre::AgregarHijoMasDerecho(Nodo1 *nodo, int etiqu
     Nodo1 *nuevoHijo = new Nodo1(nodo->Posicion(), nodoTemp.Etiqueta(), n);
     this->nodosArreglo[n] = *nuevoHijo;
     this->n+=1;
+    return nodosArreglo[n];
 }
 
 Nodo1 arbolArregloConSenaladorPadre::Padre(Nodo1 *nodo){

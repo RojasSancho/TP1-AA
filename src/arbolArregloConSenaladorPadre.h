@@ -29,8 +29,8 @@ class arbolArregloConSenaladorPadre
     void ModificarEtiqueta(Nodo1 *nodo, int etiqueta);
     int NumNodos();
 
-    void AgregarHijo(Nodo1 *nodo, int etiqueta);
-    void AgregarHijoMasDerecho(Nodo1 *nodo, int etiqueta);
+    Nodo1 AgregarHijo(Nodo1 *nodo, int etiqueta);
+    Nodo1 AgregarHijoMasDerecho(Nodo1 *nodo, int etiqueta);
     Nodo1 Padre(Nodo1 *nodo);
     
 };
