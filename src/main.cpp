@@ -38,7 +38,7 @@ int main()
     Nodo4 *hijoDeRaiz = arbol->AgregarHijo(raiz, 2);
     arbol->AgregarHijo(hijoDeRaiz, 3);
 
-    //ListarEtiquetasPreorden(arbol);
+    
 
 
     /*
