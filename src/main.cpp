@@ -30,16 +30,16 @@ int main()
 {
     
 
-    arbolHMIHDconPunteros *arbol = new arbolHMIHDconPunteros();
+    arbolHMIHDUltimoApuntandoPadre *arbol = new arbolHMIHDUltimoApuntandoPadre();
 
     arbol->Iniciar();
     arbol->PonerRaiz(1);
-    Nodo4 *raiz = arbol->Raiz();
-    Nodo4 *hijoDeRaiz = arbol->AgregarHijo(raiz, 2);
+    Nodo5 *raiz = arbol->Raiz();
+    arbol->AgregarHijo(raiz, 4);
+    Nodo5 *hijoDeRaiz = arbol->AgregarHijo(raiz, 2);
     arbol->AgregarHijo(hijoDeRaiz, 3);
 
-    
-
+    ListarEtiquetasPreorden(arbol);
 
     /*
     bool terminar = false;
@@ -362,4 +362,5 @@ int main()
 
     }  
     */
+    
 }

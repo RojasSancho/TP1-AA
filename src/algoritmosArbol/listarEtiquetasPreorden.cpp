@@ -6,10 +6,10 @@
 //#include "../arbolHMIHDUltimoApuntandoPadre.h"
 //#include "../arbolHMIHDContador.h"
 
-void ListarEtiquetasRecursividad(Nodo4 *nodo, arbolHMIHDconPunteros *arbol)
+void ListarEtiquetasRecursividad(Nodo5 *nodo, arbolHMIHDUltimoApuntandoPadre *arbol)
 {
     cout<<arbol->Etiqueta(nodo);
-    Nodo4 *siguienteNodo = arbol->HijoMasIzquierdo(nodo);
+    Nodo5 *siguienteNodo = arbol->HijoMasIzquierdo(nodo);
     while (siguienteNodo != nullptr) 
     {
         ListarEtiquetasRecursividad(siguienteNodo, arbol);
@@ -17,14 +17,11 @@ void ListarEtiquetasRecursividad(Nodo4 *nodo, arbolHMIHDconPunteros *arbol)
     } 
 }
 
-void ListarEtiquetasPreorden(arbolHMIHDconPunteros *arbol)
+void ListarEtiquetasPreorden(arbolHMIHDUltimoApuntandoPadre *arbol)
 {
-    if(arbol->NumNodos() > 0) 
-    {
-        Nodo4 *raiz = arbol->Raiz();
-        ListarEtiquetasRecursividad(raiz, arbol);
-        
-    }
+    Nodo5 *raiz = arbol->Raiz();
+    ListarEtiquetasRecursividad(raiz, arbol);
+
 }
 
 

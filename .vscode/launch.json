@@ -8,7 +8,7 @@
             "name": "g++ - Debug program",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/bin/main",
+            "program": "${workspaceFolder}/bin/program.exe",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
