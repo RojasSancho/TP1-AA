@@ -7,7 +7,26 @@
 //#include "../arbolHMIHDContador.h"
 
 //Algoritmo para averiguar cuál es el hermano izquierdo de un nodo n
-void HermanoIzq(Nodo *nodo, )
+Nodo4 HermanoIzq(Nodo4 *nodo, arbolHMIHDUltimoApuntandoPadre *arbol){
+    Nodo4 HermanoIzq = HermanoIzqRec(nodo, nodo->Raiz(), arbol);
+    return HermanoIzq;
+}
+
+Nodo4 HermanoIzqRec(Nodo4 *nodo, Nodo4 *pos, arbolHMIHDUltimoApuntandoPadre *arbol){
+    hijo = HijoMasIzquierdo(pos);
+    Nodo4 HermanoIzq = Nodo4();
+    while (hijo != nullptr && HermanoDerecho(hijo) != nodo){
+        HermanoIzq = HermanoIzqRec(nodo, hijo, arbol);
+        hijo = HermanoDerecho(hijo);
+    }
+    if (HermanoDerecho(hijo) != nodo){
+        HermanoIzq = hijo;
+    }
+    return HermanoIzq;
+}
+
+
+
 
 //Algoritmo para averiguar si el árbol tiene etiquetas repetidas
 //Algoritmo para averiguar cuántos niveles tiene el árbol haciendo un recorrido por niveles
