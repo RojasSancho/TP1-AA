@@ -50,9 +50,26 @@ int EtiquetaRepetidaRec(int etiqueta, Nodo4 *pos, arbolHMIHDUltimoApuntandoPadre
 }
 
 //Algoritmo para averiguar cuántos niveles tiene el árbol haciendo un recorrido por niveles
+
+int numNiveles(){
+
+}
+
 //Algoritmo para listar las etiquetas del i-ésimo nivel
+
+void ListarEtiquetasEnUnNivel(){
+
+}
+
 //Algoritmo para listar las etiquetas del árbol por niveles
+void ListarEtiquetasPorNivel(){
+
+}
+
 //Algoritmo para eliminar subarbol de un nodo
+void EliminarSubarbol(){
+    
+}
 
 //Algoritmo Listar nodos en preorden
 void ListarEtiquetasRecursividad(Nodo5 *nodo, arbolHMIHDUltimoApuntandoPadre *arbol)
