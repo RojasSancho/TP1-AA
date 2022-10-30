@@ -25,10 +25,30 @@ Nodo4 HermanoIzqRec(Nodo4 *nodo, Nodo4 *pos, arbolHMIHDUltimoApuntandoPadre *arb
     return HermanoIzq;
 }
 
-
-
-
 //Algoritmo para averiguar si el árbol tiene etiquetas repetidas
+bool EtiquetaRepetida(int etiqueta, arbolHMIHDUltimoApuntandoPadre *arbol){
+    bool Repetida = false;
+    int Repeticiones = EtiquetaRepetidaRec(etiqueta, arbol->Raiz(), arbol);
+    if (Repeticiones >= 2){
+        Repetida = true;
+    }
+    return Repetida;
+}
+
+int EtiquetaRepetidaRec(int etiqueta, Nodo4 *pos, arbolHMIHDUltimoApuntandoPadre *arbol){
+    int Repeticiones = 0;
+    Nodo4 *siguienteNodo = arbol->HijoMasIzquierdo(nodo);
+    while (siguienteNodo != nullptr) 
+    {
+        if (siguienteNodo->Etiqueta()==etiqueta){
+            Repeticiones+=1;
+        }
+        Repeticiones+= ListarEtiquetasRecursividad(siguienteNodo, arbol);
+        siguienteNodo = arbol->HermanoDerecho(siguienteNodo);
+    }
+    return Repeticiones; 
+}
+
 //Algoritmo para averiguar cuántos niveles tiene el árbol haciendo un recorrido por niveles
 //Algoritmo para listar las etiquetas del i-ésimo nivel
 //Algoritmo para listar las etiquetas del árbol por niveles
