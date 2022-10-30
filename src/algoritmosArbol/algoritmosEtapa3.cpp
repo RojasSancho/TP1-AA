@@ -1,10 +1,10 @@
 #include <iostream>
 #include <list>
 
-#include "../arbolHMIHDconPunteros.h"
-#include "../nodo4.h"
 //#include "../arbolHMIHDconPunteros.h"
-//#include "../arbolHMIHDUltimoApuntandoPadre.h"
+#include "../nodo5.h"
+//#include "../arbolHMIHDconPunteros.h"
+#include "../arbolHMIHDUltimoApuntandoPadre.h"
 //#include "../arbolHMIHDContador.h"
 
 //Algoritmo para averiguar cuál es el hermano izquierdo de un nodo n
@@ -163,4 +163,30 @@ int NumNivelesPreorden(arbolHMIHDUltimoApuntandoPadre *arbol)
     ultimoNivel = 0;
     NumNivelesRecursividad(arbol->Raiz(), 1, arbol);
     return ultimoNivel;
+}
+
+//Algoritmo Buscar una etiqueta e (Devuelve el primer nodo encontrado con etiqueta e)
+
+Nodo5 *nodoConEtiqueta = nullptr;
+void BuscarEtiquetaRecursividad(int etiqueta, Nodo5 *nodo, arbolHMIHDUltimoApuntandoPadre *arbol)
+{
+    if (arbol->Etiqueta(nodo) == etiqueta) 
+    {
+        nodoConEtiqueta = nodo;
+    } else
+    {
+        nodo = arbol->HijoMasIzquierdo(nodo);
+        while (nodo != nullptr) 
+        {
+            BuscarEtiquetaRecursividad(etiqueta, nodo, arbol);
+            nodo = arbol->HermanoDerecho(nodo);
+        }
+    }
+}
+
+Nodo5 *BuscarEtiqueta (int etiqueta, arbolHMIHDUltimoApuntandoPadre *arbol) 
+{
+    nodoConEtiqueta = nullptr;
+    BuscarEtiquetaRecursividad(etiqueta, arbol->Raiz(), arbol);
+    return nodoConEtiqueta;
 }

@@ -38,12 +38,15 @@ int main()
     arbol->AgregarHijo(raiz, 4);
     Nodo5 *hijoDeRaiz = arbol->AgregarHijo(raiz, 2);
     Nodo5 *nivel3 = arbol->AgregarHijo(hijoDeRaiz, 3);
-    arbol->AgregarHijo(nivel3, 5);
+    arbol->AgregarHijo(nivel3, 2);
 
     ListarEtiquetasPreorden(arbol);
 
     int niveles = NumNivelesPreorden(arbol);
     cout<<niveles;
+
+    Nodo5 *nodo = BuscarEtiqueta(4, arbol);
+    //cout<<"\n"<<arbol->Etiqueta(nodo);
 
     /*
     bool terminar = false;
