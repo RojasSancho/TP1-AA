@@ -58,8 +58,21 @@ int numNiveles(){
 
 //Algoritmo para listar las etiquetas del i-ésimo nivel
 
-void ListarEtiquetasEnUnNivel(){
-    
+void ListarEtiquetasEnUnNivel(int nivel, arbol arbolHMIHDUltimoApuntandoPadre){
+    ListarEtiquetasEnUnNivelRec(nivel, arbol->Raiz(), arbol);
+}
+
+void ListarEtiquetasEnUnNivelRec(int nivel, Nodo4 *nodo, arbol arbolHMIHDUltimoApuntandoPadre){
+    if (nivel == 1){
+        cout<<nodo->Etiqueta();
+    }
+    else {
+        hijo = nodo->hijoMasIzquierdo();
+        while (hijo != nullptr){
+            ListarEtiquetasEnUnNivelRec(nivel-1, hijo);
+            hijo = hijo->HermanoDerecho();
+        }
+    }
 }
 
 //Algoritmo para listar las etiquetas del árbol por niveles
@@ -76,12 +89,11 @@ void ListarEtiquetasPorNivel(arbolHMIHDUltimoApuntandoPadre *arbol){
             nodoHijo = arbol->HermanoDerecho(nodoHijo);
         }
     }
-    
 }
 
 //Algoritmo para eliminar subarbol de un nodo
 void EliminarSubarbol(){
-
+    
 }
 
 //Algoritmo Listar nodos en preorden
