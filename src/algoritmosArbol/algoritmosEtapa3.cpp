@@ -1,4 +1,5 @@
 #include <iostream>
+#include <list>
 
 //#include "../arbolHMIHDconPunteros.h"
 #include "../nodo5.h"
@@ -6,6 +7,94 @@
 #include "../arbolHMIHDUltimoApuntandoPadre.h"
 //#include "../arbolHMIHDContador.h"
 
+//Algoritmo para averiguar cuál es el hermano izquierdo de un nodo n
+Nodo4 HermanoIzq(Nodo4 *nodo, arbolHMIHDUltimoApuntandoPadre *arbol){
+    Nodo4 HermanoIzq = HermanoIzqRec(nodo, nodo->Raiz(), arbol);
+    return HermanoIzq;
+}
+
+Nodo4 HermanoIzqRec(Nodo4 *nodo, Nodo4 *pos, arbolHMIHDUltimoApuntandoPadre *arbol){
+    hijo = HijoMasIzquierdo(pos);
+    Nodo4 HermanoIzq = Nodo4();
+    while (hijo != nullptr && HermanoDerecho(hijo) != nodo){
+        HermanoIzq = HermanoIzqRec(nodo, hijo, arbol);
+        hijo = HermanoDerecho(hijo);
+    }
+    if (HermanoDerecho(hijo) != nodo){
+        HermanoIzq = hijo;
+    }
+    return HermanoIzq;
+}
+
+//Algoritmo para averiguar si el árbol tiene etiquetas repetidas
+bool EtiquetaRepetida(int etiqueta, arbolHMIHDUltimoApuntandoPadre *arbol){
+    bool Repetida = false;
+    int Repeticiones = EtiquetaRepetidaRec(etiqueta, arbol->Raiz(), arbol);
+    if (Repeticiones >= 2){
+        Repetida = true;
+    }
+    return Repetida;
+}
+
+int EtiquetaRepetidaRec(int etiqueta, Nodo4 *pos, arbolHMIHDUltimoApuntandoPadre *arbol){
+    int Repeticiones = 0;
+    Nodo4 *siguienteNodo = arbol->HijoMasIzquierdo(nodo);
+    while (siguienteNodo != nullptr) 
+    {
+        if (siguienteNodo->Etiqueta()==etiqueta){
+            Repeticiones+=1;
+        }
+        Repeticiones+= ListarEtiquetasRecursividad(siguienteNodo, arbol);
+        siguienteNodo = arbol->HermanoDerecho(siguienteNodo);
+    }
+    return Repeticiones; 
+}
+
+//Algoritmo para averiguar cuántos niveles tiene el árbol haciendo un recorrido por niveles
+
+int numNiveles(){
+
+}
+
+//Algoritmo para listar las etiquetas del i-ésimo nivel
+
+void ListarEtiquetasEnUnNivel(int nivel, arbol arbolHMIHDUltimoApuntandoPadre){
+    ListarEtiquetasEnUnNivelRec(nivel, arbol->Raiz(), arbol);
+}
+
+void ListarEtiquetasEnUnNivelRec(int nivel, Nodo4 *nodo, arbol arbolHMIHDUltimoApuntandoPadre){
+    if (nivel == 1){
+        cout<<nodo->Etiqueta();
+    }
+    else {
+        hijo = nodo->hijoMasIzquierdo();
+        while (hijo != nullptr){
+            ListarEtiquetasEnUnNivelRec(nivel-1, hijo);
+            hijo = hijo->HermanoDerecho();
+        }
+    }
+}
+
+//Algoritmo para listar las etiquetas del árbol por niveles
+void ListarEtiquetasPorNivel(arbolHMIHDUltimoApuntandoPadre *arbol){
+    list<Nodo4*> lista;
+    lista.push_back(arbol->Raiz()); 
+    while (lista.size()>0){
+        nodo = lista.front();
+        lista.pop_front();
+        cout<<arbol->Etiqueta(nodo);
+        nodoHijo = arbol->HijoMasIzquierdo(nodo);
+        while (nodoHijo != nullptr){
+            lista.push_back(nodoHijo);
+            nodoHijo = arbol->HermanoDerecho(nodoHijo);
+        }
+    }
+}
+
+//Algoritmo para eliminar subarbol de un nodo
+void EliminarSubarbol(){
+    
+}
 
 //Algoritmo Listar nodos en preorden
 void ListarEtiquetasRecursividad(Nodo5 *nodo, arbolHMIHDUltimoApuntandoPadre *arbol)
@@ -26,7 +115,7 @@ void ListarEtiquetasPreorden(arbolHMIHDUltimoApuntandoPadre *arbol)
 
 }
 
-//Algoritmo averiguar numero de niveles de arbol
+//Algoritmo averiguar numero de niveles de arbol en preorden
 int ultimoNivel = 0;
 void NumNivelesRecursividad(Nodo5 *nodo, int nivel, arbolHMIHDUltimoApuntandoPadre *arbol)
 {
