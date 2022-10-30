@@ -56,6 +56,28 @@ int numNiveles(){
 
 }
 
+int numNiveles(arbol arbolHMIHDUltimoApuntandoPadre){
+    int NumNiveles = numNivelesRec(1, arbol->Raiz(), arbol);
+    return NumNiveles;
+}
+
+int numNivelesRec(int nivel, Nodo4 *nodo, arbol arbolHMIHDUltimoApuntandoPadre){
+    int NumNiveles = nivel;
+    int NumNivelesTemp = nivel;
+    hijo = nodo->hijoMasIzquierdo();
+    if (hijo != nullptr){
+        NumNiveles+=1;
+        while (hijo != nullptr){
+            NumNivelesTemp = NumNivelesRec(nivel, hijo, arbol);
+            if (NumNivelesTemp > NumNiveles){
+                NumNiveles = NumNivelesTemp;
+            }
+            hijo = hijo->HermanoDerecho();
+        }
+    }
+    return NumNiveles
+}
+
 //Algoritmo para listar las etiquetas del i-ésimo nivel
 
 void ListarEtiquetasEnUnNivel(int nivel, arbol arbolHMIHDUltimoApuntandoPadre){
@@ -69,7 +91,7 @@ void ListarEtiquetasEnUnNivelRec(int nivel, Nodo4 *nodo, arbol arbolHMIHDUltimoA
     else {
         hijo = nodo->hijoMasIzquierdo();
         while (hijo != nullptr){
-            ListarEtiquetasEnUnNivelRec(nivel-1, hijo);
+            ListarEtiquetasEnUnNivelRec(nivel-1, hijo, arbol);
             hijo = hijo->HermanoDerecho();
         }
     }
