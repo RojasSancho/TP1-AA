@@ -20,7 +20,7 @@ Sánchez Cárdenas Carlos David C17235
 #include "nodo5.h"
 #include "nodoLista.h"
 
-#include "./algoritmosArbol/listarEtiquetasPreorden.cpp"
+#include "./algoritmosArbol/algoritmosEtapa3.cpp"
 
 #include <iostream>
 
@@ -37,9 +37,13 @@ int main()
     Nodo5 *raiz = arbol->Raiz();
     arbol->AgregarHijo(raiz, 4);
     Nodo5 *hijoDeRaiz = arbol->AgregarHijo(raiz, 2);
-    arbol->AgregarHijo(hijoDeRaiz, 3);
+    Nodo5 *nivel3 = arbol->AgregarHijo(hijoDeRaiz, 3);
+    arbol->AgregarHijo(nivel3, 5);
 
     ListarEtiquetasPreorden(arbol);
+
+    int niveles = NumNivelesPreorden(arbol);
+    cout<<niveles;
 
     /*
     bool terminar = false;
