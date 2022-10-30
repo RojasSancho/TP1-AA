@@ -6,6 +6,14 @@
 //#include "../arbolHMIHDUltimoApuntandoPadre.h"
 //#include "../arbolHMIHDContador.h"
 
+//Algoritmo para averiguar cuál es el hermano izquierdo de un nodo n
+void HermanoIzq(Nodo *nodo, )
+
+//Algoritmo para averiguar si el árbol tiene etiquetas repetidas
+//Algoritmo para averiguar cuántos niveles tiene el árbol haciendo un recorrido por niveles
+//Algoritmo para listar las etiquetas del i-ésimo nivel
+//Algoritmo para listar las etiquetas del árbol por niveles
+//Algoritmo para eliminar subarbol de un nodo
 
 //Algoritmo Listar nodos en preorden
 void ListarEtiquetasRecursividad(Nodo5 *nodo, arbolHMIHDUltimoApuntandoPadre *arbol)
@@ -26,7 +34,7 @@ void ListarEtiquetasPreorden(arbolHMIHDUltimoApuntandoPadre *arbol)
 
 }
 
-//Algoritmo averiguar numero de niveles de arbol
+//Algoritmo averiguar numero de niveles de arbol en preorden
 int ultimoNivel = 0;
 void NumNivelesRecursividad(Nodo5 *nodo, int nivel, arbolHMIHDUltimoApuntandoPadre *arbol)
 {
