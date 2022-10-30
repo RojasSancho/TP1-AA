@@ -1,4 +1,5 @@
 #include <iostream>
+#include <list>
 
 #include "../arbolHMIHDconPunteros.h"
 #include "../nodo4.h"
@@ -58,17 +59,29 @@ int numNiveles(){
 //Algoritmo para listar las etiquetas del i-ésimo nivel
 
 void ListarEtiquetasEnUnNivel(){
-
+    
 }
 
 //Algoritmo para listar las etiquetas del árbol por niveles
-void ListarEtiquetasPorNivel(){
-
+void ListarEtiquetasPorNivel(arbolHMIHDUltimoApuntandoPadre *arbol){
+    list<Nodo4*> lista;
+    lista.push_back(arbol->Raiz()); 
+    while (lista.size()>0){
+        nodo = lista.front();
+        lista.pop_front();
+        cout<<arbol->Etiqueta(nodo);
+        nodoHijo = arbol->HijoMasIzquierdo(nodo);
+        while (nodoHijo != nullptr){
+            lista.push_back(nodoHijo);
+            nodoHijo = arbol->HermanoDerecho(nodoHijo);
+        }
+    }
+    
 }
 
 //Algoritmo para eliminar subarbol de un nodo
 void EliminarSubarbol(){
-    
+
 }
 
 //Algoritmo Listar nodos en preorden
