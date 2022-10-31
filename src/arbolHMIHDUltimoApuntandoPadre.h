@@ -2,10 +2,11 @@
 #define ARBOLHMIHDULTIMOAPUNTANDOPADRE_H
 
 #include "nodo5.h"
+#include "arbol.h"
 
 using namespace std;
 
-class arbolHMIHDUltimoApuntandoPadre
+class arbolHMIHDUltimoApuntandoPadre : public arbol
 {
     Nodo5 *raiz; 
 

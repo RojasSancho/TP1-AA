@@ -4,11 +4,12 @@
 #include "nodo1.h"
 #include <vector>
 #include <array> 
+#include "arbol.h"
 
 
 using namespace std;
 
-class arbolArregloConSenaladorPadre
+class arbolArregloConSenaladorPadre  : public arbol
 {
 
     Nodo1 *nodosArreglo;

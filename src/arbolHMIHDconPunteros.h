@@ -2,10 +2,11 @@
 #define ARBOLHMIHDCONPUNTEROS_H
 
 #include "nodo4.h"
+#include "arbol.h"
 
 using namespace std;
 
-class arbolHMIHDconPunteros
+class arbolHMIHDconPunteros : public arbol
 {
     Nodo4 *raiz; 
 

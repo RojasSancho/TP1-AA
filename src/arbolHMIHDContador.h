@@ -2,10 +2,11 @@
 #define ARBOLHMIHDCONTADOR_H
 
 #include "nodo.h"
+#include "arbol.h"
 
 using namespace std;
 
-class arbolHMIHDContador
+class arbolHMIHDContador : public arbol
 {
     Nodo *raiz; 
     
