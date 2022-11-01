@@ -23,16 +23,6 @@ Nodo4::Nodo4()
     this->hermanoIzquierdo = nullptr;
 }
 
-void Nodo4::ModificarEtiqueta(int etiqueta) 
-{
-    this->etiqueta = etiqueta;
-}
-
-int Nodo4::Etiqueta() 
-{
-    return this->etiqueta;
-}
-
 Nodo4 *Nodo4::HijoMasIzquierdo() 
 {
     return this->hijoMasIzquierdo;

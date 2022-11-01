@@ -1,24 +1,23 @@
 #ifndef NODO4_H
 #define NODO4_H
 
+#include "nodoArbol.h"
+
 using namespace std;
 
-class Nodo4
+class Nodo4 : public NodoArbol
 {
     Nodo4 *hijoMasIzquierdo;
     Nodo4 *hermanoDerecho;
     Nodo4 *hermanoIzquierdo;
     Nodo4 *padre;
 
-    int etiqueta;
-
     public:
 
     Nodo4();
     Nodo4(Nodo4 *hijoMasIzquierdo, Nodo4 *hermanoDerecho, int etiqueta);
     Nodo4(int etiqueta);
-    void ModificarEtiqueta(int etiqueta);
-    int Etiqueta();
+
     Nodo4* HijoMasIzquierdo();
     Nodo4* HermanoDerecho();
     Nodo4* HermanoIzquierdo();

@@ -15,16 +15,6 @@ Nodo::Nodo()
     this->hermanoDerecho = nullptr;
 }
 
-void Nodo::ModificarEtiqueta(int etiqueta) 
-{
-    this->etiqueta = etiqueta;
-}
-
-int Nodo::Etiqueta() 
-{
-    return this->etiqueta;
-}
-
 Nodo *Nodo::HijoMasIzquierdo() 
 {
     return this->hijoMasIzquierdo;

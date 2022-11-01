@@ -4,9 +4,8 @@ using namespace std;
 
 void arbolHMIHDUltimoApuntandoPadre::Iniciar()
 {
-    
+    this->raiz = nullptr;
 }
-
 void arbolHMIHDUltimoApuntandoPadre::PonerRaiz(int etiqueta)
 {
     this->raiz = new Nodo5(nullptr, nullptr, etiqueta);
@@ -41,11 +40,6 @@ Nodo5 *arbolHMIHDUltimoApuntandoPadre::HijoMasIzquierdo(Nodo5 *nodo)
 Nodo5 *arbolHMIHDUltimoApuntandoPadre::HermanoDerecho(Nodo5 *nodo)
 {
     return nodo->HermanoDerecho();
-}
-
-int arbolHMIHDUltimoApuntandoPadre::Etiqueta(Nodo5 *nodo)
-{
-    return nodo->Etiqueta();
 }
 
 void arbolHMIHDUltimoApuntandoPadre::ModificarEtiqueta(Nodo5 *nodo, int etiqueta)

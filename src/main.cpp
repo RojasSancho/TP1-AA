@@ -9,6 +9,7 @@ Sánchez Cárdenas Carlos David C17235
 #include "colaArregloCircular.h"
 #include "listaIndexada.h"
 
+#include "arbol.h"
 #include "arbolHMIHDContador.h"
 #include "arbolHMIHDconPunteros.h"
 #include "arbolArregloConSenaladorPadre.h"
@@ -19,6 +20,7 @@ Sánchez Cárdenas Carlos David C17235
 #include "nodo4.h"
 #include "nodo5.h"
 #include "nodoLista.h"
+#include "nodoArbol.h"
 
 #include "./algoritmosArbol/algoritmosEtapa3.cpp"
 
@@ -40,12 +42,12 @@ int main()
     Nodo5 *nivel3 = arbol->AgregarHijo(hijoDeRaiz, 3);
     arbol->AgregarHijo(nivel3, 2);
 
-    ListarEtiquetasPreorden(arbol);
+    arbol->ListarEtiquetasPreorden(arbol);
 
-    int niveles = NumNivelesPreorden(arbol);
+    int niveles = arbol->NumNivelesPreorden(arbol);
     cout<<niveles;
 
-    Nodo5 *nodo = BuscarEtiqueta(4, arbol);
+    NodoArbol *nodo = arbol->BuscarEtiqueta(4, arbol);
     //cout<<"\n"<<arbol->Etiqueta(nodo);
 
     /*

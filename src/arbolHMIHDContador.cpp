@@ -28,11 +28,6 @@ Nodo *arbolHMIHDContador::HermanoDerecho(Nodo *nodo)
     return nodo->HermanoDerecho();
 }
 
-int arbolHMIHDContador::Etiqueta(Nodo *nodo)
-{
-    return nodo->Etiqueta();
-}
-
 void arbolHMIHDContador::ModificarEtiqueta(Nodo *nodo, int etiqueta)
 {
     nodo->ModificarEtiqueta(etiqueta);

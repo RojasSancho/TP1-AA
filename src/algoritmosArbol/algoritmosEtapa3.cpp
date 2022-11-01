@@ -3,31 +3,37 @@
 
 //#include "../arbolHMIHDconPunteros.h"
 #include "../nodo5.h"
+#include "../nodo4.h"
+#include "../nodoArbol.h"
 //#include "../arbolHMIHDconPunteros.h"
 #include "../arbolHMIHDUltimoApuntandoPadre.h"
+#include "../arbol.h"
 //#include "../arbolHMIHDContador.h"
 
 //Algoritmo para averiguar cuál es el hermano izquierdo de un nodo n
-Nodo4 HermanoIzq(Nodo4 *nodo, arbolHMIHDUltimoApuntandoPadre *arbol){
-    Nodo4 HermanoIzq = HermanoIzqRec(nodo, nodo->Raiz(), arbol);
+NodoArbol arbol::HermanoIzq(NodoArbol *nodo, arbol *arbol){
+    NodoArbol HermanoIzq = HermanoIzqRec(nodo, arbol->Raiz(), arbol);
     return HermanoIzq;
 }
 
-Nodo4 HermanoIzqRec(Nodo4 *nodo, Nodo4 *pos, arbolHMIHDUltimoApuntandoPadre *arbol){
-    hijo = HijoMasIzquierdo(pos);
-    Nodo4 HermanoIzq = Nodo4();
-    while (hijo != nullptr && HermanoDerecho(hijo) != nodo){
+NodoArbol arbol::HermanoIzqRec(NodoArbol *nodo, NodoArbol *pos, arbol *arbol){
+    NodoArbol hijoTemp = HijoMasIzquierdo(pos);
+    NodoArbol *hijo = &hijoTemp;
+    NodoArbol HermanoIzq = NodoArbol();
+    NodoArbol HermanoDerTemp = HermanoDerecho(hijo);
+    NodoArbol *HermanoDer = &HermanoDerTemp;
+    while (hijo != nullptr && HermanoDer != nodo){
         HermanoIzq = HermanoIzqRec(nodo, hijo, arbol);
-        hijo = HermanoDerecho(hijo);
+        hijoTemp = HermanoDerTemp;
     }
-    if (HermanoDerecho(hijo) != nodo){
-        HermanoIzq = hijo;
+    if (HermanoDer != nodo){
+        HermanoIzq = hijoTemp;
     }
     return HermanoIzq;
 }
 
 //Algoritmo para averiguar si el árbol tiene etiquetas repetidas
-bool EtiquetaRepetida(int etiqueta, arbolHMIHDUltimoApuntandoPadre *arbol){
+bool arbol::EtiquetaRepetida(int etiqueta, arbol *arbol){
     bool Repetida = false;
     int Repeticiones = EtiquetaRepetidaRec(etiqueta, arbol->Raiz(), arbol);
     if (Repeticiones >= 2){
@@ -36,129 +42,138 @@ bool EtiquetaRepetida(int etiqueta, arbolHMIHDUltimoApuntandoPadre *arbol){
     return Repetida;
 }
 
-int EtiquetaRepetidaRec(int etiqueta, Nodo4 *pos, arbolHMIHDUltimoApuntandoPadre *arbol){
+int arbol::EtiquetaRepetidaRec(int etiqueta, NodoArbol *pos, arbol *arbol){
     int Repeticiones = 0;
-    Nodo4 *siguienteNodo = arbol->HijoMasIzquierdo(nodo);
+    NodoArbol siguienteNodoTemp = arbol->HijoMasIzquierdo(pos);
+    NodoArbol *siguienteNodo = &siguienteNodoTemp;
     while (siguienteNodo != nullptr) 
     {
         if (siguienteNodo->Etiqueta()==etiqueta){
             Repeticiones+=1;
         }
-        Repeticiones+= ListarEtiquetasRecursividad(siguienteNodo, arbol);
-        siguienteNodo = arbol->HermanoDerecho(siguienteNodo);
+        Repeticiones+= EtiquetaRepetidaRec(etiqueta, siguienteNodo, arbol);
+        siguienteNodoTemp = arbol->HermanoDerecho(siguienteNodo);
+        siguienteNodo = &siguienteNodoTemp;
     }
     return Repeticiones; 
 }
 
 //Algoritmo para averiguar cuántos niveles tiene el árbol haciendo un recorrido por niveles
 
-int numNiveles(){
 
-}
-
-int numNiveles(arbol arbolHMIHDUltimoApuntandoPadre){
+int arbol::numNiveles(arbol *arbol){
     int NumNiveles = numNivelesRec(1, arbol->Raiz(), arbol);
     return NumNiveles;
 }
 
-int numNivelesRec(int nivel, Nodo4 *nodo, arbol arbolHMIHDUltimoApuntandoPadre){
+int arbol::numNivelesRec(int nivel, NodoArbol *nodo, arbol *arbol){
     int NumNiveles = nivel;
     int NumNivelesTemp = nivel;
-    hijo = nodo->hijoMasIzquierdo();
+    NodoArbol hijoTemp = HijoMasIzquierdo(nodo);
+    NodoArbol *hijo = &hijoTemp;
     if (hijo != nullptr){
         NumNiveles+=1;
         while (hijo != nullptr){
-            NumNivelesTemp = NumNivelesRec(nivel, hijo, arbol);
+            NumNivelesTemp = numNivelesRec(nivel, hijo, arbol);
             if (NumNivelesTemp > NumNiveles){
                 NumNiveles = NumNivelesTemp;
             }
-            hijo = hijo->HermanoDerecho();
+            NodoArbol NodoHermanoTemp = HermanoDerecho(hijo);
+            hijo = &NodoHermanoTemp;
         }
     }
-    return NumNiveles
+    return NumNiveles;
 }
 
 //Algoritmo para listar las etiquetas del i-ésimo nivel
 
-void ListarEtiquetasEnUnNivel(int nivel, arbol arbolHMIHDUltimoApuntandoPadre){
+void arbol::ListarEtiquetasEnUnNivel(int nivel, arbol *arbol){
     ListarEtiquetasEnUnNivelRec(nivel, arbol->Raiz(), arbol);
 }
 
-void ListarEtiquetasEnUnNivelRec(int nivel, Nodo4 *nodo, arbol arbolHMIHDUltimoApuntandoPadre){
+void arbol::ListarEtiquetasEnUnNivelRec(int nivel, NodoArbol *nodo, arbol *arbol){
     if (nivel == 1){
         cout<<nodo->Etiqueta();
     }
     else {
-        hijo = nodo->hijoMasIzquierdo();
+        NodoArbol hijoTemp = HijoMasIzquierdo(nodo);
+        NodoArbol *hijo = &hijoTemp;
         while (hijo != nullptr){
             ListarEtiquetasEnUnNivelRec(nivel-1, hijo, arbol);
-            hijo = hijo->HermanoDerecho();
+
+            NodoArbol NodoHermanoTemp = HermanoDerecho(hijo);
+            hijo = &NodoHermanoTemp;
         }
     }
 }
 
 //Algoritmo para listar las etiquetas del árbol por niveles
-void ListarEtiquetasPorNivel(arbolHMIHDUltimoApuntandoPadre *arbol){
-    list<Nodo4*> lista;
+void arbol::ListarEtiquetasPorNivel(arbol *arbol){
+    list<NodoArbol*> lista;
     lista.push_back(arbol->Raiz()); 
     while (lista.size()>0){
-        nodo = lista.front();
+        NodoArbol *nodo = lista.front();
         lista.pop_front();
         cout<<arbol->Etiqueta(nodo);
-        nodoHijo = arbol->HijoMasIzquierdo(nodo);
+        NodoArbol nodoHijoTemp = arbol->HijoMasIzquierdo(nodo);
+        NodoArbol *nodoHijo = &nodoHijoTemp;
         while (nodoHijo != nullptr){
             lista.push_back(nodoHijo);
-            nodoHijo = arbol->HermanoDerecho(nodoHijo);
+            nodoHijoTemp = arbol->HermanoDerecho(nodoHijo);
+            nodoHijo = &nodoHijoTemp;
         }
     }
 }
 
 //Algoritmo para eliminar subarbol de un nodo
-void EliminarSubarbol(){
+// void arbol:EliminarSubarbol(){
     
-}
+// }
 
 //Algoritmo Listar nodos en preorden
-void ListarEtiquetasRecursividad(Nodo5 *nodo, arbolHMIHDUltimoApuntandoPadre *arbol)
+void arbol::ListarEtiquetasRecursividad(NodoArbol *nodo, arbol *arbol)
 {
     cout<<arbol->Etiqueta(nodo);
-    Nodo5 *siguienteNodo = arbol->HijoMasIzquierdo(nodo);
+    NodoArbol siguienteNodoTemp = arbol->HijoMasIzquierdo(nodo);
+    NodoArbol *siguienteNodo = &siguienteNodoTemp;
     while (siguienteNodo != nullptr) 
     {
         ListarEtiquetasRecursividad(siguienteNodo, arbol);
-        siguienteNodo = arbol->HermanoDerecho(siguienteNodo);
+        siguienteNodoTemp = arbol->HermanoDerecho(siguienteNodo);
+        siguienteNodo = &siguienteNodoTemp;
     } 
 }
 
-void ListarEtiquetasPreorden(arbolHMIHDUltimoApuntandoPadre *arbol)
+void arbol::ListarEtiquetasPreorden(arbol *arbol)
 {
-    Nodo5 *raiz = arbol->Raiz();
+    NodoArbol *raiz = arbol->Raiz();
     ListarEtiquetasRecursividad(raiz, arbol);
 
 }
 
 //Algoritmo averiguar numero de niveles de arbol en preorden
 int ultimoNivel = 0;
-void NumNivelesRecursividad(Nodo5 *nodo, int nivel, arbolHMIHDUltimoApuntandoPadre *arbol)
+void arbol::NumNivelesRecursividad(NodoArbol *nodo, int nivel, arbol *arbol)
 {
-    if ((arbol->HijoMasIzquierdo(nodo)) == nullptr) 
+    NodoArbol HMI = arbol->HijoMasIzquierdo(nodo);
+    if ((&HMI) == nullptr) 
     {
         if (nivel > ultimoNivel) 
         {
             ultimoNivel = nivel;
         }
     } else
-    {
-        nodo = arbol->HijoMasIzquierdo(nodo);
-        while (nodo != nullptr) 
+    {   
+        NodoArbol N1 = arbol->HijoMasIzquierdo(nodo);
+        while ((&N1) != nullptr) 
         {
-            NumNivelesRecursividad(nodo, nivel+1, arbol);
-            nodo = arbol->HermanoDerecho(nodo);
+            NumNivelesRecursividad(&N1, nivel+1, arbol);
+            N1 = arbol->HermanoDerecho(&N1);
         }
     }
 }
 
-int NumNivelesPreorden(arbolHMIHDUltimoApuntandoPadre *arbol)
+int arbol::NumNivelesPreorden(arbol *arbol)
 {
     ultimoNivel = 0;
     NumNivelesRecursividad(arbol->Raiz(), 1, arbol);
@@ -167,24 +182,24 @@ int NumNivelesPreorden(arbolHMIHDUltimoApuntandoPadre *arbol)
 
 //Algoritmo Buscar una etiqueta e (Devuelve el primer nodo encontrado con etiqueta e)
 
-Nodo5 *nodoConEtiqueta = nullptr;
-void BuscarEtiquetaRecursividad(int etiqueta, Nodo5 *nodo, arbolHMIHDUltimoApuntandoPadre *arbol)
+NodoArbol *nodoConEtiqueta = nullptr;
+void arbol::BuscarEtiquetaRecursividad(int etiqueta, NodoArbol *nodo, arbol *arbol)
 {
     if (arbol->Etiqueta(nodo) == etiqueta) 
     {
         nodoConEtiqueta = nodo;
     } else
     {
-        nodo = arbol->HijoMasIzquierdo(nodo);
-        while (nodo != nullptr) 
+        NodoArbol nodoTemp = arbol->HijoMasIzquierdo(nodo);
+        while ((&nodoTemp) != nullptr) 
         {
-            BuscarEtiquetaRecursividad(etiqueta, nodo, arbol);
-            nodo = arbol->HermanoDerecho(nodo);
+            BuscarEtiquetaRecursividad(etiqueta, &nodoTemp, arbol);
+            nodoTemp = arbol->HermanoDerecho(&nodoTemp);
         }
     }
 }
 
-Nodo5 *BuscarEtiqueta (int etiqueta, arbolHMIHDUltimoApuntandoPadre *arbol) 
+NodoArbol *arbol::BuscarEtiqueta (int etiqueta, arbol *arbol) 
 {
     nodoConEtiqueta = nullptr;
     BuscarEtiquetaRecursividad(etiqueta, arbol->Raiz(), arbol);

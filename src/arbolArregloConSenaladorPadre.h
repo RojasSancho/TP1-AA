@@ -15,18 +15,18 @@ class arbolArregloConSenaladorPadre  : public arbol
     Nodo1 *nodosArreglo;
 
     int n;
-    
+
     public:
 
-    void Iniciar(int n);
+    void Iniciar(int tamano);
     void PonerRaiz(int etiqueta);
+    Nodo1 *Raiz();
+
     void BorrarHoja();
 
-    Nodo1 Raiz();
     Nodo1 HijoMasIzquierdo(Nodo1 *nodo);
     Nodo1 HermanoDerecho(Nodo1 *nodo);
 
-    int Etiqueta(Nodo1 *nodo);
     void ModificarEtiqueta(Nodo1 *nodo, int etiqueta);
     int NumNodos();
 

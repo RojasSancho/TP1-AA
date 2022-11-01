@@ -1,23 +1,21 @@
 #ifndef NODO_H
 #define NODO_H
 
+#include "nodoArbol.h"
+
 using namespace std;
 
-class Nodo
+class Nodo : public NodoArbol
 {
     Nodo *hijoMasIzquierdo;
     Nodo *hermanoDerecho;
 
-    int etiqueta;
-
     public:
-
     Nodo();
     Nodo(Nodo *hijoMasIzquierdo, Nodo *hermanoDerecho, int etiqueta);
-    void ModificarEtiqueta(int etiqueta);
-    int Etiqueta();
-    Nodo* HijoMasIzquierdo();
-    Nodo* HermanoDerecho();
+
+    Nodo *HijoMasIzquierdo();
+    Nodo *HermanoDerecho();
 
     void ModificarHMI(Nodo* nuevoHMI); //Modificar Hijo Mas Izquierdo
     void ModificarHD(Nodo* nuevoHD); //Modificar HermanoDerecho

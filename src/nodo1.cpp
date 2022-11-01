@@ -2,6 +2,11 @@
 
 using namespace std;
 
+Nodo1::Nodo1()
+{
+    
+}
+
 Nodo1::Nodo1(int padre, int etiqueta, int posicion)
 {
     this->padre = padre;
@@ -9,24 +14,9 @@ Nodo1::Nodo1(int padre, int etiqueta, int posicion)
     this->posicion = posicion;
 }
 
-Nodo1::Nodo1()
-{
-
-}
-
 Nodo1::Nodo1(int etiqueta)
 {
     this->etiqueta = etiqueta;  
-}
-
-void Nodo1::ModificarEtiqueta(int etiqueta) 
-{
-    this->etiqueta = etiqueta;
-}
-
-int Nodo1::Etiqueta() 
-{
-    return this->etiqueta;
 }
 
 int Nodo1::Padre()

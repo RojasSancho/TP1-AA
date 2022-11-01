@@ -18,8 +18,9 @@ void arbolArregloConSenaladorPadre::BorrarHoja(){
     this->n-=1;
 }
 
-Nodo1 arbolArregloConSenaladorPadre::Raiz(){
-    return nodosArreglo[0];
+Nodo1 *arbolArregloConSenaladorPadre::Raiz(){
+    Nodo1 *nodo = &nodosArreglo[0];
+    return nodo;
 }
 
 Nodo1 arbolArregloConSenaladorPadre::HijoMasIzquierdo(Nodo1 *nodo){
@@ -42,10 +43,6 @@ Nodo1 arbolArregloConSenaladorPadre::HermanoDerecho(Nodo1 *nodo){
         nodoTemp = nodosArreglo[cont];
     }
     return nodosArreglo[cont];
-}
-
-int arbolArregloConSenaladorPadre::Etiqueta(Nodo1 *nodo){
-    return nodo->Etiqueta();
 }
 
 void arbolArregloConSenaladorPadre::ModificarEtiqueta(Nodo1 *nodo, int etiqueta){

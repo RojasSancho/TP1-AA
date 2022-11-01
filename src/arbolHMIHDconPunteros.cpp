@@ -32,11 +32,6 @@ Nodo4 *arbolHMIHDconPunteros::HermanoIzquierdo(Nodo4 *nodo)
     return nodo->HermanoIzquierdo();
 }
 
-int arbolHMIHDconPunteros::Etiqueta(Nodo4 *nodo)
-{
-    return nodo->Etiqueta();
-}
-
 void arbolHMIHDconPunteros::ModificarEtiqueta(Nodo4 *nodo, int etiqueta)
 {
     nodo->ModificarEtiqueta(etiqueta);

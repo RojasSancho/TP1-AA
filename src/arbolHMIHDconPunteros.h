@@ -12,22 +12,24 @@ class arbolHMIHDconPunteros : public arbol
 
     int NumNodosRecursivo(Nodo4 *nodo);
     
-    public:
-    void Iniciar();
-    void PonerRaiz(int etiqueta);
-
-    Nodo4 *Raiz();
-    Nodo4 *HijoMasIzquierdo(Nodo4 *nodo);
-    Nodo4 *HermanoDerecho(Nodo4 *nodo);
+    public: ///falta borrar hoja para el cpp
+    
     Nodo4 *HermanoIzquierdo(Nodo4 *nodo);
 
-    int Etiqueta(Nodo4 *nodo);
+    void Iniciar();
+    void PonerRaiz(int etiqueta);
+    Nodo4 *Raiz();
+
+    Nodo4 *HijoMasIzquierdo(Nodo4 *nodo);
+    Nodo4 *HermanoDerecho(Nodo4 *nodo);
+
     void ModificarEtiqueta(Nodo4 *nodo, int etiqueta);
     int NumNodos();
 
     Nodo4 *AgregarHijo(Nodo4 *nodo, int etiqueta);
     Nodo4 *AgregarHijoMasDerecho(Nodo4 *nodo, int etiqueta);
     Nodo4 *Padre(Nodo4 *nodo);
+
     
 };
 

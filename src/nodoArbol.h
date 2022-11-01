@@ -1,15 +1,17 @@
-#ifndef NODO_H
-#define NODO_H
+#ifndef NODOARBOL_H
+#define NODOARBOL_H
 
 using namespace std;
 
 class NodoArbol
 {
-    int etiqueta; //ESTE
+
 
     public:
+    int etiqueta;
 
-    Nodo(); //ESTE
+    NodoArbol(); //ESTE
+    ~NodoArbol();  
     void ModificarEtiqueta(int etiqueta); //ESTE
     int Etiqueta(); //ESTE
 

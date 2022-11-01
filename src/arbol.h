@@ -10,21 +10,47 @@ class arbol{
 
     public:
 
-    void Iniciar(int n);
-    void PonerRaiz(int etiqueta);
-    void BorrarHoja();
+    void Iniciar(); //Este
 
-    Nodo Raiz();
-    Nodo HijoMasIzquierdo(Nodo *nodo);
-    Nodo HermanoDerecho(Nodo *nodo);
+    int Etiqueta(NodoArbol *nodo); //Este
 
-    int Etiqueta(Nodo *nodo);
-    void ModificarEtiqueta(Nodo *nodo, int etiqueta);
-    int NumNodos();
+    virtual void PonerRaiz(int etiqueta);
+    virtual NodoArbol *Raiz();
 
-    Nodo1 AgregarHijo(Nodo *nodo, int etiqueta);
-    Nodo1 AgregarHijoMasDerecho(Nodo *nodo, int etiqueta);
-    Nodo1 Padre(Nodo *nodo);
+    virtual void BorrarHoja();
+
+    virtual NodoArbol HijoMasIzquierdo(NodoArbol *nodo);
+    virtual NodoArbol HermanoDerecho(NodoArbol *nodo);
+
+    virtual void ModificarEtiqueta(NodoArbol *nodo, int etiqueta);
+    virtual int NumNodos();
+
+    virtual NodoArbol AgregarHijo(NodoArbol *nodo, int etiqueta);
+    virtual NodoArbol AgregarHijoMasDerecho(NodoArbol *nodo, int etiqueta);
+    virtual NodoArbol Padre(NodoArbol *nodo);
+
+    NodoArbol HermanoIzq(NodoArbol *nodo, arbol *arbol);
+    NodoArbol HermanoIzqRec(NodoArbol *nodo, NodoArbol *pos, arbol *arbol);
+    bool EtiquetaRepetida(int etiqueta, arbol *arbol);
+    int EtiquetaRepetidaRec(int etiqueta, NodoArbol *pos, arbol *arbol);
+
+    int numNiveles(arbol *arbol);
+    int numNivelesRec(int nivel, NodoArbol *nodo, arbol *arbol);
+
+    void ListarEtiquetasEnUnNivel(int nivel, arbol *arbol);
+    void ListarEtiquetasEnUnNivelRec(int nivel, NodoArbol *nodo, arbol *arbol);
+
+    void ListarEtiquetasPorNivel(arbol *arbol);
+
+    void ListarEtiquetasRecursividad(NodoArbol *nodo, arbol *arbol);
+    void ListarEtiquetasPreorden(arbol *arbol);
+
+    void NumNivelesRecursividad(NodoArbol *nodo, int nivel, arbol *arbol);
+    int NumNivelesPreorden(arbol *arbol);
+
+    void BuscarEtiquetaRecursividad(int etiqueta, NodoArbol *nodo, arbol *arbol);
+
+    NodoArbol *BuscarEtiqueta (int etiqueta, arbol *arbol);
 };
 
 #endif
