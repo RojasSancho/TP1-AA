@@ -39,12 +39,13 @@ int main()
     arbol->PonerRaiz(1);
     Nodo5 *raiz = arbol->Raiz();
     cout<<arbol->Etiqueta(arbol->Raiz());
-    // arbol->AgregarHijo(raiz, 4);
-    // Nodo5 *hijoDeRaiz = arbol->AgregarHijo(raiz, 2);
-    // Nodo5 *nivel3 = arbol->AgregarHijo(hijoDeRaiz, 3);
-    // arbol->AgregarHijo(nivel3, 2);
+    arbol->AgregarHijo(raiz, 4);
+    cout<<arbol->Etiqueta(arbol->HijoMasIzquierdo(raiz));
+    Nodo5 *hijoDeRaiz = arbol->AgregarHijo(raiz, 2);
+    Nodo5 *nivel3 = arbol->AgregarHijo(hijoDeRaiz, 3);
+    arbol->AgregarHijo(nivel3, 2);
 
-    // arbol->ListarEtiquetasPreorden(arbol);
+    arbol->ListarEtiquetasPreorden(arbol);
 
     // int niveles = arbol->NumNivelesPreorden(arbol);
     // cout<<niveles;
