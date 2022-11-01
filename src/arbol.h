@@ -14,10 +14,10 @@ class arbol{
 
     int Etiqueta(NodoArbol *nodo); //Este
 
-    virtual void PonerRaiz(int etiqueta);
-    virtual NodoArbol *Raiz();
+    virtual void PonerRaiz(int etiqueta)=0;
+    virtual NodoArbol *Raiz()=0;
 
-    virtual void BorrarHoja();
+    virtual void BorrarHoja()=0;
 
     virtual NodoArbol HijoMasIzquierdo(NodoArbol *nodo)=0;
     virtual NodoArbol HermanoDerecho(NodoArbol *nodo)=0;
