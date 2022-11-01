@@ -8,29 +8,41 @@ using namespace std;
 
 class arbol{
 
-    public:
-
-    void Iniciar(); //Este
+    public: //Este
 
     int Etiqueta(NodoArbol *nodo); //Este
 
     virtual void PonerRaiz(int etiqueta)=0;
     virtual NodoArbol *Raiz()=0;
 
-    virtual void BorrarHoja()=0;
+    // virtual void BorrarHoja()=0;
 
-    virtual NodoArbol HijoMasIzquierdo(NodoArbol *nodo)=0;
-    virtual NodoArbol HermanoDerecho(NodoArbol *nodo)=0;
+    virtual NodoArbol *HijoMasIzquierdo(NodoArbol *nodo){
+        return nodo;
+    }
+    virtual NodoArbol *HermanoDerecho(NodoArbol *nodo){
+        return nodo;
+    }
 
-    virtual void ModificarEtiqueta(NodoArbol *nodo, int etiqueta)=0;
-    virtual int NumNodos()=0;
+    virtual void ModificarEtiqueta(NodoArbol *nodo, int etiqueta){
+        
+    }
+    virtual int NumNodos(){
+        return 0;
+    }
 
-    virtual NodoArbol AgregarHijo(NodoArbol *nodo, int etiqueta)=0;
-    virtual NodoArbol AgregarHijoMasDerecho(NodoArbol *nodo, int etiqueta)=0;
-    virtual NodoArbol Padre(NodoArbol *nodo)=0;
+    virtual NodoArbol *AgregarHijo(NodoArbol *nodo, int etiqueta){
+        return nodo;
+    }
+    virtual NodoArbol *AgregarHijoMasDerecho(NodoArbol *nodo, int etiqueta){
+        return nodo;
+    }
+    virtual NodoArbol *Padre(NodoArbol *nodo){
+        return nodo;
+    }
 
-    NodoArbol HermanoIzq(NodoArbol *nodo, arbol *arbol);
-    NodoArbol HermanoIzqRec(NodoArbol *nodo, NodoArbol *pos, arbol *arbol);
+    NodoArbol *HermanoIzq(NodoArbol *nodo, arbol *arbol);
+    NodoArbol *HermanoIzqRec(NodoArbol *nodo, NodoArbol *pos, arbol *arbol);
     bool EtiquetaRepetida(int etiqueta, arbol *arbol);
     int EtiquetaRepetidaRec(int etiqueta, NodoArbol *pos, arbol *arbol);
 

@@ -11,23 +11,21 @@
 //#include "../arbolHMIHDContador.h"
 
 //Algoritmo para averiguar cuál es el hermano izquierdo de un nodo n
-NodoArbol arbol::HermanoIzq(NodoArbol *nodo, arbol *arbol){
-    NodoArbol HermanoIzq = HermanoIzqRec(nodo, arbol->Raiz(), arbol);
+NodoArbol *arbol::HermanoIzq(NodoArbol *nodo, arbol *arbol){
+    NodoArbol *HermanoIzq = HermanoIzqRec(nodo, arbol->Raiz(), arbol);
     return HermanoIzq;
 }
 
-NodoArbol arbol::HermanoIzqRec(NodoArbol *nodo, NodoArbol *pos, arbol *arbol){
-    NodoArbol hijoTemp = HijoMasIzquierdo(pos);
-    NodoArbol *hijo = &hijoTemp;
-    NodoArbol HermanoIzq = NodoArbol();
-    NodoArbol HermanoDerTemp = HermanoDerecho(hijo);
-    NodoArbol *HermanoDer = &HermanoDerTemp;
+NodoArbol *arbol::HermanoIzqRec(NodoArbol *nodo, NodoArbol *pos, arbol *arbol){
+    NodoArbol *hijo = HijoMasIzquierdo(pos);
+    NodoArbol *HermanoIzq = HijoMasIzquierdo(pos);
+    NodoArbol *HermanoDer = HermanoDerecho(hijo);
     while (hijo != nullptr && HermanoDer != nodo){
         HermanoIzq = HermanoIzqRec(nodo, hijo, arbol);
-        hijoTemp = HermanoDerTemp;
+        hijo = HermanoDer;
     }
     if (HermanoDer != nodo){
-        HermanoIzq = hijoTemp;
+        HermanoIzq = hijo;
     }
     return HermanoIzq;
 }
@@ -44,16 +42,14 @@ bool arbol::EtiquetaRepetida(int etiqueta, arbol *arbol){
 
 int arbol::EtiquetaRepetidaRec(int etiqueta, NodoArbol *pos, arbol *arbol){
     int Repeticiones = 0;
-    NodoArbol siguienteNodoTemp = arbol->HijoMasIzquierdo(pos);
-    NodoArbol *siguienteNodo = &siguienteNodoTemp;
+    NodoArbol *siguienteNodo = arbol->HijoMasIzquierdo(pos);
     while (siguienteNodo != nullptr) 
     {
         if (siguienteNodo->Etiqueta()==etiqueta){
             Repeticiones+=1;
         }
         Repeticiones+= EtiquetaRepetidaRec(etiqueta, siguienteNodo, arbol);
-        siguienteNodoTemp = arbol->HermanoDerecho(siguienteNodo);
-        siguienteNodo = &siguienteNodoTemp;
+        siguienteNodo = arbol->HermanoDerecho(siguienteNodo);
     }
     return Repeticiones; 
 }
@@ -69,8 +65,7 @@ int arbol::numNiveles(arbol *arbol){
 int arbol::numNivelesRec(int nivel, NodoArbol *nodo, arbol *arbol){
     int NumNiveles = nivel;
     int NumNivelesTemp = nivel;
-    NodoArbol hijoTemp = HijoMasIzquierdo(nodo);
-    NodoArbol *hijo = &hijoTemp;
+    NodoArbol *hijo = HijoMasIzquierdo(nodo);
     if (hijo != nullptr){
         NumNiveles+=1;
         while (hijo != nullptr){
@@ -78,8 +73,7 @@ int arbol::numNivelesRec(int nivel, NodoArbol *nodo, arbol *arbol){
             if (NumNivelesTemp > NumNiveles){
                 NumNiveles = NumNivelesTemp;
             }
-            NodoArbol NodoHermanoTemp = HermanoDerecho(hijo);
-            hijo = &NodoHermanoTemp;
+            hijo = HermanoDerecho(hijo);
         }
     }
     return NumNiveles;
@@ -96,13 +90,11 @@ void arbol::ListarEtiquetasEnUnNivelRec(int nivel, NodoArbol *nodo, arbol *arbol
         cout<<nodo->Etiqueta();
     }
     else {
-        NodoArbol hijoTemp = HijoMasIzquierdo(nodo);
-        NodoArbol *hijo = &hijoTemp;
+        NodoArbol *hijo = HijoMasIzquierdo(nodo);
         while (hijo != nullptr){
             ListarEtiquetasEnUnNivelRec(nivel-1, hijo, arbol);
 
-            NodoArbol NodoHermanoTemp = HermanoDerecho(hijo);
-            hijo = &NodoHermanoTemp;
+            hijo = HermanoDerecho(hijo);
         }
     }
 }
@@ -115,12 +107,10 @@ void arbol::ListarEtiquetasPorNivel(arbol *arbol){
         NodoArbol *nodo = lista.front();
         lista.pop_front();
         cout<<arbol->Etiqueta(nodo);
-        NodoArbol nodoHijoTemp = arbol->HijoMasIzquierdo(nodo);
-        NodoArbol *nodoHijo = &nodoHijoTemp;
+        NodoArbol *nodoHijo = arbol->HijoMasIzquierdo(nodo);
         while (nodoHijo != nullptr){
             lista.push_back(nodoHijo);
-            nodoHijoTemp = arbol->HermanoDerecho(nodoHijo);
-            nodoHijo = &nodoHijoTemp;
+            nodoHijo = arbol->HermanoDerecho(nodoHijo);
         }
     }
 }
@@ -134,13 +124,11 @@ void arbol::ListarEtiquetasPorNivel(arbol *arbol){
 void arbol::ListarEtiquetasRecursividad(NodoArbol *nodo, arbol *arbol)
 {
     cout<<arbol->Etiqueta(nodo);
-    NodoArbol siguienteNodoTemp = arbol->HijoMasIzquierdo(nodo);
-    NodoArbol *siguienteNodo = &siguienteNodoTemp;
+    NodoArbol *siguienteNodo = arbol->HijoMasIzquierdo(nodo);
     while (siguienteNodo != nullptr) 
     {
         ListarEtiquetasRecursividad(siguienteNodo, arbol);
-        siguienteNodoTemp = arbol->HermanoDerecho(siguienteNodo);
-        siguienteNodo = &siguienteNodoTemp;
+        siguienteNodo = arbol->HermanoDerecho(siguienteNodo);
     } 
 }
 
@@ -155,8 +143,8 @@ void arbol::ListarEtiquetasPreorden(arbol *arbol)
 int ultimoNivel = 0;
 void arbol::NumNivelesRecursividad(NodoArbol *nodo, int nivel, arbol *arbol)
 {
-    NodoArbol HMI = arbol->HijoMasIzquierdo(nodo);
-    if ((&HMI) == nullptr) 
+    NodoArbol *HMI = arbol->HijoMasIzquierdo(nodo);
+    if ((HMI) == nullptr) 
     {
         if (nivel > ultimoNivel) 
         {
@@ -164,11 +152,11 @@ void arbol::NumNivelesRecursividad(NodoArbol *nodo, int nivel, arbol *arbol)
         }
     } else
     {   
-        NodoArbol N1 = arbol->HijoMasIzquierdo(nodo);
-        while ((&N1) != nullptr) 
+        NodoArbol *N1 = arbol->HijoMasIzquierdo(nodo);
+        while ((N1) != nullptr) 
         {
-            NumNivelesRecursividad(&N1, nivel+1, arbol);
-            N1 = arbol->HermanoDerecho(&N1);
+            NumNivelesRecursividad(N1, nivel+1, arbol);
+            N1 = arbol->HermanoDerecho(N1);
         }
     }
 }
@@ -190,11 +178,11 @@ void arbol::BuscarEtiquetaRecursividad(int etiqueta, NodoArbol *nodo, arbol *arb
         nodoConEtiqueta = nodo;
     } else
     {
-        NodoArbol nodoTemp = arbol->HijoMasIzquierdo(nodo);
-        while ((&nodoTemp) != nullptr) 
+        NodoArbol *nodoTemp = arbol->HijoMasIzquierdo(nodo);
+        while ((nodoTemp) != nullptr) 
         {
-            BuscarEtiquetaRecursividad(etiqueta, &nodoTemp, arbol);
-            nodoTemp = arbol->HermanoDerecho(&nodoTemp);
+            BuscarEtiquetaRecursividad(etiqueta, nodoTemp, arbol);
+            nodoTemp = arbol->HermanoDerecho(nodoTemp);
         }
     }
 }

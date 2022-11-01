@@ -32,11 +32,13 @@ int main()
 {
     
 
-    // arbolHMIHDUltimoApuntandoPadre *arbol = new arbolHMIHDUltimoApuntandoPadre();
+    arbolHMIHDUltimoApuntandoPadre *arbol = new arbolHMIHDUltimoApuntandoPadre();
+    
 
-    // arbol->Iniciar();
-    // arbol->PonerRaiz(1);
-    // Nodo5 *raiz = arbol->Raiz();
+    arbol->Iniciar();
+    arbol->PonerRaiz(1);
+    Nodo5 *raiz = arbol->Raiz();
+    cout<<arbol->Etiqueta(arbol->Raiz());
     // arbol->AgregarHijo(raiz, 4);
     // Nodo5 *hijoDeRaiz = arbol->AgregarHijo(raiz, 2);
     // Nodo5 *nivel3 = arbol->AgregarHijo(hijoDeRaiz, 3);
