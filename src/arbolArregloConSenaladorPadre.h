@@ -19,20 +19,20 @@ class arbolArregloConSenaladorPadre  : public arbol
     public:
 
     void Iniciar(int tamano);
-    void PonerRaiz(int etiqueta);
-    Nodo1 *Raiz();
+    virtual void PonerRaiz(int etiqueta);
+    virtual Nodo1 *Raiz();
 
-    void BorrarHoja();
+    virtual void BorrarHoja();
 
-    Nodo1 HijoMasIzquierdo(Nodo1 *nodo);
-    Nodo1 HermanoDerecho(Nodo1 *nodo);
+    virtual Nodo1 HijoMasIzquierdo(Nodo1 *nodo);
+    virtual Nodo1 HermanoDerecho(Nodo1 *nodo);
 
-    void ModificarEtiqueta(Nodo1 *nodo, int etiqueta);
-    int NumNodos();
+    virtual void ModificarEtiqueta(Nodo1 *nodo, int etiqueta);
+    virtual int NumNodos();
 
-    Nodo1 AgregarHijo(Nodo1 *nodo, int etiqueta);
-    Nodo1 AgregarHijoMasDerecho(Nodo1 *nodo, int etiqueta);
-    Nodo1 Padre(Nodo1 *nodo);
+    virtual Nodo1 AgregarHijo(Nodo1 *nodo, int etiqueta);
+    virtual Nodo1 AgregarHijoMasDerecho(Nodo1 *nodo, int etiqueta);
+    virtual Nodo1 Padre(Nodo1 *nodo);
     
 };
 

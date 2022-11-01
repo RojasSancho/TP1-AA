@@ -19,15 +19,15 @@ class arbol{
 
     virtual void BorrarHoja();
 
-    virtual NodoArbol HijoMasIzquierdo(NodoArbol *nodo);
-    virtual NodoArbol HermanoDerecho(NodoArbol *nodo);
+    virtual NodoArbol HijoMasIzquierdo(NodoArbol *nodo)=0;
+    virtual NodoArbol HermanoDerecho(NodoArbol *nodo)=0;
 
-    virtual void ModificarEtiqueta(NodoArbol *nodo, int etiqueta);
-    virtual int NumNodos();
+    virtual void ModificarEtiqueta(NodoArbol *nodo, int etiqueta)=0;
+    virtual int NumNodos()=0;
 
-    virtual NodoArbol AgregarHijo(NodoArbol *nodo, int etiqueta);
-    virtual NodoArbol AgregarHijoMasDerecho(NodoArbol *nodo, int etiqueta);
-    virtual NodoArbol Padre(NodoArbol *nodo);
+    virtual NodoArbol AgregarHijo(NodoArbol *nodo, int etiqueta)=0;
+    virtual NodoArbol AgregarHijoMasDerecho(NodoArbol *nodo, int etiqueta)=0;
+    virtual NodoArbol Padre(NodoArbol *nodo)=0;
 
     NodoArbol HermanoIzq(NodoArbol *nodo, arbol *arbol);
     NodoArbol HermanoIzqRec(NodoArbol *nodo, NodoArbol *pos, arbol *arbol);
