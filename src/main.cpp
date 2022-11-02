@@ -33,18 +33,22 @@ int main()
     
 
     arbolHMIHDUltimoApuntandoPadre *arbol = new arbolHMIHDUltimoApuntandoPadre();
+    Nodo5 *actual = new Nodo5();
     
 
     arbol->Iniciar();
     arbol->PonerRaiz(1);
-    cout<<arbol->Etiqueta(arbol->Raiz());
-    arbol->AgregarHijo(arbol->Raiz(), 4);
-    cout<<arbol->Etiqueta(arbol->HijoMasIzquierdo(arbol->Raiz()));
-    arbol->AgregarHijo(arbol->Raiz(), 2);
-    arbol->AgregarHijo(arbol->AgregarHijo(arbol->Raiz(), 2), 3);
-    arbol->AgregarHijo(arbol->AgregarHijo(arbol->AgregarHijo(arbol->Raiz(), 2), 3), 2);
+    actual = arbol->Raiz();
+    //cout<<arbol->Etiqueta(arbol->Raiz());
+    arbol->AgregarHijo(actual, 4);
+    //cout<<arbol->Etiqueta(arbol->HijoMasIzquierdo(arbol->Raiz()));
+    arbol->AgregarHijo(actual, 2);
+    actual = actual->HijoMasIzquierdo();
+    arbol->AgregarHijo(actual, 3);
+    actual = actual->HijoMasIzquierdo();
+    arbol->AgregarHijo(actual, 2);
 
-    arbol->ListarEtiquetasEnUnNivel(2, arbol);
+    arbol->ListarEtiquetasEnUnNivel(3, arbol);
 
     //arbol->ListarEtiquetasPorNivel(arbol);
 

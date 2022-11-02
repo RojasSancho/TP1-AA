@@ -22,9 +22,9 @@ Nodo5 *arbolHMIHDUltimoApuntandoPadre::Padre(Nodo5 *nodo){
         padre = nodo->Padre();
     }
     else {
-        Nodo5 *nodoTemp = HermanoDerecho(nodo);
+        Nodo5 *nodoTemp = nodo->HermanoDerecho();
         while (HermanoDerecho(nodoTemp) != nullptr){
-            nodoTemp = HermanoDerecho(nodo);
+            nodoTemp = nodo->HermanoDerecho();
         }
         padre = Padre(nodoTemp);
     }
@@ -34,12 +34,12 @@ Nodo5 *arbolHMIHDUltimoApuntandoPadre::Padre(Nodo5 *nodo){
 
 Nodo5 *arbolHMIHDUltimoApuntandoPadre::HijoMasIzquierdo(Nodo5 *nodo)
 {
-    return nodo->HijoMasIzquierdo();
+    return (nodo->HijoMasIzquierdo());
 }
 
 Nodo5 *arbolHMIHDUltimoApuntandoPadre::HermanoDerecho(Nodo5 *nodo)
 {
-    return nodo->HermanoDerecho();
+    return (nodo->HermanoDerecho());
 }
 
 void arbolHMIHDUltimoApuntandoPadre::ModificarEtiqueta(Nodo5 *nodo, int etiqueta)

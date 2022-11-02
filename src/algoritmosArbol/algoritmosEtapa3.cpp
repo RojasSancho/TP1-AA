@@ -91,10 +91,8 @@ void arbol::ListarEtiquetasEnUnNivelRec(int nivel, NodoArbol *nodo, arbol *arbol
     }
     else {
         NodoArbol *hijo = HijoMasIzquierdo(nodo);
-        cout<<hijo->Etiqueta();
-        while (hijo->Etiqueta() == 2){
+        while (hijo != nullptr){
             ListarEtiquetasEnUnNivelRec(nivel-1, hijo, arbol);
-
             hijo = HermanoDerecho(hijo);
         }
     }
@@ -104,14 +102,14 @@ void arbol::ListarEtiquetasEnUnNivelRec(int nivel, NodoArbol *nodo, arbol *arbol
 void arbol::ListarEtiquetasPorNivel(arbol *arbol){
     list<NodoArbol*> lista;
     lista.push_back(arbol->Raiz()); 
-    while (lista.size()>0){
+    if (lista.size()>0){
         NodoArbol *nodo = lista.front();
         lista.pop_front();
         cout<<arbol->Etiqueta(nodo);
         NodoArbol *nodoHijo = arbol->HijoMasIzquierdo(nodo);
-        while (nodoHijo != nullptr){
-            lista.push_back(nodoHijo);
-            nodoHijo = arbol->HermanoDerecho(nodoHijo);
+        if (nodoHijo != nullptr){
+        lista.push_back(nodoHijo);
+          nodoHijo = arbol->HermanoDerecho(nodoHijo);
         }
     }
 }
