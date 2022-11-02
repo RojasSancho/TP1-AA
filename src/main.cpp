@@ -50,7 +50,18 @@ int main()
 
     arbol->ListarEtiquetasPreorden(arbol);
 
+    actual = arbol->Padre(actual);
+
+    //SIRVE
+    //arbol->EtiquetaRepetida(2, arbol); 
     //arbol->ListarEtiquetasPorNivel(arbol);
+    //arbol->ListarEtiquetasEnUnNivel(2, arbol);
+    //arbol->ListarEtiquetasPreorden(arbol);
+    //cout<<arbol->NumNivelesPreorden(arbol)<<" ";
+    //cout<<arbol->numNiveles(arbol);
+    //arbol->
+    //arbol->
+    //arbol->
 
     // int niveles = arbol->NumNivelesPreorden(arbol);
     // cout<<niveles;

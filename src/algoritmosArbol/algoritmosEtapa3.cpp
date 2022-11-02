@@ -36,6 +36,7 @@ bool arbol::EtiquetaRepetida(int etiqueta, arbol *arbol){
     int Repeticiones = EtiquetaRepetidaRec(etiqueta, arbol->Raiz(), arbol);
     if (Repeticiones >= 2){
         Repetida = true;
+        cout<<" true";
     }
     return Repetida;
 }
@@ -69,7 +70,7 @@ int arbol::numNivelesRec(int nivel, NodoArbol *nodo, arbol *arbol){
     if (hijo != nullptr){
         NumNiveles+=1;
         while (hijo != nullptr){
-            NumNivelesTemp = numNivelesRec(nivel, hijo, arbol);
+            NumNivelesTemp = numNivelesRec(NumNiveles, hijo, arbol);
             if (NumNivelesTemp > NumNiveles){
                 NumNiveles = NumNivelesTemp;
             }
