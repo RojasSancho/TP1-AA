@@ -102,13 +102,13 @@ void arbol::ListarEtiquetasEnUnNivelRec(int nivel, NodoArbol *nodo, arbol *arbol
 void arbol::ListarEtiquetasPorNivel(arbol *arbol){
     list<NodoArbol*> lista;
     lista.push_back(arbol->Raiz()); 
-    if (lista.size()>0){
+    while (lista.size()>0){
         NodoArbol *nodo = lista.front();
         lista.pop_front();
         cout<<arbol->Etiqueta(nodo);
         NodoArbol *nodoHijo = arbol->HijoMasIzquierdo(nodo);
-        if (nodoHijo != nullptr){
-        lista.push_back(nodoHijo);
+        while (nodoHijo != nullptr){
+          lista.push_back(nodoHijo);
           nodoHijo = arbol->HermanoDerecho(nodoHijo);
         }
     }
@@ -134,7 +134,6 @@ void arbol::ListarEtiquetasRecursividad(NodoArbol *nodo, arbol *arbol)
 void arbol::ListarEtiquetasPreorden(arbol *arbol)
 {
     NodoArbol *raiz = arbol->Raiz();
-    cout<<arbol->Etiqueta(arbol->Raiz());
     ListarEtiquetasRecursividad(raiz, arbol);
 
 }

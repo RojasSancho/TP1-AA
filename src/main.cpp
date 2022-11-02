@@ -48,7 +48,7 @@ int main()
     actual = actual->HijoMasIzquierdo();
     arbol->AgregarHijo(actual, 2);
 
-    arbol->ListarEtiquetasEnUnNivel(3, arbol);
+    arbol->ListarEtiquetasPreorden(arbol);
 
     //arbol->ListarEtiquetasPorNivel(arbol);
 
