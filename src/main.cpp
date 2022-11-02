@@ -45,7 +45,7 @@ int main()
     Nodo5 *nivel3 = arbol->AgregarHijo(hijoDeRaiz, 3);
     arbol->AgregarHijo(nivel3, 2);
 
-    arbol->ListarEtiquetasPreorden(arbol);
+    //arbol->ListarEtiquetasPreorden(arbol);
 
     // int niveles = arbol->NumNivelesPreorden(arbol);
     // cout<<niveles;
