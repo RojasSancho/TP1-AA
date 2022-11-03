@@ -14,7 +14,7 @@ class arbolArregloConSenaladorPadre  : public arbol
 
     public:
 
-    Nodo1 *nodosArreglo[];
+    Nodo1 *nodosArreglo;
 
 
     int n;

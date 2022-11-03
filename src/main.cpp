@@ -30,17 +30,14 @@ using namespace std;
 
 int main()
 {
-    //arbolHMIHDUltimoApuntandoPadre *arbol = new arbolHMIHDUltimoApuntandoPadre();
-    //Nodo5 *actual = new Nodo5();
+    arbolHMIHDUltimoApuntandoPadre *arbol = new arbolHMIHDUltimoApuntandoPadre();
+    Nodo5 *actual = new Nodo5();
 
     //arbolArregloConSenaladorPadre *arbol = new arbolArregloConSenaladorPadre();
-    //Nodo4 *actual = new Nodo4();
+    //Nodo1 *actual = new Nodo1();
 
-    arbolArregloConSenaladorPadre *arbol = new arbolArregloConSenaladorPadre();
-    Nodo1 *actual = new Nodo1();
-
-    //arbol->Iniciar();
-    arbol->Iniciar(6);
+    arbol->Iniciar();
+    //arbol->Iniciar(6);
     arbol->PonerRaiz(1);
     actual = arbol->Raiz();
     //cout<<arbol->Etiqueta(arbol->Raiz());
@@ -53,11 +50,11 @@ int main()
     arbol->AgregarHijo(actual, 2);
     actual = arbol->HijoMasIzquierdo(actual);
 
-    //actual = arbol->BuscarEtiqueta(1, arbol);
-    //actual = actual->HijoMasIzquierdo();
-    //cout<<Etiqueta(actual);
+    actual = arbol->BuscarEtiqueta(1);
+    actual = actual->HijoMasIzquierdo();
+    cout<<actual->Etiqueta();
 
-    //arbol->ListarEtiquetasPreorden(arbol);
+    arbol->ListarEtiquetasPreorden(arbol);
     
 
 
