@@ -10,6 +10,13 @@ class NodoArbol
     public:
     int etiqueta;
 
+    virtual NodoArbol *HijoMasIzquierdo(){
+        return HijoMasIzquierdo();
+    }
+    virtual NodoArbol *HermanoDerecho(){
+        return HijoMasIzquierdo();
+    }
+
     NodoArbol(); //ESTE
     ~NodoArbol();  
     void ModificarEtiqueta(int etiqueta); //ESTE

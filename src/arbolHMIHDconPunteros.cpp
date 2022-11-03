@@ -104,3 +104,27 @@ Nodo4* arbolHMIHDconPunteros::Padre(Nodo4 *nodo)
     return nodo->Padre();  
 }
 
+//Buscar etiqueta para programa de pruebas
+Nodo4 *nodoEtiqueta3 = nullptr;
+Nodo4 *arbolHMIHDconPunteros::BuscarEtiqueta (int etiqueta) 
+{
+    nodoEtiqueta3 = nullptr;
+    BuscarEtiquetaRecursividad(etiqueta, this->Raiz());
+    return nodoEtiqueta3;
+}
+
+void arbolHMIHDconPunteros::BuscarEtiquetaRecursividad(int etiqueta, Nodo4 *nodo)
+{
+    if (this->Etiqueta(nodo) == etiqueta) 
+    {
+        nodoEtiqueta3 = nodo;
+    } else
+    {
+        Nodo4 *nodoTemp = this->HijoMasIzquierdo(nodo);
+        while ((nodoTemp) != nullptr) 
+        {
+            BuscarEtiquetaRecursividad(etiqueta, nodoTemp);
+            nodoTemp = this->HermanoDerecho(nodoTemp);
+        }
+    }
+}

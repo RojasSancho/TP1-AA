@@ -1,15 +1,16 @@
 #include <iostream>
 #include <list>
 
-//#include "../arbolHMIHDconPunteros.h"
-#include "../nodo5.h"
-#include "../nodo4.h"
+
 #include "../nodoArbol.h"
-//#include "../arbolHMIHDconPunteros.h"
-#include "../arbolHMIHDUltimoApuntandoPadre.h"
 #include "../arbol.h"
+<<<<<<< HEAD
 //#include "../arbolHMIHDContador.h"
 #include "../listaIndexada.h"
+=======
+
+
+>>>>>>> 6094a12e3b3ba2cb0af46a765b91913dfcf488dc
 //Algoritmo para averiguar cuál es el hermano izquierdo de un nodo n
 NodoArbol *arbol::HermanoIzq(NodoArbol *nodo, arbol *arbol){
     NodoArbol *HermanoIzq = HermanoIzqRec(nodo, arbol->Raiz(), arbol);
@@ -36,6 +37,7 @@ bool arbol::EtiquetaRepetida(int etiqueta, arbol *arbol){
     int Repeticiones = EtiquetaRepetidaRec(etiqueta, arbol->Raiz(), arbol);
     if (Repeticiones >= 2){
         Repetida = true;
+        cout<<" true";
     }
     return Repetida;
 }
@@ -69,7 +71,7 @@ int arbol::numNivelesRec(int nivel, NodoArbol *nodo, arbol *arbol){
     if (hijo != nullptr){
         NumNiveles+=1;
         while (hijo != nullptr){
-            NumNivelesTemp = numNivelesRec(nivel, hijo, arbol);
+            NumNivelesTemp = numNivelesRec(NumNiveles, hijo, arbol);
             if (NumNivelesTemp > NumNiveles){
                 NumNiveles = NumNivelesTemp;
             }
@@ -87,13 +89,12 @@ void arbol::ListarEtiquetasEnUnNivel(int nivel, arbol *arbol){
 
 void arbol::ListarEtiquetasEnUnNivelRec(int nivel, NodoArbol *nodo, arbol *arbol){
     if (nivel == 1){
-        cout<<nodo->Etiqueta();
+        cout<<nodo->Etiqueta() <<" - ";
     }
     else {
         NodoArbol *hijo = HijoMasIzquierdo(nodo);
         while (hijo != nullptr){
             ListarEtiquetasEnUnNivelRec(nivel-1, hijo, arbol);
-
             hijo = HermanoDerecho(hijo);
         }
     }
@@ -106,11 +107,11 @@ void arbol::ListarEtiquetasPorNivel(arbol *arbol){
     while (lista.size()>0){
         NodoArbol *nodo = lista.front();
         lista.pop_front();
-        cout<<arbol->Etiqueta(nodo);
+        cout<<arbol->Etiqueta(nodo)<<" - ";
         NodoArbol *nodoHijo = arbol->HijoMasIzquierdo(nodo);
         while (nodoHijo != nullptr){
-            lista.push_back(nodoHijo);
-            nodoHijo = arbol->HermanoDerecho(nodoHijo);
+          lista.push_back(nodoHijo);
+          nodoHijo = arbol->HermanoDerecho(nodoHijo);
         }
     }
 }
@@ -123,7 +124,7 @@ void arbol::ListarEtiquetasPorNivel(arbol *arbol){
 //Algoritmo Listar nodos en preorden
 void arbol::ListarEtiquetasRecursividad(NodoArbol *nodo, arbol *arbol)
 {
-    cout<<arbol->Etiqueta(nodo);
+    cout<<arbol->Etiqueta(nodo)<<" - ";
     NodoArbol *siguienteNodo = arbol->HijoMasIzquierdo(nodo);
     while (siguienteNodo != nullptr) 
     {

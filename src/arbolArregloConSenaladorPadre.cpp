@@ -23,18 +23,19 @@ Nodo1 *arbolArregloConSenaladorPadre::Raiz(){
     return nodo;
 }
 
-Nodo1 arbolArregloConSenaladorPadre::HijoMasIzquierdo(Nodo1 *nodo){
+Nodo1 *arbolArregloConSenaladorPadre::HijoMasIzquierdo(Nodo1 *nodo){
     int pos = nodo->Posicion();
-    int cont = nodo->Posicion()+1;
+    int cont = (nodo->Posicion())+1;
     Nodo1 nodoTemp = nodosArreglo[cont];
     while (nodoTemp.Padre() != pos){
         cont+=1;
         nodoTemp = nodosArreglo[cont];
     }
-    return nodosArreglo[cont];
+    Nodo1 *hmi = &nodosArreglo[cont];
+    return hmi;
 }
 
-Nodo1 arbolArregloConSenaladorPadre::HermanoDerecho(Nodo1 *nodo){
+Nodo1 *arbolArregloConSenaladorPadre::HermanoDerecho(Nodo1 *nodo){
     int posPadre = nodo->Padre();
     int cont = nodo->Posicion()-1;
     Nodo1 nodoTemp = nodosArreglo[cont];
@@ -42,12 +43,13 @@ Nodo1 arbolArregloConSenaladorPadre::HermanoDerecho(Nodo1 *nodo){
         cont-=1;
         nodoTemp = nodosArreglo[cont];
     }
-    return nodosArreglo[cont];
+    Nodo1 *hd = &nodosArreglo[cont];
+    return hd;
 }
 
-void arbolArregloConSenaladorPadre::ModificarEtiqueta(Nodo1 *nodo, int etiqueta){
-    nodo->ModificarEtiqueta(etiqueta);
-}
+// void arbolArregloConSenaladorPadre::ModificarEtiqueta(Nodo1 *nodo, int etiqueta){
+//     nodo->ModificarEtiqueta(etiqueta);
+// }
 
 int arbolArregloConSenaladorPadre::NumNodos(){
     return n;
@@ -55,6 +57,7 @@ int arbolArregloConSenaladorPadre::NumNodos(){
 
 Nodo1 arbolArregloConSenaladorPadre::AgregarHijo(Nodo1 *nodo, int etiqueta){
     Nodo1 *nuevoHijo = new Nodo1(nodo->Posicion(), etiqueta, n);
+    nodo->ModificarHMI(nuevoHijo);
     this->nodosArreglo[n] = *nuevoHijo;
     this->n+=1; 
     return nodosArreglo[n];
@@ -68,8 +71,10 @@ Nodo1 arbolArregloConSenaladorPadre::AgregarHijoMasDerecho(Nodo1 *nodo, int etiq
         cont+=1;
         nodoTemp = nodosArreglo[cont];
     }
-    nodosArreglo[cont].ModificarEtiqueta(etiqueta);
+    //nodosArreglo[cont].ModificarEtiqueta(etiqueta);
     Nodo1 *nuevoHijo = new Nodo1(nodo->Posicion(), nodoTemp.Etiqueta(), n);
+    nuevoHijo->ModificarHD(this->HijoMasIzquierdo(nodo));
+    nodo->ModificarHMI(nuevoHijo);
     this->nodosArreglo[n] = *nuevoHijo;
     this->n+=1;
     return nodosArreglo[n];
@@ -77,4 +82,30 @@ Nodo1 arbolArregloConSenaladorPadre::AgregarHijoMasDerecho(Nodo1 *nodo, int etiq
 
 Nodo1 arbolArregloConSenaladorPadre::Padre(Nodo1 *nodo){
     return nodosArreglo[nodo->Padre()];
+}
+
+
+Nodo1 *nodoEtiqueta4 = nullptr;
+Nodo1 *arbolArregloConSenaladorPadre::BuscarEtiqueta (int etiqueta) 
+{
+    nodoEtiqueta4 = nullptr;
+    BuscarEtiquetaRecursividad(etiqueta, this->Raiz());
+    return nodoEtiqueta4;
+}
+
+
+void arbolArregloConSenaladorPadre::BuscarEtiquetaRecursividad(int etiqueta, Nodo1 *nodo)
+{
+    if (this->Etiqueta(nodo) == etiqueta) 
+    {
+        nodoEtiqueta4 = nodo;
+    } else
+    {
+        Nodo1 *nodoTemp = this->HijoMasIzquierdo(nodo);
+        while ((nodoTemp) != nullptr) 
+        {
+            BuscarEtiquetaRecursividad(etiqueta, nodoTemp);
+            nodoTemp = this->HermanoDerecho(nodoTemp);
+        }
+    }
 }

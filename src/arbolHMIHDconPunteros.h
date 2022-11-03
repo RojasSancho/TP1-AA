@@ -11,7 +11,7 @@ class arbolHMIHDconPunteros : public arbol
     Nodo4 *raiz; 
 
     int NumNodosRecursivo(Nodo4 *nodo);
-    
+    void BuscarEtiquetaRecursividad(int etiqueta, Nodo4 *nodo);
     public: ///falta borrar hoja para el cpp
     
     Nodo4 *HermanoIzquierdo(Nodo4 *nodo);
@@ -30,6 +30,7 @@ class arbolHMIHDconPunteros : public arbol
     Nodo4 *AgregarHijoMasDerecho(Nodo4 *nodo, int etiqueta);
     Nodo4 *Padre(Nodo4 *nodo);
 
+    Nodo4 *BuscarEtiqueta (int etiqueta);
     
 };
 

@@ -12,6 +12,7 @@ class arbolHMIHDContador : public arbol
     
     int contador;
 
+    void BuscarEtiquetaRecursividad(int etiqueta, Nodo *nodo);
     //Nodo *PadreRecursivo(Nodo *nodo, Nodo *inicio);
     
     public: //falta borrarhoja para cpp
@@ -30,6 +31,8 @@ class arbolHMIHDContador : public arbol
     Nodo *AgregarHijo(Nodo *nodo, int etiqueta);
     Nodo *AgregarHijoMasDerecho(Nodo *nodo, int etiqueta);
     Nodo Padre(Nodo *nodo);
+
+    Nodo *BuscarEtiqueta (int etiqueta); 
     
 };
 

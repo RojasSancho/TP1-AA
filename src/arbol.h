@@ -18,10 +18,10 @@ class arbol{
     // virtual void BorrarHoja()=0;
 
     virtual NodoArbol *HijoMasIzquierdo(NodoArbol *nodo){
-        return nodo;
+        return nodo->HijoMasIzquierdo();
     }
     virtual NodoArbol *HermanoDerecho(NodoArbol *nodo){
-        return nodo;
+        return nodo->HermanoDerecho();
     }
 
     virtual void ModificarEtiqueta(NodoArbol *nodo, int etiqueta){
