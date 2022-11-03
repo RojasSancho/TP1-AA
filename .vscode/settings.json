@@ -1,9 +1,3 @@
 {
-    "files.associations": {
-        "iostream": "cpp",
-        "vector": "cpp",
-        "array": "cpp",
-        "list": "cpp"
-    },
-    "C_Cpp.errorSquiggles": "Disabled"
+    "makefile.extensionOutputFolder": "./.vscode"
 }
