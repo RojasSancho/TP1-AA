@@ -245,7 +245,7 @@ int main()
                 system("clear");
                 int opcionArbol = 0;
 
-                cout<<"\n\nARBOL N-ARIO\nDigite alguna de las opciones para utilizar el operador basico o 14 para volver al menu principal:\n\n";
+                cout<<"\n\nARBOL N-ARIO\nDigite alguna de las opciones para utilizar el operador basico o 14 para volver al menu principal: (Si desea ir al menu de algoritmos ingrese 15)\n\n";
                 cout<<"1. Iniciar\n";
                 cout<<"2. Destruir\n";
                 cout<<"3. PonerRaiz\n";
@@ -260,6 +260,7 @@ int main()
                 cout<<"12. Modificar Etiqueta\n";
                 cout<<"13. NumNodos (Numero actual de nodos en el árbol)\n";
                 cout<<"\n14. Salir al menu principal\n";
+                cout<<"\n15. MENU ALGORITMOS DE ARBOL\n";
                 cin>>opcionArbol;
 
                 if(opcionArbol == 14)

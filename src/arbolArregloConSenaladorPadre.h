@@ -25,8 +25,10 @@ class arbolArregloConSenaladorPadre  : public arbol
 
     void BorrarHoja();
 
+
     Nodo1 *HijoMasIzquierdo(Nodo1 *nodo);
     Nodo1 *HermanoDerecho(Nodo1 *nodo);
+
 
     void ModificarEtiqueta(Nodo1 *nodo, int etiqueta);
     int NumNodos();
