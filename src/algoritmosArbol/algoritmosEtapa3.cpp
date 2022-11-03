@@ -117,6 +117,15 @@ void arbol::ListarEtiquetasPorNivel(arbol *arbol){
 // }
 
 //Algoritmo Listar nodos en preorden
+//Parámetros:
+// A – Árbol n-ario
+
+// Efecto: Imprime todas las etiquetas que se encuentran en los nodos de un árbol A.
+
+// Requiere: Árbol A inicializado y no vacío.
+
+// Modifica: N/A
+
 void arbol::ListarEtiquetasRecursividad(NodoArbol *nodo, arbol *arbol)
 {
     cout<<arbol->Etiqueta(nodo)<<" - ";
@@ -136,6 +145,15 @@ void arbol::ListarEtiquetasPreorden(arbol *arbol)
 }
 
 //Algoritmo averiguar numero de niveles de arbol en preorden
+//Parámetros:
+//A – Árbol n-ario
+
+//Efecto: Devuelve el número de niveles que tiene un árbol A (un entero).
+
+//Requiere: Árbol A inicializado y no vacío.
+
+//Modifica: N/A
+
 int ultimoNivel = 0;
 void arbol::NumNivelesRecursividad(NodoArbol *nodo, int nivel, arbol *arbol)
 {
@@ -165,6 +183,15 @@ int arbol::NumNivelesPreorden(arbol *arbol)
 }
 
 //Algoritmo Buscar una etiqueta e (Devuelve el primer nodo encontrado con etiqueta e)
+// Parámetros:
+// A – Árbol n-ario
+// e – Etiqueta 
+
+// Efecto: Retorna el primer nodo en el árbol con la etiqueta proporcionada (si no se encuentra la etiqueta, devuelve nodonulo)
+
+// Requiere: Árbol A inicializado, no vacío y etiqueta valida en el árbol.
+
+// Modifica: N/A
 
 NodoArbol *nodoConEtiqueta = nullptr;
 void arbol::BuscarEtiquetaRecursividad(int etiqueta, NodoArbol *nodo, arbol *arbol)
