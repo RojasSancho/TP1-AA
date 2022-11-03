@@ -12,12 +12,14 @@ using namespace std;
 class arbolArregloConSenaladorPadre  : public arbol
 {
 
-    Nodo1 *nodosArreglo;
+    public:
+
+    Nodo1 *nodosArreglo[];
+
 
     int n;
     
     void BuscarEtiquetaRecursividad(int etiqueta, Nodo1 *nodo);
-    public:
 
     void Iniciar(int tamano);
     void PonerRaiz(int etiqueta);
