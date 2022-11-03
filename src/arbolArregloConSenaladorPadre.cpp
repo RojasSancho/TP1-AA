@@ -25,7 +25,7 @@ Nodo1 *arbolArregloConSenaladorPadre::Raiz(){
 
 Nodo1 *arbolArregloConSenaladorPadre::HijoMasIzquierdo(Nodo1 *nodo){
     int pos = nodo->Posicion();
-    int cont = nodo->Posicion()+1;
+    int cont = (nodo->Posicion())+1;
     Nodo1 nodoTemp = nodosArreglo[cont];
     while (nodoTemp.Padre() != pos){
         cont+=1;
