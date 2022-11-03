@@ -2,54 +2,121 @@
 
 using namespace std;
 
+/**
+ * @brief Construye nuevo Arbol 5:: Arbol 5 object
+ * 
+ */
 Arbol2::Arbol2(){
 
 }
 
+/**
+ * @brief Destruye Arbol 5:: Arbol 5 object
+ * 
+ */
 Arbol2::~Arbol2(){
 
 }
 
-void Arbol2::Arbol2PonerRaíz(int etiqueta){
+/**
+ * @brief Hace y posiciona un nodo con int como etiqueta
+ * @param etiqueta etiqueta tipo entero del nodo a poner
+ */
+void Arbol2::PonerRaíz(int etiqueta){
 
 }
 
-void Arbol2::AgregarHijo(Nodo nodo, int etiqueta){
+/**
+ * @brief Agrega Hijo a un nodo en el árbol
+ * 
+ * @param nodo 
+ * @param etiqueta 
+ */
+void Arbol2::AgregarHijo(Nodo2 nodo, int etiqueta){
 
 }
 
-void Arbol2::AgregarHijoMásDerecho(Nodo nodo, int etiqueta){
+/**
+ * @brief Agrega hijo a un nodo del árbol como su hijo "más a la derecha"
+ * 
+ * @param nodo 
+ * @param etiqueta
+ */
+void Arbol2::AgregarHijoMásDerecho(Nodo2 nodo, int etiqueta){
+
+}
+/**
+ * @brief Borra un nodo hoja del árbol
+ * 
+ * @param nodo 
+ */
+void Arbol2::BorrarHoja(Nodo2 nodo){
 
 }
 
-void Arbol2::BorrarHoja(Nodo nodo){
+/**
+ * @brief Devuelve nodo raíz del árbol
+ * @return Nodo
+ */
+Nodo2 Arbol2::Raíz(){
 
 }
 
-Nodo Arbol2::Raíz(){
+/**
+ * @brief Devuelve nodo padre de un nodo del árbol
+ * 
+ * @param nodo 
+ * @return Nodo2 
+ */
+Nodo2 Arbol2::Padre(Nodo2 nodo){
 
 }
 
-Nodo Arbol2::Padre(Nodo nodo){
+/**
+ * @brief Devuelve nodo hijo más izquierdo de un nodo del árbol
+ * 
+ * @param nodo 
+ * @return Nodo2 
+ */
+Nodo2 Arbol2::HijoMásIzquierdo(Nodo2 nodo){
 
 }
 
-Nodo Arbol2::HijoMásIzquierdo(Nodo nodo){
+/**
+ * @brief Devuelve el nodo hermano que se encuentra "a la derecha" de un nodo del árbol
+ * 
+ * @param nodo 
+ * @return Nodo2 
+ */
+Nodo2 Arbol2::HermanoDerecho(Nodo2 nodo){
 
 }
 
-Nodo Arbol2::HermanoDerecho(Nodo nodo){
+/**
+ * @brief Retorna etiqueta de un nodo del árbol
+ * 
+ * @param nodo 
+ * @return int 
+ */
+int Arbol2::Etiqueta(Nodo2 nodo){
 
 }
 
-int Arbol2::Etiqueta(Nodo nodo){
+/**
+ * @brief Modifica etiqueta de un nodo del árbol
+ * 
+ * @param nodo 
+ * @param etiqueta 
+ */
+void Arbol2::ModificaEtiqueta(Nodo2 nodo, int etiqueta){
 
 }
 
-void Arbol2::ModificaEtiqueta(Nodo nodo, int etiqueta){
-
-}
-
+/**
+ * @brief Retorna cantidad de nodos existentes en el árbol
+ * 
+ * @return int 
+ */
 int Arbol2::NumNodos(){
 
 }

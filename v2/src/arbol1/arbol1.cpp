@@ -1,55 +1,122 @@
-#include "Arbol1.h"
+#include "arbol5.h"
 
 using namespace std;
 
-Arbol1::Arbol1(){
+/**
+ * @brief Construye nuevo Arbol 5:: Arbol 5 object
+ * 
+ */
+Arbol5::Arbol5(){
 
 }
 
-Arbol1::~Arbol1(){
+/**
+ * @brief Destruye Arbol 5:: Arbol 5 object
+ * 
+ */
+Arbol5::~Arbol5(){
 
 }
 
-void Arbol1::Arbol1PonerRaíz(int etiqueta){
+/**
+ * @brief Hace y posiciona un nodo con int como etiqueta
+ * @param etiqueta etiqueta tipo entero del nodo a poner
+ */
+void Arbol5::PonerRaíz(int etiqueta){
 
 }
 
-void Arbol1::AgregarHijo(Nodo nodo, int etiqueta){
+/**
+ * @brief Agrega Hijo a un nodo en el árbol
+ * 
+ * @param nodo 
+ * @param etiqueta 
+ */
+void Arbol5::AgregarHijo(Nodo5 nodo, int etiqueta){
 
 }
 
-void Arbol1::AgregarHijoMásDerecho(Nodo nodo, int etiqueta){
+/**
+ * @brief Agrega hijo a un nodo del árbol como su hijo "más a la derecha"
+ * 
+ * @param nodo 
+ * @param etiqueta
+ */
+void Arbol5::AgregarHijoMásDerecho(Nodo5 nodo, int etiqueta){
+
+}
+/**
+ * @brief Borra un nodo hoja del árbol
+ * 
+ * @param nodo 
+ */
+void Arbol5::BorrarHoja(Nodo5 nodo){
 
 }
 
-void Arbol1::BorrarHoja(Nodo nodo){
+/**
+ * @brief Devuelve nodo raíz del árbol
+ * @return Nodo
+ */
+Nodo5 Arbol5::Raíz(){
 
 }
 
-Nodo Arbol1::Raíz(){
+/**
+ * @brief Devuelve nodo padre de un nodo del árbol
+ * 
+ * @param nodo 
+ * @return Nodo5 
+ */
+Nodo5 Arbol5::Padre(Nodo5 nodo){
 
 }
 
-Nodo Arbol1::Padre(Nodo nodo){
+/**
+ * @brief Devuelve nodo hijo más izquierdo de un nodo del árbol
+ * 
+ * @param nodo 
+ * @return Nodo5 
+ */
+Nodo5 Arbol5::HijoMásIzquierdo(Nodo5 nodo){
 
 }
 
-Nodo Arbol1::HijoMásIzquierdo(Nodo nodo){
+/**
+ * @brief Devuelve el nodo hermano que se encuentra "a la derecha" de un nodo del árbol
+ * 
+ * @param nodo 
+ * @return Nodo5 
+ */
+Nodo5 Arbol5::HermanoDerecho(Nodo5 nodo){
 
 }
 
-Nodo Arbol1::HermanoDerecho(Nodo nodo){
+/**
+ * @brief Retorna etiqueta de un nodo del árbol
+ * 
+ * @param nodo 
+ * @return int 
+ */
+int Arbol5::Etiqueta(Nodo5 nodo){
 
 }
 
-int Arbol1::Etiqueta(Nodo nodo){
+/**
+ * @brief Modifica etiqueta de un nodo del árbol
+ * 
+ * @param nodo 
+ * @param etiqueta 
+ */
+void Arbol5::ModificaEtiqueta(Nodo5 nodo, int etiqueta){
 
 }
 
-void Arbol1::ModificaEtiqueta(Nodo nodo, int etiqueta){
-
-}
-
-int Arbol1::NumNodos(){
+/**
+ * @brief Retorna cantidad de nodos existentes en el árbol
+ * 
+ * @return int 
+ */
+int Arbol5::NumNodos(){
 
 }
