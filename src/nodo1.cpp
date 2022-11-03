@@ -29,4 +29,11 @@ int Nodo1::Posicion()
     return this->posicion;
 }
 
+Nodo *HijoMasIzquierdo(Nodo1 *nodo, arbolArregloConSenaladorPadre *arbol){
+    return arbol->HijoMasIzquierdo(nodo);
+}
+
+Nodo *HermanoDerecho(Nodo1 *nodo, arbolArregloConSenaladorPadre *arbol){
+    return arbol->HermanoDerecho(nodo);
+}
 
