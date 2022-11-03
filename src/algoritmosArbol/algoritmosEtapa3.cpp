@@ -4,13 +4,8 @@
 
 #include "../nodoArbol.h"
 #include "../arbol.h"
-<<<<<<< HEAD
 //#include "../arbolHMIHDContador.h"
 #include "../listaIndexada.h"
-=======
-
-
->>>>>>> 6094a12e3b3ba2cb0af46a765b91913dfcf488dc
 //Algoritmo para averiguar cuál es el hermano izquierdo de un nodo n
 NodoArbol *arbol::HermanoIzq(NodoArbol *nodo, arbol *arbol){
     NodoArbol *HermanoIzq = HermanoIzqRec(nodo, arbol->Raiz(), arbol);
@@ -250,7 +245,7 @@ int arbol::ProfundidadRec(int etiqueta, NodoArbol *pos, arbol *arbol) {
 }
 
 
-arbol ConstruirArbol(int k, int i, ListaIndexada L) {
+arbol arbol::ConstruirArbol(int k, int i, ListaIndexada L) {
     if(L.NumElem() == (k^i- 1)/(k-1)) {
         arbol arbolResultado = arbol();
         arbolResultado.PonerRaiz(L.Recuperar(0));

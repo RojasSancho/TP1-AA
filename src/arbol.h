@@ -5,6 +5,7 @@
 using namespace std;
 
 #include "nodoArbol.h"
+#include "listaIndexada.h"
 
 class arbol{
 
@@ -68,7 +69,7 @@ class arbol{
 
     int ProfundidadRec(int etiqueta, NodoArbol *pos, arbol *arbol);
 
-    ConstruirArbol(int k, int i, ListaIndexada L);
+    arbol ConstruirArbol(int k, int i, ListaIndexada L);
 };
 
 #endif
