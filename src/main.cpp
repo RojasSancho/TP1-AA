@@ -29,20 +29,20 @@ using namespace std;
 
 int main()
 {
-     bool terminar = false;
+    //  bool terminar = false;
 
-     while(!terminar)
-     {
-         system("clear");
-         int opcionMenuPrin = 0;
+    //  while(!terminar)
+    //  {
+    //      system("clear");
+    //      int opcionMenuPrin = 0;
 
-         cout<< "\n\nBienvenido! Este programa esta hecho para probar diferentes modelos matematicos como lo son la Cola, la Lista Indexada y el Arbol n-ario.\n"; 
-         cout<<"Elija entre las siguiente opciones digitando uno de los numeros:\n";
-         cout<<"\n1. Cola\n";
-         cout<<"2. Lista Indexada\n";
-         cout<<"3. Arbol n-ario\n";
-         cout<<"\n4. Salir del programa\n";
-         cin>>opcionMenuPrin;
+    //      cout<< "\n\nBienvenido! Este programa esta hecho para probar diferentes modelos matematicos como lo son la Cola, la Lista Indexada y el Arbol n-ario.\n"; 
+    //      cout<<"Elija entre las siguiente opciones digitando uno de los numeros:\n";
+    //      cout<<"\n1. Cola\n";
+    //      cout<<"2. Lista Indexada\n";
+    //      cout<<"3. Arbol n-ario\n";
+    //      cout<<"\n4. Salir del programa\n";
+    //      cin>>opcionMenuPrin;
 
          if(opcionMenuPrin == 4)
          {
@@ -338,19 +338,22 @@ int main()
                  // {
                     
                  // }
-                 case 7:
-                 {
-                     Nodo *raiz = arbolUsuario->Raiz();
-                     //Nodo1 *raiz = arbolUsuario->Raiz();
-                     //Nodo4 *raiz = arbolUsuario->Raiz();
-                     //Nodo5 *raiz = arbolUsuario->Raiz();
-                     cout<<"\nLa etiqueta de la raiz del arbol es: "<<arbolUsuario->Etiqueta(raiz);
-                     break;
-                 }
-                 // case 8:
-                 // {
+ 
+
+                case 7:
+                {
+                    Nodo *raiz = arbolUsuario->Raiz();
+                    //Nodo1 *raiz = arbolUsuario->Raiz();
+                    //Nodo4 *raiz = arbolUsuario->Raiz();
+                    //Nodo5 *raiz = arbolUsuario->Raiz();
+                    cout<<"\nLa etiqueta de la raiz del arbol es: "<<arbolUsuario->Etiqueta(raiz);
+                    break;
+                }
+                // case 8:
+                // {
                     
-                // }
+                //}
+                
                 case 9:
                 {
                     int etiquetaPadre = 0;
@@ -417,7 +420,7 @@ int main()
                         cout<<"5. Listar las etiquetas del arbol (preorden)\n";
                         cout<<"6. Averiguar numero de niveles de arbol en preorden (preorden)\n";
                         cout<<"7. Buscar una etiqueta e (para efectos del programa de prueba, dice si esta o no)\n";
-                        cout<<"8. \n";
+                        cout<<"8. Averiguar la profundidad de un nodo n\n";
                         cout<<"\n12. Volver a operadores basicos de arbol\n";
                         cin>>opcionAlgoritmos;
 
@@ -496,8 +499,23 @@ int main()
                             {
                                 cout<<"No existe ningun nodo en el arbol con esta etiqueta!";
                             } else {
-                                cout<<"Si existe un nodo al menos con esta etiqueta!";
+                                cout<<"Si existe al menos un nodo con esta etiqueta!";
                             }
+                            break;
+                        }
+
+                        case 8:
+                        {
+                            int etiqueta;
+                            cout<<"Ingrese la etiqueta del nodo del cual quiere saber su profundidad: ";
+                            cin>>etiqueta;
+                            Nodo *nodo = arbolUsuario->BuscarEtiqueta(etiqueta);
+                            //Nodo1 *nodo = arbolUsuario->BuscarEtiqueta(etiqueta);
+                            //Nodo4 *nodo = arbolUsuario->BuscarEtiqueta(etiqueta);
+                            //Nodo5 *nodo = arbolUsuario->BuscarEtiqueta(etiqueta);
+
+                            int profundidadNodo = arbolUsuario->Profundidad(nodo, arbolUsuario);
+                            cout<<"La profunidad del nodo es: "<< profundidadNodo;
                             break;
                         }
 
