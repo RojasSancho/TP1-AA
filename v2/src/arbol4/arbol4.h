@@ -3,6 +3,8 @@
 
 #include <iostream>
 
+#include "nodo4.h"
+
 class Arbol4 {
     public:
 

@@ -2,6 +2,8 @@
 
 using namespace std;
 
+#include "nodo3.h"
+
 Arbol3::Arbol3(){
 
 }

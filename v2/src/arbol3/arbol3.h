@@ -3,7 +3,7 @@
 
 #include <iostream>
 
-using namespace std;
+#include "nodo3.h"
 
 class Arbol3 {
     
