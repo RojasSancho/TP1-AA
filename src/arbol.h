@@ -10,7 +10,7 @@ class arbol{
 
     public: //Este
 
-    int Etiqueta(NodoArbol *nodo); //Este
+    int Etiqueta(NodoArbol *nodo);
 
     virtual void PonerRaiz(int etiqueta)=0;
     virtual NodoArbol *Raiz()=0;

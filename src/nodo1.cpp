@@ -49,3 +49,6 @@ void Nodo1::ModificarHD(Nodo1* nuevoHD)
     this->hermanoDerecho = nuevoHD;
 }
 
+void ModificarEtiqueta(int etiqueta){
+    
+}
