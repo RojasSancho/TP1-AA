@@ -63,6 +63,12 @@ class arbol{
     void BuscarEtiquetaRecursividad(int etiqueta, NodoArbol *nodo, arbol *arbol);
 
     NodoArbol *BuscarEtiqueta (int etiqueta, arbol *arbol);
+
+    int Profundidad(NodoArbol *nodo, arbol *arbol);
+
+    int ProfundidadRec(int etiqueta, NodoArbol *pos, arbol *arbol);
+
+    ConstruirArbol(int k, int i, ListaIndexada L);
 };
 
 #endif
