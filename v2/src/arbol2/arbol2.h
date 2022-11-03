@@ -1,4 +1,4 @@
-ifndef ARBOL2_H
+#ifndef ARBOL2_H
 #define ARBOL2_H
 
 #include <iostream>
@@ -32,4 +32,8 @@ class Arbol2 {
     void ModificaEtiqueta(Nodo nodo, int etiqueta);
 
     int NumNodos();
-}
+};
+
+typedef Arbol2 Arbol;
+
+#endif

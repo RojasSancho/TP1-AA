@@ -1,4 +1,4 @@
-ifndef ARBOL4_H
+#ifndef ARBOL4_H
 #define ARBOL4_H
 
 #include <iostream>
@@ -31,4 +31,8 @@ class Arbol4 {
     void ModificaEtiqueta(Nodo4 nodo, int etiqueta);
 
     int NumNodos();
-}
+};
+
+typedef Arbol4 Arbol;
+
+#endif

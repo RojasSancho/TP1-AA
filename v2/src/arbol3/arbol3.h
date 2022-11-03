@@ -1,7 +1,9 @@
-ifndef ARBOL3_H
+#ifndef ARBOL3_H
 #define ARBOL3_H
 
 #include <iostream>
+
+using namespace std;
 
 class Arbol3 {
     
@@ -32,4 +34,8 @@ class Arbol3 {
     void ModificaEtiqueta(Nodo3 nodo, int etiqueta);
 
     int NumNodos();
-}
+};
+
+typedef Arbol3 Arbol;
+
+#endif
