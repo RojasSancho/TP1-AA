@@ -26,8 +26,13 @@ class arbolArregloConSenaladorPadre  : public arbol
     void BorrarHoja();
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     virtual Nodo1 *HijoMasIzquierdo(Nodo1 *nodo);
     virtual Nodo1 *HermanoDerecho(Nodo1 *nodo);
+=======
+    Nodo1 HijoMasIzquierdo(Nodo1 *nodo);
+    Nodo1 HermanoDerecho(Nodo1 *nodo);
+>>>>>>> Stashed changes
 =======
     Nodo1 HijoMasIzquierdo(Nodo1 *nodo);
     Nodo1 HermanoDerecho(Nodo1 *nodo);
