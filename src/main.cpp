@@ -45,16 +45,16 @@ int main()
          cout<<"\n4. Salir del programa\n";
          cin>>opcionMenuPrin;
 
-    actual = arbol->BuscarEtiqueta(1);
-    actual = actual->HijoMasIzquierdo();
-    cout<<actual->Etiqueta();
+    // actual = arbol->BuscarEtiqueta(1);
+    // actual = actual->HijoMasIzquierdo();
+    // cout<<actual->Etiqueta();
 
-    arbol->ListarEtiquetasPreorden(arbol);
+    // arbol->ListarEtiquetasPreorden(arbol);
     
 
 
     //SIRVE 
-    cout<<arbol->EtiquetaRepetida(2, arbol);
+    //cout<<arbol->EtiquetaRepetida(2, arbol);
     // arbol->ListarEtiquetasPorNivel(arbol);
     // cout<<" ";
     // arbol->ListarEtiquetasEnUnNivel(2, arbol);
