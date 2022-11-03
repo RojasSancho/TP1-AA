@@ -6,10 +6,6 @@
 #include "../arbol.h"
 //#include "../arbolHMIHDContador.h"
 #include "../listaIndexada.h"
-<<<<<<< HEAD
-=======
-
->>>>>>> 0df54018aab41b5e7a1fd84ce1d998c131491cbe
 //Algoritmo para averiguar cuál es el hermano izquierdo de un nodo n
 NodoArbol *arbol::HermanoIzq(NodoArbol *nodo, arbol *arbol){
     NodoArbol *HermanoIzq = HermanoIzqRec(nodo, arbol->Raiz(), arbol);

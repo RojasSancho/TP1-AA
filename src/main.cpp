@@ -30,20 +30,20 @@ using namespace std;
 
 int main()
 {
-     bool terminar = false;
+    //  bool terminar = false;
 
-     while(!terminar)
-     {
-         system("clear");
-         int opcionMenuPrin = 0;
+    //  while(!terminar)
+    //  {
+    //      system("clear");
+    //      int opcionMenuPrin = 0;
 
-         cout<< "\n\nBienvenido! Este programa esta hecho para probar diferentes modelos matematicos como lo son la Cola, la Lista Indexada y el Arbol n-ario.\n"; 
-         cout<<"Elija entre las siguiente opciones digitando uno de los numeros:\n";
-         cout<<"\n1. Cola\n";
-         cout<<"2. Lista Indexada\n";
-         cout<<"3. Arbol n-ario\n";
-         cout<<"\n4. Salir del programa\n";
-         cin>>opcionMenuPrin;
+    //      cout<< "\n\nBienvenido! Este programa esta hecho para probar diferentes modelos matematicos como lo son la Cola, la Lista Indexada y el Arbol n-ario.\n"; 
+    //      cout<<"Elija entre las siguiente opciones digitando uno de los numeros:\n";
+    //      cout<<"\n1. Cola\n";
+    //      cout<<"2. Lista Indexada\n";
+    //      cout<<"3. Arbol n-ario\n";
+    //      cout<<"\n4. Salir del programa\n";
+    //      cin>>opcionMenuPrin;
 
     // actual = arbol->BuscarEtiqueta(1);
     // actual = actual->HijoMasIzquierdo();
@@ -387,7 +387,7 @@ int main()
                 // case 8:
                 // {
                     
-                }
+                //}
                 case 9:
                 {
                     int etiquetaPadre = 0;
