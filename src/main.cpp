@@ -257,7 +257,7 @@ int main()
                 cout<<"9. HijoMásIzquierdo\n";
                 cout<<"10. HermanoDerecho\n";
                 cout<<"11. Etiqueta\n";
-                cout<<"12. Modifica Etiqueta\n";
+                cout<<"12. Modificar Etiqueta\n";
                 cout<<"13. NumNodos (Numero actual de nodos en el árbol)\n";
                 cout<<"\n14. Salir al menu principal\n";
                 cin>>opcionArbol;
@@ -375,15 +375,31 @@ int main()
                 }
                 case 11:
                 {
+                    int etiqueta = 0;
+                    cout<<"\nIngrese la etiqueta del nodo: ";
+                    cin>>etiqueta;
+                    Nodo *nodo = arbolUsuario->BuscarEtiqueta(etiqueta);
+                    cout<<"\nLa etiqueta del nodo es: "<<arbolUsuario->Etiqueta(nodo);
                     break;
                 }
                 case 12:
                 {
+                    int etiqueta = 0;
+                    int etiquetaNueva = 0;
+                    cout<<"\nIngrese la etiqueta del nodo al que desea modificarle la etiqueta: ";
+                    cin>>etiqueta;
+                    cout<<"\nIngrese la nueva etiqueta para el nodo: ";
+                    cin>>etiquetaNueva;
+                    Nodo *nodo = arbolUsuario->BuscarEtiqueta(etiqueta);
+                    arbolUsuario->ModificarEtiqueta(nodo, etiquetaNueva);
+
+                    cout<<"\nLa etiqueta del nodo ahora es: "<<arbolUsuario->Etiqueta(nodo);
                     break;
                 }
                 case 13:
                 {
-                    arbolUsuario->NumNodos();
+                    int numNodos = arbolUsuario->NumNodos();
+                    cout<<"\nEl numero actual de nodos en el arbol es: "<<numNodos;
                     break;
                 }
                 default:
