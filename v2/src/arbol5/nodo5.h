@@ -5,13 +5,30 @@
 
 using namespace std;
 
-class Nodo5  {
+template<typename T> 
+
+class Nodo5{
+
+    friend class arbol5;
+
     private:
+
+    Nodo5* hijoMasIzquierdo = nullptr;
+    Nodo5* hermanoDerecho = nullptr;
+    Nodo5 *actual = nullptr;
+    Nodo5* padre = nullptr;
 
     public:
 
+    Nodo5();
+    Nodo5(Nodo5 *nodo);
+    Nodo5(Nodo5 *elemento)
+    ~Nodo5();
+    Nodo5 *get();
+    Nodo5 modificarContenido(Nodo5 elemento);
+
 };
 
-typedef Nodo5 Nodo;
+//typedef Nodo5 Nodo; //!!
 
 #endif

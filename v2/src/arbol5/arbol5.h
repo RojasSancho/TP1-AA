@@ -5,6 +5,7 @@
 
 #include "nodo5.h"
 
+template <class Arbol>
 class Arbol5 {
     public:
 
@@ -14,23 +15,23 @@ class Arbol5 {
 
     void PonerRaíz(int etiqueta);
 
-    void AgregarHijo(Nodo5 nodo, int etiqueta);
+    void AgregarHijo(Nodo nodo, int etiqueta);
 
-    void AgregarHijoMásDerecho(Nodo5 nodo, int etiqueta);
+    void AgregarHijoMásDerecho(Nodo nodo, int etiqueta);
 
-    void BorrarHoja(Nodo5 nodo);
+    void BorrarHoja(Nodo nodo);
 
     Nodo5 Raíz();
 
-    Nodo5 Padre(Nodo5 nodo);
+    Nodo5 Padre(Nodo nodo);
 
-    Nodo5 HijoMásIzquierdo(Nodo5 nodo);
+    Nodo5 HijoMásIzquierdo(Nodo nodo);
 
-    Nodo5 HermanoDerecho(Nodo5 nodo);
+    Nodo5 HermanoDerecho(Nodo nodo);
 
-    int Etiqueta(Nodo5 nodo);
+    int Etiqueta(Nodo nodo);
 
-    void ModificaEtiqueta(Nodo5 nodo, int etiqueta);
+    void ModificaEtiqueta(Nodo nodo, int etiqueta);
 
     int NumNodos();
 };

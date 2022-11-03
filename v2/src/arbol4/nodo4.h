@@ -6,6 +6,9 @@
 using namespace std;
 
 class Nodo4  {
+    private:
+
+    public:
 
 };
 
