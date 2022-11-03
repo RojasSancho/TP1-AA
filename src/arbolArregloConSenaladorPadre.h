@@ -28,9 +28,6 @@ class arbolArregloConSenaladorPadre  : public arbol
     virtual Nodo1 *HijoMasIzquierdo(Nodo1 *nodo);
     virtual Nodo1 *HermanoDerecho(Nodo1 *nodo);
 
-    Nodo1 HijoMasIzquierdo(Nodo1 *nodo);
-    Nodo1 HermanoDerecho(Nodo1 *nodo);
-
     void ModificarEtiqueta(Nodo1 *nodo, int etiqueta);
     int NumNodos();
 
