@@ -30,68 +30,6 @@ using namespace std;
 
 int main()
 {
-<<<<<<< Updated upstream
-=======
-    
-
-    //arbolHMIHDUltimoApuntandoPadre *arbol = new arbolHMIHDUltimoApuntandoPadre();
-    //Nodo5 *actual = new Nodo5();
-
-    //arbolHMIHDconPunteros *arbol = new arbolHMIHDconPunteros();
-    //Nodo4 *actual = new Nodo4();
-
-    //arbolHMIHDContador *arbol = new arbolHMIHDContador();
-    //Nodo *actual = new Nodo();
-
-    arbolArregloConSenaladorPadre *arbol = new arbolArregloConSenaladorPadre();
-    Nodo1 *actual = new Nodo1();
-
-    //arbol->Iniciar();
-    arbol->Iniciar(7);
-    arbol->PonerRaiz(1);
-    actual = arbol->Raiz();
-    //cout<<arbol->Etiqueta(actual);
-    arbol->AgregarHijo(actual, 4);
-    // //cout<<arbol->Etiqueta(arbol->HijoMasIzquierdo(arbol->Raiz()));
-    arbol->AgregarHijo(actual, 2);
-    // //actual = actual->HijoMasIzquierdo();
-    actual = arbol->HijoMasIzquierdo(actual);
-    arbol->AgregarHijo(actual, 3);
-    // //actual = actual->HijoMasIzquierdo();
-    actual = arbol->HijoMasIzquierdo(actual); //para senalador al padre
-    // arbol->AgregarHijo(actual, 2);
-
-
-    //actual = arbol->Padre(actual);
-
-    //SIRVE
-    //arbol->EtiquetaRepetida(2, arbol); 
-    //arbol->ListarEtiquetasPorNivel(arbol);
-    //arbol->ListarEtiquetasEnUnNivel(2, arbol);
-    //arbol->ListarEtiquetasPreorden(arbol);
-    //cout<<arbol->NumNivelesPreorden(arbol)<<" ";
-    //cout<<arbol->numNiveles(arbol);
-    //arbol->
-    //arbol->
-    //arbol->
-    //cout<<arbol->EtiquetaRepetida(2, arbol);
-    //arbol->ListarEtiquetasPorNivel(arbol);
-    // cout<<" ";
-    //arbol->ListarEtiquetasEnUnNivel(2, arbol);
-    // cout<<" ";
-    //arbol->ListarEtiquetasPreorden(arbol);
-    // cout<<" ";
-    //cout<<arbol->NumNivelesPreorden(arbol)<<" ";
-    //cout<<arbol->numNiveles(arbol);
-
-    // int niveles = arbol->NumNivelesPreorden(arbol);
-    // cout<<niveles;
-
-    // NodoArbol *nodo = arbol->BuscarEtiqueta(4, arbol);
-    //cout<<"\n"<<arbol->Etiqueta(nodo);
-
-    /*
->>>>>>> Stashed changes
     bool terminar = false;
 
     while(!terminar)
@@ -319,7 +257,7 @@ int main()
                 cout<<"9. HijoMásIzquierdo\n";
                 cout<<"10. HermanoDerecho\n";
                 cout<<"11. Etiqueta\n";
-                cout<<"12. Modifica Etiqueta\n";
+                cout<<"12. Modificar Etiqueta\n";
                 cout<<"13. NumNodos (Numero actual de nodos en el árbol)\n";
                 cout<<"\n14. Salir al menu principal\n";
                 cin>>opcionArbol;
@@ -437,15 +375,31 @@ int main()
                 }
                 case 11:
                 {
+                    int etiqueta = 0;
+                    cout<<"\nIngrese la etiqueta del nodo: ";
+                    cin>>etiqueta;
+                    Nodo *nodo = arbolUsuario->BuscarEtiqueta(etiqueta);
+                    cout<<"\nLa etiqueta del nodo es: "<<arbolUsuario->Etiqueta(nodo);
                     break;
                 }
                 case 12:
                 {
+                    int etiqueta = 0;
+                    int etiquetaNueva = 0;
+                    cout<<"\nIngrese la etiqueta del nodo al que desea modificarle la etiqueta: ";
+                    cin>>etiqueta;
+                    cout<<"\nIngrese la nueva etiqueta para el nodo: ";
+                    cin>>etiquetaNueva;
+                    Nodo *nodo = arbolUsuario->BuscarEtiqueta(etiqueta);
+                    arbolUsuario->ModificarEtiqueta(nodo, etiquetaNueva);
+
+                    cout<<"\nLa etiqueta del nodo ahora es: "<<arbolUsuario->Etiqueta(nodo);
                     break;
                 }
                 case 13:
                 {
-                    arbolUsuario->NumNodos();
+                    int numNodos = arbolUsuario->NumNodos();
+                    cout<<"\nEl numero actual de nodos en el arbol es: "<<numNodos;
                     break;
                 }
                 default:
