@@ -3,6 +3,8 @@
 
 #include <iostream>
 
+#include "nodo2.h"
+
 class Arbol2 {
 
     public:
@@ -13,23 +15,23 @@ class Arbol2 {
 
     void PonerRaíz(int etiqueta);
 
-    void AgregarHijo(Nodo nodo, int etiqueta);
+    void AgregarHijo(Nodo2 nodo, int etiqueta);
 
-    void AgregarHijoMásDerecho(Nodo nodo, int etiqueta);
+    void AgregarHijoMásDerecho(Nodo2 nodo, int etiqueta);
 
-    void BorrarHoja(Nodo nodo);
+    void BorrarHoja(Nodo2 nodo);
 
-    Nodo Raíz();
+    Nodo2 Raíz();
 
-    Nodo Padre(Nodo nodo);
+    Nodo2 Padre(Nodo2 nodo);
 
-    Nodo HijoMásIzquierdo(Nodo nodo);
+    Nodo2 HijoMásIzquierdo(Nodo2 nodo);
 
-    Nodo HermanoDerecho(Nodo nodo);
+    Nodo2 HermanoDerecho(Nodo2 nodo);
 
-    int Etiqueta(Nodo nodo);
+    int Etiqueta(Nodo2 nodo);
 
-    void ModificaEtiqueta(Nodo nodo, int etiqueta);
+    void ModificaEtiqueta(Nodo2 nodo, int etiqueta);
 
     int NumNodos();
 };

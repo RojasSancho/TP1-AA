@@ -3,33 +3,35 @@
 
 #include <iostream>
 
-class Arbol2 {
+#include "nodo1.h"
+
+class Arbol1 {
 
     public:
 
-    Arbol2();
+    Arbol1();
 
-    ~Arbol2();
+    ~Arbol1();
 
     void PonerRaíz(int etiqueta);
 
-    void AgregarHijo(Nodo nodo, int etiqueta);
+    void AgregarHijo(Nodo1 nodo, int etiqueta);
 
-    void AgregarHijoMásDerecho(Nodo nodo, int etiqueta);
+    void AgregarHijoMásDerecho(Nodo1 nodo, int etiqueta);
 
-    void BorrarHoja(Nodo nodo);
+    void BorrarHoja(Nodo1 nodo);
 
-    Nodo Raíz();
+    Nodo1 Raíz();
 
-    Nodo Padre(Nodo nodo);
+    Nodo1 Padre(Nodo1 nodo);
 
-    Nodo HijoMásIzquierdo(Nodo nodo);
+    Nodo1 HijoMásIzquierdo(Nodo1 nodo);
 
-    Nodo HermanoDerecho(Nodo nodo);
+    Nodo1 HermanoDerecho(Nodo1 nodo);
 
-    int Etiqueta(Nodo nodo);
+    int Etiqueta(Nodo1 nodo);
 
-    void ModificaEtiqueta(Nodo nodo, int etiqueta);
+    void ModificaEtiqueta(Nodo1 nodo, int etiqueta);
 
     int NumNodos();
 };
