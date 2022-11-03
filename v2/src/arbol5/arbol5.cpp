@@ -14,39 +14,39 @@ void Arbol5::Arbol5PonerRaíz(int etiqueta){
 
 }
 
-void Arbol5::AgregarHijo(Nodo nodo, int etiqueta){
+void Arbol5::AgregarHijo(Nodo5 nodo, int etiqueta){
 
 }
 
-void Arbol5::AgregarHijoMásDerecho(Nodo nodo, int etiqueta){
+void Arbol5::AgregarHijoMásDerecho(Nodo5 nodo, int etiqueta){
 
 }
 
-void Arbol5::BorrarHoja(Nodo nodo){
+void Arbol5::BorrarHoja(Nodo5 nodo){
 
 }
 
-Nodo Arbol5::Raíz(){
+Nodo5 Arbol5::Raíz(){
 
 }
 
-Nodo Arbol5::Padre(Nodo nodo){
+Nodo5 Arbol5::Padre(Nodo5 nodo){
 
 }
 
-Nodo Arbol5::HijoMásIzquierdo(Nodo nodo){
+Nodo5 Arbol5::HijoMásIzquierdo(Nodo5 nodo){
 
 }
 
-Nodo Arbol5::HermanoDerecho(Nodo nodo){
+Nodo5 Arbol5::HermanoDerecho(Nodo5 nodo){
 
 }
 
-int Arbol5::Etiqueta(Nodo nodo){
+int Arbol5::Etiqueta(Nodo5 nodo){
 
 }
 
-void Arbol5::ModificaEtiqueta(Nodo nodo, int etiqueta){
+void Arbol5::ModificaEtiqueta(Nodo5 nodo, int etiqueta){
 
 }
 

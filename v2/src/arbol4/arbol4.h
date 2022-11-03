@@ -12,23 +12,23 @@ class Arbol4 {
 
     void PonerRaíz(int etiqueta);
 
-    void AgregarHijo(Nodo nodo, int etiqueta);
+    void AgregarHijo(Nodo4 nodo, int etiqueta);
 
-    void AgregarHijoMásDerecho(Nodo nodo, int etiqueta);
+    void AgregarHijoMásDerecho(Nodo4 nodo, int etiqueta);
 
-    void BorrarHoja(Nodo nodo);
+    void BorrarHoja(Nodo4 nodo);
 
-    Nodo Raíz();
+    Nodo4 Raíz();
 
-    Nodo Padre(Nodo nodo);
+    Nodo4 Padre(Nodo4 nodo);
 
-    Nodo HijoMásIzquierdo(Nodo nodo);
+    Nodo4 HijoMásIzquierdo(Nodo4 Nodo4);
 
-    Nodo HermanoDerecho(Nodo nodo);
+    Nodo4 HermanoDerecho(Nodo4 nodo);
 
-    int Etiqueta(Nodo nodo);
+    int Etiqueta(Nodo4 nodo);
 
-    void ModificaEtiqueta(Nodo nodo, int etiqueta);
+    void ModificaEtiqueta(Nodo4 nodo, int etiqueta);
 
     int NumNodos();
 }
