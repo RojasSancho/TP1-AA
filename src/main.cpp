@@ -32,9 +32,14 @@ int main()
 {
     
 
-    arbolHMIHDUltimoApuntandoPadre *arbol = new arbolHMIHDUltimoApuntandoPadre();
-    Nodo5 *actual = new Nodo5();
-    
+    //arbolHMIHDUltimoApuntandoPadre *arbol = new arbolHMIHDUltimoApuntandoPadre();
+    //Nodo5 *actual = new Nodo5();
+
+    //arbolHMIHDconPunteros *arbol = new arbolHMIHDconPunteros();
+    //Nodo4 *actual = new Nodo4();
+
+    arbolHMIHDContador *arbol = new arbolHMIHDContador();
+    Nodo *actual = new Nodo();
 
     arbol->Iniciar();
     arbol->PonerRaiz(1);
@@ -48,9 +53,8 @@ int main()
     actual = actual->HijoMasIzquierdo();
     arbol->AgregarHijo(actual, 2);
 
-    arbol->ListarEtiquetasPreorden(arbol);
 
-    actual = arbol->Padre(actual);
+    //actual = arbol->Padre(actual);
 
     //SIRVE
     //arbol->EtiquetaRepetida(2, arbol); 
@@ -62,6 +66,15 @@ int main()
     //arbol->
     //arbol->
     //arbol->
+    cout<<arbol->EtiquetaRepetida(2, arbol);
+    arbol->ListarEtiquetasPorNivel(arbol);
+    cout<<" ";
+    arbol->ListarEtiquetasEnUnNivel(2, arbol);
+    cout<<" ";
+    arbol->ListarEtiquetasPreorden(arbol);
+    cout<<" ";
+    cout<<arbol->NumNivelesPreorden(arbol)<<" ";
+    cout<<arbol->numNiveles(arbol);
 
     // int niveles = arbol->NumNivelesPreorden(arbol);
     // cout<<niveles;
