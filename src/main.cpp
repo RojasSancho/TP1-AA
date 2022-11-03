@@ -389,71 +389,177 @@ int main()
     //             // case 8:
     //             // {
                     
-    //             // }
-    //             case 9:
-    //             {
-    //                 int etiquetaPadre = 0;
-    //                 cout<<"\nIngrese la etiqueta del nodo del que desea saber su hijo mas izquierdo: ";
-    //                 cin>>etiquetaPadre;
+                // }
+                case 9:
+                {
+                    int etiquetaPadre = 0;
+                    cout<<"\nIngrese la etiqueta del nodo del que desea saber su hijo mas izquierdo: ";
+                    cin>>etiquetaPadre;
 
-    //                 Nodo *nodoPadre = arbolUsuario->BuscarEtiqueta(etiquetaPadre);
-    //                 Nodo *HMI = arbolUsuario->HijoMasIzquierdo(nodoPadre);
-    //                 cout<<"\nLa etiqueta del hijo mas izquierdo es: "<<arbolUsuario->Etiqueta(HMI);
-    //                 break;
-    //             }
-    //             case 10:
-    //             {
-    //                 int etiqueta = 0;
-    //                 cout<<"\nIngrese la etiqueta del nodo del que desea saber su hermano derecho: ";
-    //                 cin>>etiqueta;
+                    Nodo *nodoPadre = arbolUsuario->BuscarEtiqueta(etiquetaPadre);
+                    Nodo *HMI = arbolUsuario->HijoMasIzquierdo(nodoPadre);
+                    cout<<"\nLa etiqueta del hijo mas izquierdo es: "<<arbolUsuario->Etiqueta(HMI);
+                    break;
+                }
+                case 10:
+                {
+                    int etiqueta = 0;
+                    cout<<"\nIngrese la etiqueta del nodo del que desea saber su hermano derecho: ";
+                    cin>>etiqueta;
 
-    //                 Nodo *nodo = arbolUsuario->BuscarEtiqueta(etiqueta);
-    //                 Nodo *HD = arbolUsuario->HermanoDerecho(nodo);
-    //                 cout<<"\nLa etiqueta del hermano derecho es: "<<arbolUsuario->Etiqueta(HD);
-    //                 break;
-    //             }
-    //             case 11:
-    //             {
-    //                 int etiqueta = 0;
-    //                 cout<<"\nIngrese la etiqueta del nodo: ";
-    //                 cin>>etiqueta;
-    //                 Nodo *nodo = arbolUsuario->BuscarEtiqueta(etiqueta);
-    //                 cout<<"\nLa etiqueta del nodo es: "<<arbolUsuario->Etiqueta(nodo);
-    //                 break;
-    //             }
-    //             case 12:
-    //             {
-    //                 int etiqueta = 0;
-    //                 int etiquetaNueva = 0;
-    //                 cout<<"\nIngrese la etiqueta del nodo al que desea modificarle la etiqueta: ";
-    //                 cin>>etiqueta;
-    //                 cout<<"\nIngrese la nueva etiqueta para el nodo: ";
-    //                 cin>>etiquetaNueva;
-    //                 Nodo *nodo = arbolUsuario->BuscarEtiqueta(etiqueta);
-    //                 arbolUsuario->ModificarEtiqueta(nodo, etiquetaNueva);
+                    Nodo *nodo = arbolUsuario->BuscarEtiqueta(etiqueta);
+                    Nodo *HD = arbolUsuario->HermanoDerecho(nodo);
+                    cout<<"\nLa etiqueta del hermano derecho es: "<<arbolUsuario->Etiqueta(HD);
+                    break;
+                }
+                case 11:
+                {
+                    int etiqueta = 0;
+                    cout<<"\nIngrese la etiqueta del nodo: ";
+                    cin>>etiqueta;
+                    Nodo *nodo = arbolUsuario->BuscarEtiqueta(etiqueta);
+                    cout<<"\nLa etiqueta del nodo es: "<<arbolUsuario->Etiqueta(nodo);
+                    break;
+                }
+                case 12:
+                {
+                    int etiqueta = 0;
+                    int etiquetaNueva = 0;
+                    cout<<"\nIngrese la etiqueta del nodo al que desea modificarle la etiqueta: ";
+                    cin>>etiqueta;
+                    cout<<"\nIngrese la nueva etiqueta para el nodo: ";
+                    cin>>etiquetaNueva;
+                    Nodo *nodo = arbolUsuario->BuscarEtiqueta(etiqueta);
+                    arbolUsuario->ModificarEtiqueta(nodo, etiquetaNueva);
 
-    //                 cout<<"\nLa etiqueta del nodo ahora es: "<<arbolUsuario->Etiqueta(nodo);
-    //                 break;
-    //             }
-    //             case 13:
-    //             {
-    //                 int numNodos = arbolUsuario->NumNodos();
-    //                 cout<<"\nEl numero actual de nodos en el arbol es: "<<numNodos;
-    //                 break;
-    //             }
-    //             default:
-    //                 break;
-    //             }
+                    cout<<"\nLa etiqueta del nodo ahora es: "<<arbolUsuario->Etiqueta(nodo);
+                    break;
+                }
+                case 13:
+                {
+                    int numNodos = arbolUsuario->NumNodos();
+                    cout<<"\nEl numero actual de nodos en el arbol es: "<<numNodos;
+                    break;
+                }
+                case 15:
+                {
+                    bool volverAOperadores = false;
+                    while(!volverAOperadores)
+                    {
+                        system("clear");
+                        int opcionAlgoritmos = 0;
+                        cout<<"\n\nALGORITMOS ARBOL N-ARIO\nDigite alguna de las opciones para utilizar el algoritmo o 12 para volver a los operadores basicos del arbol:\n\n";
+                        cout<<"1. Averiguar si arbol tiene etiquetas repetidas\n";
+                        cout<<"2. Averiguar cuántos niveles tiene el árbol (Recorrido por niveles)\n";
+                        cout<<"3. Listar las etiquetas del i-ésimo nivel\n";
+                        cout<<"4. Listar las etiquetas del árbol por niveles\n";
+                        cout<<"5. Listar las etiquetas del arbol (preorden)\n";
+                        cout<<"6. Averiguar numero de niveles de arbol en preorden (preorden)\n";
+                        cout<<"7. Buscar una etiqueta e (para efectos del programa de prueba, dice si esta o no)\n";
+                        cout<<"8. \n";
+                        cout<<"\n12. Volver a operadores basicos de arbol\n";
+                        cin>>opcionAlgoritmos;
 
-    //         }
-    //         break; 
-    //     }
+                        if(opcionAlgoritmos == 12)
+                        {
+                            volverAOperadores = true;
+                        }
+                        
+                        switch (opcionAlgoritmos)
+                        {
+                        case 1:
+                        {
+                            int etiqueta = 0;
+                            cout<<"Ingrese la etiqueta la cual desea saber si esta repetida: ";
+                            cin>>etiqueta;
 
-    //     default:
-    //         break;
-    //     }
+                            bool repetido = arbolUsuario->EtiquetaRepetida(etiqueta, arbolUsuario);
+                            if(repetido == true) 
+                            {
+                                cout<<"La etiqueta si esta repetida!"; 
+                            } else {
+                                cout<<"La etiqueta no esta repetida!"; 
+                            }
+                            break;
+                        }
 
-    // }  
+                        case 2:
+                        {
+                            int numNiveles = arbolUsuario->numNiveles(arbolUsuario);
+                            cout<<"El numero de niveles del arbol es: "<<numNiveles;
+                            break;
+                        }
+                            
+                        case 3:
+                        {
+                            int nivel = 0;
+                            cout<<"Ingrese el numero del nivel que desea listar: ";
+                            cin>>nivel;
+                            cout<<"Nivel: ";
+                            arbolUsuario->ListarEtiquetasEnUnNivel(nivel, arbolUsuario);
+                            break;
+                        }
+
+                        case 4:
+                        {
+                            cout<<"Etiquetas del arbol por niveles: ";
+                            arbolUsuario->ListarEtiquetasPorNivel(arbolUsuario);
+                            break;
+                        }
+
+                        case 5:
+                        {
+                            cout<<"Etiquetas del arbol en preorden: ";
+                            arbolUsuario->ListarEtiquetasPreorden(arbolUsuario);
+                            break;
+                        }
+
+                        case 6:
+                        {
+                            int numNivelesPreorden = arbolUsuario->NumNivelesPreorden(arbolUsuario);
+                            cout<<"El numero de niveles del arbol es (preorden): "<<numNivelesPreorden;
+                            break;
+                        }
+
+                        case 7:
+                        {
+                            int etiquetaABuscar = 0;
+                            cout<<"Ingrese la etiqueta que desea buscar en el arbol: ";
+                            cin>>etiquetaABuscar;
+                            Nodo *nodo = arbolUsuario->BuscarEtiqueta(etiquetaABuscar);
+                            //Nodo1 *nodo = arbolUsuario->BuscarEtiqueta(etiquetaABuscar);
+                            //Nodo4 *nodo = arbolUsuario->BuscarEtiqueta(etiquetaABuscar);
+                            //Nodo5 *nodo = arbolUsuario->BuscarEtiqueta(etiquetaABuscar);
+
+                            if (nodo == nullptr) 
+                            {
+                                cout<<"No existe ningun nodo en el arbol con esta etiqueta!";
+                            } else {
+                                cout<<"Si existe un nodo al menos con esta etiqueta!";
+                            }
+                            break;
+                        }
+
+                        default:
+                            break;
+                        }
+                    }
+                    break;
+                }
+
+                default:
+                    break;
+                }
+
+            }
+            break; 
+        }
+
+        default:
+            break;
+        }
+
+    }  
     
     
 }

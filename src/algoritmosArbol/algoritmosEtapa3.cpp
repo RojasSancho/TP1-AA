@@ -84,7 +84,7 @@ void arbol::ListarEtiquetasEnUnNivel(int nivel, arbol *arbol){
 
 void arbol::ListarEtiquetasEnUnNivelRec(int nivel, NodoArbol *nodo, arbol *arbol){
     if (nivel == 1){
-        cout<<nodo->Etiqueta();
+        cout<<nodo->Etiqueta() <<" - ";
     }
     else {
         NodoArbol *hijo = HijoMasIzquierdo(nodo);
@@ -102,7 +102,7 @@ void arbol::ListarEtiquetasPorNivel(arbol *arbol){
     while (lista.size()>0){
         NodoArbol *nodo = lista.front();
         lista.pop_front();
-        cout<<arbol->Etiqueta(nodo);
+        cout<<arbol->Etiqueta(nodo)<<" - ";
         NodoArbol *nodoHijo = arbol->HijoMasIzquierdo(nodo);
         while (nodoHijo != nullptr){
           lista.push_back(nodoHijo);
@@ -119,7 +119,7 @@ void arbol::ListarEtiquetasPorNivel(arbol *arbol){
 //Algoritmo Listar nodos en preorden
 void arbol::ListarEtiquetasRecursividad(NodoArbol *nodo, arbol *arbol)
 {
-    cout<<arbol->Etiqueta(nodo)<<"\n";
+    cout<<arbol->Etiqueta(nodo)<<" - ";
     NodoArbol *siguienteNodo = arbol->HijoMasIzquierdo(nodo);
     while (siguienteNodo != nullptr) 
     {
