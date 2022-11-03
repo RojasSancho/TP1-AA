@@ -15,7 +15,8 @@ class arbolArregloConSenaladorPadre  : public arbol
     Nodo1 *nodosArreglo;
 
     int n;
-
+    
+    void BuscarEtiquetaRecursividad(int etiqueta, Nodo1 *nodo);
     public:
 
     void Iniciar(int tamano);
@@ -24,8 +25,8 @@ class arbolArregloConSenaladorPadre  : public arbol
 
     virtual void BorrarHoja();
 
-    virtual Nodo1 HijoMasIzquierdo(Nodo1 *nodo);
-    virtual Nodo1 HermanoDerecho(Nodo1 *nodo);
+    virtual Nodo1 *HijoMasIzquierdo(Nodo1 *nodo);
+    virtual Nodo1 *HermanoDerecho(Nodo1 *nodo);
 
     virtual void ModificarEtiqueta(Nodo1 *nodo, int etiqueta);
     virtual int NumNodos();
@@ -34,6 +35,7 @@ class arbolArregloConSenaladorPadre  : public arbol
     virtual Nodo1 AgregarHijoMasDerecho(Nodo1 *nodo, int etiqueta);
     virtual Nodo1 Padre(Nodo1 *nodo);
     
+    Nodo1 *BuscarEtiqueta (int etiqueta);
 };
 
 #endif

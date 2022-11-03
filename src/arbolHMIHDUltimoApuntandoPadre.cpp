@@ -106,4 +106,27 @@ Nodo5* arbolHMIHDUltimoApuntandoPadre::AgregarHijoMasDerecho(Nodo5* nodo, int et
     }
 }
 
+Nodo5 *nodoEtiqueta2 = nullptr;
+Nodo5 *arbolHMIHDUltimoApuntandoPadre::BuscarEtiqueta (int etiqueta) 
+{
+    nodoEtiqueta2 = nullptr;
+    BuscarEtiquetaRecursividad(etiqueta, this->Raiz());
+    return nodoEtiqueta2;
+}
 
+
+void arbolHMIHDUltimoApuntandoPadre::BuscarEtiquetaRecursividad(int etiqueta, Nodo5 *nodo)
+{
+    if (this->Etiqueta(nodo) == etiqueta) 
+    {
+        nodoEtiqueta2 = nodo;
+    } else
+    {
+        Nodo5 *nodoTemp = this->HijoMasIzquierdo(nodo);
+        while ((nodoTemp) != nullptr) 
+        {
+            BuscarEtiquetaRecursividad(etiqueta, nodoTemp);
+            nodoTemp = this->HermanoDerecho(nodoTemp);
+        }
+    }
+}

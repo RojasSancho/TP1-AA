@@ -119,3 +119,29 @@ Nodo *arbolHMIHDContador::AgregarHijoMasDerecho(Nodo *nodo, int etiqueta)
 //     }
 //     return padre2;
 // }
+
+Nodo *nodoEtiqueta = nullptr;
+Nodo *arbolHMIHDContador::BuscarEtiqueta (int etiqueta) 
+{
+    nodoEtiqueta = nullptr;
+    BuscarEtiquetaRecursividad(etiqueta, this->Raiz());
+    return nodoEtiqueta;
+}
+
+
+void arbolHMIHDContador::BuscarEtiquetaRecursividad(int etiqueta, Nodo *nodo)
+{
+    if (this->Etiqueta(nodo) == etiqueta) 
+    {
+        nodoEtiqueta = nodo;
+    } else
+    {
+        Nodo *nodoTemp = this->HijoMasIzquierdo(nodo);
+        while ((nodoTemp) != nullptr) 
+        {
+            BuscarEtiquetaRecursividad(etiqueta, nodoTemp);
+            nodoTemp = this->HermanoDerecho(nodoTemp);
+        }
+    }
+}
+

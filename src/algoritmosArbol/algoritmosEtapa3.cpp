@@ -1,14 +1,10 @@
 #include <iostream>
 #include <list>
 
-//#include "../arbolHMIHDconPunteros.h"
-#include "../nodo5.h"
-#include "../nodo4.h"
+
 #include "../nodoArbol.h"
-//#include "../arbolHMIHDconPunteros.h"
-#include "../arbolHMIHDUltimoApuntandoPadre.h"
 #include "../arbol.h"
-//#include "../arbolHMIHDContador.h"
+
 
 //Algoritmo para averiguar cuál es el hermano izquierdo de un nodo n
 NodoArbol *arbol::HermanoIzq(NodoArbol *nodo, arbol *arbol){
@@ -122,7 +118,7 @@ void arbol::ListarEtiquetasPorNivel(arbol *arbol){
 //Algoritmo Listar nodos en preorden
 void arbol::ListarEtiquetasRecursividad(NodoArbol *nodo, arbol *arbol)
 {
-    cout<<arbol->Etiqueta(nodo);
+    cout<<arbol->Etiqueta(nodo)<<"\n";
     NodoArbol *siguienteNodo = arbol->HijoMasIzquierdo(nodo);
     while (siguienteNodo != nullptr) 
     {
@@ -134,7 +130,6 @@ void arbol::ListarEtiquetasRecursividad(NodoArbol *nodo, arbol *arbol)
 void arbol::ListarEtiquetasPreorden(arbol *arbol)
 {
     NodoArbol *raiz = arbol->Raiz();
-    cout<<arbol->Etiqueta(arbol->Raiz());
     ListarEtiquetasRecursividad(raiz, arbol);
 
 }

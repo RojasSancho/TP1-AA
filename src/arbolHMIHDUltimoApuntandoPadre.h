@@ -11,7 +11,7 @@ class arbolHMIHDUltimoApuntandoPadre : public arbol
     Nodo5 *raiz; 
 
     int NumNodosRecursivo(Nodo5 *nodo);
-    
+    void BuscarEtiquetaRecursividad(int etiqueta, Nodo5 *nodo);
     public: //falta borrarhoja para cpp
     
     void Iniciar();
@@ -27,6 +27,8 @@ class arbolHMIHDUltimoApuntandoPadre : public arbol
     Nodo5 *AgregarHijo(Nodo5 *nodo, int etiqueta);
     Nodo5 *AgregarHijoMasDerecho(Nodo5 *nodo, int etiqueta);
     Nodo5 *Padre(Nodo5 *nodo);
+
+    Nodo5 *BuscarEtiqueta (int etiqueta);
 };
 
 #endif

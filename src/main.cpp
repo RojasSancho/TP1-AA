@@ -30,35 +30,6 @@ using namespace std;
 
 int main()
 {
-    
-
-    arbolHMIHDUltimoApuntandoPadre *arbol = new arbolHMIHDUltimoApuntandoPadre();
-    Nodo5 *actual = new Nodo5();
-    
-
-    arbol->Iniciar();
-    arbol->PonerRaiz(1);
-    actual = arbol->Raiz();
-    //cout<<arbol->Etiqueta(arbol->Raiz());
-    arbol->AgregarHijo(actual, 4);
-    //cout<<arbol->Etiqueta(arbol->HijoMasIzquierdo(arbol->Raiz()));
-    arbol->AgregarHijo(actual, 2);
-    actual = actual->HijoMasIzquierdo();
-    arbol->AgregarHijo(actual, 3);
-    actual = actual->HijoMasIzquierdo();
-    arbol->AgregarHijo(actual, 2);
-
-    arbol->ListarEtiquetasEnUnNivel(3, arbol);
-
-    //arbol->ListarEtiquetasPorNivel(arbol);
-
-    // int niveles = arbol->NumNivelesPreorden(arbol);
-    // cout<<niveles;
-
-    // NodoArbol *nodo = arbol->BuscarEtiqueta(4, arbol);
-    //cout<<"\n"<<arbol->Etiqueta(nodo);
-
-    /*
     bool terminar = false;
 
     while(!terminar)
@@ -120,6 +91,7 @@ int main()
                 case 2:
                 {    
                     delete colaUsuario;
+                    cout<<"\nCola destruida!";
                     break;
                 }
                 case 3:
@@ -158,7 +130,7 @@ int main()
             {
                 system("clear");
                 int opcionLista = 0;
-                cout<<"\n\nLISTA INDEXADA\nDigite alguna de las opciones para utilizar el operador basico u 8 para volver al menu principal:\n\n";
+                cout<<"\n\nLISTA INDEXADA\nDigite alguna de las opciones para utilizar el operador basico o 9 para volver al menu principal:\n\n";
                 cout<<"1. Iniciar\n";
                 cout<<"2. Destruir\n";
                 cout<<"3. AgregarAlFinal\n";
@@ -188,6 +160,7 @@ int main()
                 {    
                     listaUsuario->~ListaIndexada();
                     delete listaUsuario;
+                    cout<<"\nLista destruida!";
                     break;
                 }
                 case 3:
@@ -262,19 +235,17 @@ int main()
         case 3: //Modelo Arbol n-ario
         { 
 
-            bool salirAMenuPrin2 = false;
-            //arbolArregloConSena  ladorPadre *arbolUsuario = new arbolArregloConSenaladorPadre();
+            bool salirAMenuPrin = false;
+            //arbolArregloConSenaladorPadre *arbolUsuario = new arbolArregloConSenaladorPadre();
             arbolHMIHDContador *arbolUsuario = new arbolHMIHDContador();
             //arbolHMIHDconPunteros *arbolUsuario = new arbolHMIHDconPunteros();
             //arbolHMIHDUltimoApuntandoPadre *arbolUsuario = new arbolHMIHDUltimoApuntandoPadre();
-            while(!salirAMenuPrin2)
+            while(!salirAMenuPrin)
             {
                 system("clear");
                 int opcionArbol = 0;
 
-                system("clear");
-                int opcionLista = 0;
-                cout<<"\n\nLISTA INDEXADA\nDigite alguna de las opciones para utilizar el operador basico u 8 para volver al menu principal:\n\n";
+                cout<<"\n\nARBOL N-ARIO\nDigite alguna de las opciones para utilizar el operador basico o 14 para volver al menu principal:\n\n";
                 cout<<"1. Iniciar\n";
                 cout<<"2. Destruir\n";
                 cout<<"3. PonerRaiz\n";
@@ -284,16 +255,17 @@ int main()
                 cout<<"7. Raiz\n";
                 //cout<<"8. Padre\n";
                 cout<<"9. HijoMásIzquierdo\n";
-                cout<<"10. HeramnoDerecho\n";
-                cout<<"11. Raiz\n";
+                cout<<"10. HermanoDerecho\n";
+                cout<<"11. Etiqueta\n";
                 cout<<"12. Modifica Etiqueta\n";
                 cout<<"13. NumNodos (Numero actual de nodos en el árbol)\n";
                 cout<<"\n14. Salir al menu principal\n";
-                cin>>opcionLista;
+                cin>>opcionArbol;
 
                 if(opcionArbol == 14)
                 {
-                    salirAMenuPrin2 = true;
+                    salirAMenuPrin = true;
+                    delete arbolUsuario;
                 }
 
                 switch (opcionArbol)
@@ -309,26 +281,57 @@ int main()
                 }
                 case 2:
                 {    
+                    delete arbolUsuario;
+                    cout<<"\nArbol destruido!";
                     break;
                 }
                 case 3:
                 {
-                    int elemento = 0;
-                    cout<<"\nIngrese el elemento entero a insertar: ";
-                    cin>>elemento;
-                    arbolUsuario->PonerRaiz(elemento);
+                    int etiqueta = 0;
+                    cout<<"\nIngrese la etiqueta (entero) a insertar: ";
+                    cin>>etiqueta;
+                    arbolUsuario->PonerRaiz(etiqueta);
+                    cout<<"\nRaiz puesta con la etiqueta indicada!";
                     break;
                 }
                 case 4:
                 {
-                    int elemento = 0;
-                    cout<<"\nIngrese hijo: ";
-                    cin>>elemento;
-                    arbolUsuario->AgregarHijo(arbolUsuario->Raiz(), elemento);
+                    int etiquetaPadre = 0;
+                    int etiquetaNuevoHijo = 0;
+                    cout<<"\nIngrese la etiqueta del nodo al que le desea agregar un hijo: ";
+                    cin>>etiquetaPadre;
+
+                    Nodo *nodoPadre = arbolUsuario->BuscarEtiqueta(etiquetaPadre);
+                    //Nodo1 *nodoPadre = arbolUsuario->BuscarEtiqueta(etiquetaPadre, arbolUsuario);
+                    //Nodo4 *nodoPadre = arbolUsuario->BuscarEtiqueta(etiquetaPadre, arbolUsuario);
+                    //Nodo5 *nodoPadre = arbolUsuario->BuscarEtiqueta(etiquetaPadre, arbolUsuario);
+
+                    cout<<"\nIngrese la etiqueta que va a tener el nuevo hijo: ";
+                    cin>>etiquetaNuevoHijo;
+
+
+                    arbolUsuario->AgregarHijo(nodoPadre, etiquetaNuevoHijo);
+                    cout<<"\nHijo agregado al nodo!";
                     break;
                 }
                 case 5:
                 {
+                    int etiquetaPadre = 0;
+                    int etiquetaNuevoHijo = 0;
+                    cout<<"\nIngrese la etiqueta del nodo al que le desea agregar un hijo: ";
+                    cin>>etiquetaPadre;
+
+                    Nodo *nodoPadre = arbolUsuario->BuscarEtiqueta(etiquetaPadre);
+                    //Nodo1 *nodoPadre = arbolUsuario->BuscarEtiqueta(etiquetaPadre, arbolUsuario);
+                    //Nodo4 *nodoPadre = arbolUsuario->BuscarEtiqueta(etiquetaPadre, arbolUsuario);
+                    //Nodo5 *nodoPadre = arbolUsuario->BuscarEtiqueta(etiquetaPadre, arbolUsuario);
+
+                    cout<<"\nIngrese la etiqueta que va a tener el nuevo hijo mas derecho: ";
+                    cin>>etiquetaNuevoHijo;
+
+
+                    arbolUsuario->AgregarHijoMasDerecho(nodoPadre, etiquetaNuevoHijo);
+                    cout<<"\nHijo mas derecho agregado al nodo!";
                     break;
                 }
                 // case 6:
@@ -337,7 +340,11 @@ int main()
                 // }
                 case 7:
                 {
-                    cout<<"\n"<<arbolUsuario->Raiz();
+                    Nodo *raiz = arbolUsuario->Raiz();
+                    //Nodo1 *raiz = arbolUsuario->Raiz();
+                    //Nodo4 *raiz = arbolUsuario->Raiz();
+                    //Nodo5 *raiz = arbolUsuario->Raiz();
+                    cout<<"\nLa etiqueta de la raiz del arbol es: "<<arbolUsuario->Etiqueta(raiz);
                     break;
                 }
                 // case 8:
@@ -346,10 +353,24 @@ int main()
                 // }
                 case 9:
                 {
+                    int etiquetaPadre = 0;
+                    cout<<"\nIngrese la etiqueta del nodo del que desea saber su hijo mas izquierdo: ";
+                    cin>>etiquetaPadre;
+
+                    Nodo *nodoPadre = arbolUsuario->BuscarEtiqueta(etiquetaPadre);
+                    Nodo *HMI = arbolUsuario->HijoMasIzquierdo(nodoPadre);
+                    cout<<"\nLa etiqueta del hijo mas izquierdo es: "<<arbolUsuario->Etiqueta(HMI);
                     break;
                 }
                 case 10:
                 {
+                    int etiqueta = 0;
+                    cout<<"\nIngrese la etiqueta del nodo del que desea saber su hermano derecho: ";
+                    cin>>etiqueta;
+
+                    Nodo *nodo = arbolUsuario->BuscarEtiqueta(etiqueta);
+                    Nodo *HD = arbolUsuario->HermanoDerecho(nodo);
+                    cout<<"\nLa etiqueta del hermano derecho es: "<<arbolUsuario->Etiqueta(HD);
                     break;
                 }
                 case 11:
@@ -378,6 +399,6 @@ int main()
         }
 
     }  
-    */
+    
     
 }
