@@ -30,68 +30,6 @@ using namespace std;
 
 int main()
 {
-<<<<<<< Updated upstream
-=======
-    
-
-    //arbolHMIHDUltimoApuntandoPadre *arbol = new arbolHMIHDUltimoApuntandoPadre();
-    //Nodo5 *actual = new Nodo5();
-
-    //arbolHMIHDconPunteros *arbol = new arbolHMIHDconPunteros();
-    //Nodo4 *actual = new Nodo4();
-
-    //arbolHMIHDContador *arbol = new arbolHMIHDContador();
-    //Nodo *actual = new Nodo();
-
-    arbolArregloConSenaladorPadre *arbol = new arbolArregloConSenaladorPadre();
-    Nodo1 *actual = new Nodo1();
-
-    //arbol->Iniciar();
-    arbol->Iniciar(7);
-    arbol->PonerRaiz(1);
-    actual = arbol->Raiz();
-    //cout<<arbol->Etiqueta(actual);
-    arbol->AgregarHijo(actual, 4);
-    // //cout<<arbol->Etiqueta(arbol->HijoMasIzquierdo(arbol->Raiz()));
-    arbol->AgregarHijo(actual, 2);
-    // //actual = actual->HijoMasIzquierdo();
-    actual = arbol->HijoMasIzquierdo(actual);
-    arbol->AgregarHijo(actual, 3);
-    // //actual = actual->HijoMasIzquierdo();
-    actual = arbol->HijoMasIzquierdo(actual); //para senalador al padre
-    // arbol->AgregarHijo(actual, 2);
-
-
-    //actual = arbol->Padre(actual);
-
-    //SIRVE
-    //arbol->EtiquetaRepetida(2, arbol); 
-    //arbol->ListarEtiquetasPorNivel(arbol);
-    //arbol->ListarEtiquetasEnUnNivel(2, arbol);
-    //arbol->ListarEtiquetasPreorden(arbol);
-    //cout<<arbol->NumNivelesPreorden(arbol)<<" ";
-    //cout<<arbol->numNiveles(arbol);
-    //arbol->
-    //arbol->
-    //arbol->
-    //cout<<arbol->EtiquetaRepetida(2, arbol);
-    //arbol->ListarEtiquetasPorNivel(arbol);
-    // cout<<" ";
-    //arbol->ListarEtiquetasEnUnNivel(2, arbol);
-    // cout<<" ";
-    //arbol->ListarEtiquetasPreorden(arbol);
-    // cout<<" ";
-    //cout<<arbol->NumNivelesPreorden(arbol)<<" ";
-    //cout<<arbol->numNiveles(arbol);
-
-    // int niveles = arbol->NumNivelesPreorden(arbol);
-    // cout<<niveles;
-
-    // NodoArbol *nodo = arbol->BuscarEtiqueta(4, arbol);
-    //cout<<"\n"<<arbol->Etiqueta(nodo);
-
-    /*
->>>>>>> Stashed changes
     bool terminar = false;
 
     while(!terminar)
