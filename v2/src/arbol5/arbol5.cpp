@@ -23,7 +23,7 @@ Arbol5::~Arbol5(){
  * @param etiqueta etiqueta tipo entero del nodo a poner
  */
 void Arbol5::PonerRaíz(int etiqueta){
-
+    this->raiz = new Nodo5(nullptr, nullptr, etiqueta);
 }
 
 /**
@@ -32,8 +32,20 @@ void Arbol5::PonerRaíz(int etiqueta){
  * @param nodo 
  * @param etiqueta 
  */
-void Arbol5::AgregarHijo(Nodo5 nodo, int etiqueta){
-
+void Arbol5::AgregarHijo(Nodo5* nodo, int etiqueta){
+    if(nodo->HijoMasIzquierdo() == nullptr) 
+    {
+        Nodo5 *nuevoHijo = new Nodo5(nullptr, nullptr, etiqueta);
+        nodo->SetearHMI(nuevoHijo);
+        nuevoHijo->SetearPadre(nodo);
+        //return nuevoHijo;
+    } else 
+    {
+        Nodo5* antiguoHMI = nodo->HijoMasIzquierdo();
+        Nodo5* nuevoHijo = new Nodo5(nullptr, antiguoHMI, etiqueta);
+        nodo->SetearHMI(nuevoHijo);
+        //return nuevoHijo;
+    }
 }
 
 /**
@@ -43,7 +55,24 @@ void Arbol5::AgregarHijo(Nodo5 nodo, int etiqueta){
  * @param etiqueta
  */
 void Arbol5::AgregarHijoMásDerecho(Nodo5 nodo, int etiqueta){
-
+    if(nodo->HijoMasIzquierdo() == nullptr) 
+    {
+        Nodo5 *nuevoHijo = new Nodo5(nullptr, nullptr, etiqueta);
+        nodo->SetearHMI(nuevoHijo);
+        nuevoHijo->SetearPadre(nodo);
+        return nuevoHijo;
+    } else 
+    {
+        Nodo5 *hijoActual = nodo->HijoMasIzquierdo();
+        while((hijoActual->HermanoDerecho()) != nullptr)
+        {
+            hijoActual = hijoActual->HermanoDerecho();
+        }
+        Nodo5 *nuevoHijo = new Nodo5(nullptr, nullptr, etiqueta);
+        hijoActual->SetearHD(nuevoHijo);
+        nuevoHijo->SetearPadre(nodo);
+        return nuevoHijo;
+    }
 }
 /**
  * @brief Borra un nodo hoja del árbol
@@ -59,7 +88,7 @@ void Arbol5::BorrarHoja(Nodo5 nodo){
  * @return Nodo
  */
 Nodo5 Arbol5::Raíz(){
-
+    return this->raiz;
 }
 
 /**
@@ -69,7 +98,19 @@ Nodo5 Arbol5::Raíz(){
  * @return Nodo5 
  */
 Nodo5 Arbol5::Padre(Nodo5 nodo){
-
+    Nodo5 *padre;
+    if (nodo->HermanoDerecho() == nullptr){
+        padre = nodo->Padre();
+    }
+    else {
+        Nodo5 *nodoTemp = nodo->HermanoDerecho();
+        while (HermanoDerecho(nodoTemp) != nullptr){
+            nodoTemp = nodo->HermanoDerecho();
+        }
+        padre = Padre(nodoTemp);
+    }
+    //ir al hermano más derecho para conseguir padre
+    return padre;
 }
 
 /**
@@ -79,7 +120,7 @@ Nodo5 Arbol5::Padre(Nodo5 nodo){
  * @return Nodo5 
  */
 Nodo5 Arbol5::HijoMásIzquierdo(Nodo5 nodo){
-
+    return (nodo->HijoMasIzquierdo());
 }
 
 /**
@@ -89,7 +130,7 @@ Nodo5 Arbol5::HijoMásIzquierdo(Nodo5 nodo){
  * @return Nodo5 
  */
 Nodo5 Arbol5::HermanoDerecho(Nodo5 nodo){
-
+    return (nodo->HermanoDerecho());
 }
 
 /**
@@ -98,8 +139,8 @@ Nodo5 Arbol5::HermanoDerecho(Nodo5 nodo){
  * @param nodo 
  * @return int 
  */
-int Arbol5::Etiqueta(Nodo5 nodo){
-
+int Arbol5::Etiqueta(Nodo5 *nodo){
+    return (nodo->get());
 }
 
 /**
@@ -109,7 +150,7 @@ int Arbol5::Etiqueta(Nodo5 nodo){
  * @param etiqueta 
  */
 void Arbol5::ModificaEtiqueta(Nodo5 nodo, int etiqueta){
-
+    nodo->ModificarEtiqueta(etiqueta);
 }
 
 /**
@@ -118,5 +159,39 @@ void Arbol5::ModificaEtiqueta(Nodo5 nodo, int etiqueta){
  * @return int 
  */
 int Arbol5::NumNodos(){
-
+    int cantidad = 0;
+    if (this->Raiz() != nullptr){
+        cantidad=this->NumNodosRecursivo(this->Raiz());
+    }
+    return cantidad;
 }
+
+
+/**
+ * @brief BuscarEtiqueta busca el primer nodo con 
+ * 
+ */
+// Nodo5 *nodoEtiqueta2 = nullptr;
+// Nodo5 *arbolHMIHDUltimoApuntandoPadre::BuscarEtiqueta (int etiqueta) 
+// {
+//     nodoEtiqueta2 = nullptr;
+//     BuscarEtiquetaRecursividad(etiqueta, this->Raiz());
+//     return nodoEtiqueta2;
+// }
+
+
+// void arbolHMIHDUltimoApuntandoPadre::BuscarEtiquetaRecursividad(int etiqueta, Nodo5 *nodo)
+// {
+//     if (this->Etiqueta(nodo) == etiqueta) 
+//     {
+//         nodoEtiqueta2 = nodo;
+//     } else
+//     {
+//         Nodo5 *nodoTemp = this->HijoMasIzquierdo(nodo);
+//         while ((nodoTemp) != nullptr) 
+//         {
+//             BuscarEtiquetaRecursividad(etiqueta, nodoTemp);
+//             nodoTemp = this->HermanoDerecho(nodoTemp);
+//         }
+//     }
+// }

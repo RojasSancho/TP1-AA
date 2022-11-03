@@ -26,8 +26,8 @@ class Nodo5{
     Nodo5(int etiqueta);
     Nodo5(Nodo5 *hijoMasIzquierdo, Nodo5 *hermanoDerecho, int etiqueta);
     ~Nodo5();
-    Nodo5 *get();
-    Nodo5 modificarContenido(Nodo5 elemento);
+    int *get();
+    void modificarContenido(int etiqueta);
 
     void SetearHMI(Nodo5* HMI); //Modificar Hijo Mas Izquierdo
     void SetearHD(Nodo5* HD); //Modificar HermanoDerecho
