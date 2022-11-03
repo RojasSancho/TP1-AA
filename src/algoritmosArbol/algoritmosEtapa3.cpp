@@ -8,6 +8,16 @@
 #include "../listaIndexada.h"
 
 //Algoritmo para averiguar cuál es el hermano izquierdo de un nodo n
+// Parámetros del algoritmo:
+// n - nodo
+// A - Árbol n-ario
+
+// Requiere:
+// Nodo válido y Árbol inicializado no vacío.
+    
+// Devuelve: El hermano izquierdo del nodo n en caso de existir, sino devuelve nulo.
+
+
 NodoArbol *arbol::HermanoIzq(NodoArbol *nodo, arbol *arbol){
     NodoArbol *HermanoIzq = HermanoIzqRec(nodo, arbol->Raiz(), arbol);
     return HermanoIzq;
@@ -28,6 +38,14 @@ NodoArbol *arbol::HermanoIzqRec(NodoArbol *nodo, NodoArbol *pos, arbol *arbol){
 }
 
 //Algoritmo para averiguar si el árbol tiene etiquetas repetidas
+// Parámetros del algoritmo:
+// e - etiqueta tipo entero
+// A - Árbol n-ario
+    
+// Efecto: Devuelve booleano indicando si es cierto que la etiqueta se repite.
+
+// Requiere: Una etiqueta y un árbol inicializado no vacío.
+
 bool arbol::EtiquetaRepetida(int etiqueta, arbol *arbol){
     bool Repetida = false;
     int Repeticiones = EtiquetaRepetidaRec(etiqueta, arbol->Raiz(), arbol);
@@ -53,6 +71,15 @@ int arbol::EtiquetaRepetidaRec(int etiqueta, NodoArbol *pos, arbol *arbol){
 }
 
 //Algoritmo para averiguar cuántos niveles tiene el árbol haciendo un recorrido por niveles
+// Parámetros:
+// A - Árbol n-ario
+
+// Efecto: Devuelve el número de niveles que tiene un árbol A (un entero).
+
+// Requiere: Árbol A inicializado y no vacío.
+
+// Modifica: N/A
+
 
 
 int arbol::numNiveles(arbol *arbol){
@@ -78,6 +105,15 @@ int arbol::numNivelesRec(int nivel, NodoArbol *nodo, arbol *arbol){
 }
 
 //Algoritmo para listar las etiquetas del i-ésimo nivel
+// Parámetros:
+// i - nivel tipo entero
+// A - Árbol n-ario
+
+// Efecto: Imprime todas las etiquetas que se encuentran en los nodos de uno de los niveles del árbol A.
+
+// Requiere: Árbol A inicializado y no vacío.
+
+// Modifica: N/A
 
 void arbol::ListarEtiquetasEnUnNivel(int nivel, arbol *arbol){
     ListarEtiquetasEnUnNivelRec(nivel, arbol->Raiz(), arbol);
@@ -97,6 +133,15 @@ void arbol::ListarEtiquetasEnUnNivelRec(int nivel, NodoArbol *nodo, arbol *arbol
 }
 
 //Algoritmo para listar las etiquetas del árbol por niveles
+// Parámetros:
+// A – Árbol n-ario
+
+// Efecto: Imprime todas las etiquetas que se encuentran en los nodos de un árbol A siguiendo el orden de un recorrido por niveles.
+
+// Requiere: Árbol A inicializado y no vacío.
+
+// Modifica: N/A
+
 void arbol::ListarEtiquetasPorNivel(arbol *arbol){
     list<NodoArbol*> lista;
     lista.push_back(arbol->Raiz()); 
