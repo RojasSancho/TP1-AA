@@ -11,7 +11,7 @@ class arbol{
 
     public: //Este
 
-    int Etiqueta(NodoArbol *nodo); //Este
+    int Etiqueta(NodoArbol *nodo);
 
     virtual void PonerRaiz(int etiqueta)=0;
     virtual NodoArbol *Raiz()=0;
@@ -69,7 +69,7 @@ class arbol{
 
     int ProfundidadRec(int etiqueta, NodoArbol *pos, arbol *arbol);
 
-    arbol ConstruirArbol(int k, int i, ListaIndexada L);
+    //ConstruirArbol(int k, int i, ListaIndexada L);
 };
 
 #endif

@@ -45,50 +45,83 @@ int main()
          cout<<"\n4. Salir del programa\n";
          cin>>opcionMenuPrin;
 
-         if(opcionMenuPrin == 4)
-         {
-             cout<<"\nHasta pronto!\n";
-             terminar = true;
-         }
+    // actual = arbol->BuscarEtiqueta(1);
+    // actual = actual->HijoMasIzquierdo();
+    // cout<<actual->Etiqueta();
 
-         switch (opcionMenuPrin)
-         {
+    // arbol->ListarEtiquetasPreorden(arbol);
+    
+
+
+    //SIRVE 
+    //cout<<arbol->EtiquetaRepetida(2, arbol);
+    // arbol->ListarEtiquetasPorNivel(arbol);
+    // cout<<" ";
+    // arbol->ListarEtiquetasEnUnNivel(2, arbol);
+    // cout<<" ";
+    // arbol->ListarEtiquetasPreorden(arbol);
+    // cout<<" ";
+    // cout<<arbol->NumNivelesPreorden(arbol)<<" ";
+    // cout<<arbol->numNiveles(arbol);
+    bool terminar = false;
+
+    while(!terminar)
+    {
+        system("clear");
+        int opcionMenuPrin = 0;
+
+        cout<< "\n\nBienvenido! Este programa esta hecho para probar diferentes modelos matematicos como lo son la Cola, la Lista Indexada y el Arbol n-ario.\n"; 
+        cout<<"Elija entre las siguiente opciones digitando uno de los numeros:\n";
+        cout<<"\n1. Cola\n";
+        cout<<"2. Lista Indexada\n";
+        cout<<"3. Arbol n-ario\n";
+        cout<<"\n4. Salir del programa\n";
+        cin>>opcionMenuPrin;
+
+        if(opcionMenuPrin == 4)
+        {
+            cout<<"\nHasta pronto!\n";
+            terminar = true;
+        }
+
+        switch (opcionMenuPrin)
+        {
             
-         case 1: //Modelo Cola
-         {
-             bool salirAMenuPrin = false;
-             ColaArregloCircular *colaUsuario = new ColaArregloCircular();
-             while(!salirAMenuPrin) 
-             {
-                 system("clear");
-                 int opcionCola = 0;
-                 cout<<"\n\nCOLA\nDigite alguna de las opciones para utilizar el operador basico o 6 para volver al menu principal:\n\n";
-                 cout<<"1. Iniciar\n";
-                 cout<<"2. Destruir\n";
-                 cout<<"3. Encolar\n";
-                 cout<<"4. Desencolar\n";
-                 cout<<"5. NumElem (Numero actual de elementos en la cola)\n";
-                 cout<<"\n6. Salir al menu principal\n";
-                 cin>>opcionCola;
+        case 1: //Modelo Cola
+        {
+            bool salirAMenuPrin = false;
+            ColaArregloCircular *colaUsuario = new ColaArregloCircular();
+            while(!salirAMenuPrin) 
+            {
+                system("clear");
+                int opcionCola = 0;
+                cout<<"\n\nCOLA\nDigite alguna de las opciones para utilizar el operador basico o 6 para volver al menu principal:\n\n";
+                cout<<"1. Iniciar\n";
+                cout<<"2. Destruir\n";
+                cout<<"3. Encolar\n";
+                cout<<"4. Desencolar\n";
+                cout<<"5. NumElem (Numero actual de elementos en la cola)\n";
+                cout<<"\n6. Salir al menu principal\n";
+                cin>>opcionCola;
 
-                 if(opcionCola == 6)
-                 {
-                     salirAMenuPrin = true;
-                     delete colaUsuario;
-                 }
+                if(opcionCola == 6)
+                {
+                    salirAMenuPrin = true;
+                    delete colaUsuario;
+                }
 
-                 switch (opcionCola)
-                 {
-                 case 1:
-                 {
-                     int M = 0;
-                     cout<<"\nIngrese el numero maximo de elementos (M) podra tener la cola:";
-                     cin>>M;
-                     colaUsuario->Iniciar(M);
-                     cout<<"\nCola iniciada!";
-                     break;
-                 }
-                 case 2:
+                switch (opcionCola)
+                {
+                case 1:
+                {
+                    int M = 0;
+                    cout<<"\nIngrese el numero maximo de elementos (M) podra tener la cola:";
+                    cin>>M;
+                    colaUsuario->Iniciar(M);
+                    cout<<"\nCola iniciada!";
+                    break;
+                }
+                case 2:
                 {    
                     delete colaUsuario;
                     cout<<"\nCola destruida!";
@@ -177,181 +210,184 @@ int main()
                 {    
                     int elemento = 0;
                     int indice = 0;
-                     cout<<"\nIngrese el elemento entero a insertar: ";
-                     cin>>elemento;
-                     cout<<"\nIngrese el indice donde se insertara: ";
-                     cin>>indice;
-                     listaUsuario->Insertar(indice, elemento);
+                    cout<<"\nIngrese el elemento entero a insertar: ";
+                    cin>>elemento;
+                    cout<<"\nIngrese el indice donde se insertara: ";
+                    cin>>indice;
+                    listaUsuario->Insertar(indice, elemento);
 
-                     cout<<"\nElemento insertado";
-                     break;
-                 }     
-                 case 5:
-                 {  
-                     int indice = 0;
-                     cout<<"\nIngrese el indice donde se encuentra el elemento que desea borrar: ";
-                     cin>>indice;
-                     listaUsuario->Borrar(indice);
+                    cout<<"\nElemento insertado";
+                    break;
+                }     
+                case 5:
+                {  
+                    int indice = 0;
+                    cout<<"\nIngrese el indice donde se encuentra el elemento que desea borrar: ";
+                    cin>>indice;
+                    listaUsuario->Borrar(indice);
 
-                     cout<<"\nElemento del indice "<<indice<<" borrado";
-                     break;
-                 } 
-                 case 6:
-                 {
-                     int indice = 0;
-                     cout<<"Ingrese el indice en el que se encuentra el elemento que desea recuperar: ";
-                     cin>>indice;
-                     NodoLista *nodoRecuperado = listaUsuario->Recuperar(indice);
-                     int elementoRecuperado = nodoRecuperado->getElemento();
+                    cout<<"\nElemento del indice "<<indice<<" borrado";
+                    break;
+                } 
+                case 6:
+                {
+                    int indice = 0;
+                    cout<<"Ingrese el indice en el que se encuentra el elemento que desea recuperar: ";
+                    cin>>indice;
+                    NodoLista *nodoRecuperado = listaUsuario->Recuperar(indice);
+                    int elementoRecuperado = nodoRecuperado->getElemento();
 
-                     cout<<"\nEl elemento recuperado es: " << elementoRecuperado;
-                     break;
-                 }       
-                 case 7:
-                 {
-                     int indice = 0;
-                     int elementoParaModificar = 0;
-                     cout<<"Ingrese el entero con el que se va a modificar: ";
-                     cin>>elementoParaModificar;
-                     cout<<"Ingrese el indice que se va a modificar: ";
-                     cin>>indice;
-                     listaUsuario->Modificar(indice, elementoParaModificar);
+                    cout<<"\nEl elemento recuperado es: " << elementoRecuperado;
+                    break;
+                }       
+                case 7:
+                {
+                    int indice = 0;
+                    int elementoParaModificar = 0;
+                    cout<<"Ingrese el entero con el que se va a modificar: ";
+                    cin>>elementoParaModificar;
+                    cout<<"Ingrese el indice que se va a modificar: ";
+                    cin>>indice;
+                    listaUsuario->Modificar(indice, elementoParaModificar);
 
-                     cout<<"Indice "<<indice<<" modificado";
-                     break;
-                 } 
-                 case 8:
-                 {
-                     int numElem = listaUsuario->NumElem();
-                     cout<<"El numero actual de elementos en la lista es: "<<numElem;
-                     break;
-                 } 
-                 default:
-                     break;
-                 }
-             }
-             break;
-         }
-         case 3: //Modelo Arbol n-ario
-         { 
+                    cout<<"Indice "<<indice<<" modificado";
+                    break;
+                } 
+                case 8:
+                {
+                    int numElem = listaUsuario->NumElem();
+                    cout<<"El numero actual de elementos en la lista es: "<<numElem;
+                    break;
+                } 
+                default:
+                    break;
+                }
+            }
+            break;
+        }
+        case 3: //Modelo Arbol n-ario
+        { 
 
-             bool salirAMenuPrin = false;
-             //arbolArregloConSenaladorPadre *arbolUsuario = new arbolArregloConSenaladorPadre();
-             arbolHMIHDContador *arbolUsuario = new arbolHMIHDContador();
-             //arbolHMIHDconPunteros *arbolUsuario = new arbolHMIHDconPunteros();
-             //arbolHMIHDUltimoApuntandoPadre *arbolUsuario = new arbolHMIHDUltimoApuntandoPadre();
-             while(!salirAMenuPrin)
-             {
-                 system("clear");
-                 int opcionArbol = 0;
+            bool salirAMenuPrin = false;
+            //arbolArregloConSenaladorPadre *arbolUsuario = new arbolArregloConSenaladorPadre();
+            arbolHMIHDContador *arbolUsuario = new arbolHMIHDContador();
+            //arbolHMIHDconPunteros *arbolUsuario = new arbolHMIHDconPunteros();
+            //arbolHMIHDUltimoApuntandoPadre *arbolUsuario = new arbolHMIHDUltimoApuntandoPadre();
+            while(!salirAMenuPrin)
+            {
+                system("clear");
+                int opcionArbol = 0;
 
-                 cout<<"\n\nARBOL N-ARIO\nDigite alguna de las opciones para utilizar el operador basico o 14 para volver al menu principal: (Si desea ir al menu de algoritmos ingrese 15)\n\n";
-                 cout<<"1. Iniciar\n";
-                 cout<<"2. Destruir\n";
-                 cout<<"3. PonerRaiz\n";
-                 cout<<"4. AgregarHijo\n";
-                 cout<<"5. AgregarHijoMásDerecho\n";
-                 //cout<<"6. BorrarHoja\n";
-                 cout<<"7. Raiz\n";
-                 //cout<<"8. Padre\n";
-                 cout<<"9. HijoMásIzquierdo\n";
-                 cout<<"10. HermanoDerecho\n";
-                 cout<<"11. Etiqueta\n";
-                 cout<<"12. Modificar Etiqueta\n";
-                 cout<<"13. NumNodos (Numero actual de nodos en el árbol)\n";
-                 cout<<"\n14. Salir al menu principal\n";
-                 cout<<"\n15. MENU ALGORITMOS DE ARBOL\n";
-                 cin>>opcionArbol;
+                cout<<"\n\nARBOL N-ARIO\nDigite alguna de las opciones para utilizar el operador basico o 14 para volver al menu principal: (Si desea ir al menu de algoritmos ingrese 15)\n\n";
+                cout<<"1. Iniciar\n";
+                cout<<"2. Destruir\n";
+                cout<<"3. PonerRaiz\n";
+                cout<<"4. AgregarHijo\n";
+                cout<<"5. AgregarHijoMásDerecho\n";
+                //cout<<"6. BorrarHoja\n";
+                cout<<"7. Raiz\n";
+                //cout<<"8. Padre\n";
+                cout<<"9. HijoMásIzquierdo\n";
+                cout<<"10. HermanoDerecho\n";
+                cout<<"11. Etiqueta\n";
+                cout<<"12. Modificar Etiqueta\n";
+                cout<<"13. NumNodos (Numero actual de nodos en el árbol)\n";
+                cout<<"\n14. Salir al menu principal\n";
+                cout<<"\n15. MENU ALGORITMOS DE ARBOL\n";
+                cin>>opcionArbol;
 
-                 if(opcionArbol == 14)
-                 {
-                     salirAMenuPrin = true;
-                     delete arbolUsuario;
-                 }
+                if(opcionArbol == 14)
+                {
+                    salirAMenuPrin = true;
+                    delete arbolUsuario;
+                }
 
-                 switch (opcionArbol)
-                 {
-                 case 1:
-                 {   
-                     //arbolArregloConSenaladorPadre *arbolUsuario = new arbolArregloConSenaladorPadre();
-                     arbolHMIHDContador *arbolUsuario = new arbolHMIHDContador();
-                     //arbolHMIHDconPunteros *arbolUsuario = new arbolHMIHDconPunteros();
-                     //arbolHMIHDUltimoApuntandoPadre *arbolUsuario = new arbolHMIHDUltimoApuntandoPadre();
-                     cout<<"\nÁrbol iniciado!";
-                     break;
-                 }
-                 case 2:
-                 {    
-                     delete arbolUsuario;
-                     cout<<"\nArbol destruido!";
-                     break;
-                 }
-                 case 3:
-                 {
-                     int etiqueta = 0;
-                     cout<<"\nIngrese la etiqueta (entero) a insertar: ";
-                     cin>>etiqueta;
-                     arbolUsuario->PonerRaiz(etiqueta);
-                     cout<<"\nRaiz puesta con la etiqueta indicada!";
-                     break;
-                 }
-                 case 4:
-                 {
-                     int etiquetaPadre = 0;
-                     int etiquetaNuevoHijo = 0;
-                     cout<<"\nIngrese la etiqueta del nodo al que le desea agregar un hijo: ";
-                     cin>>etiquetaPadre;
+                switch (opcionArbol)
+                {
+                case 1:
+                {   
+                    //arbolArregloConSenaladorPadre *arbolUsuario = new arbolArregloConSenaladorPadre();
+                    arbolHMIHDContador *arbolUsuario = new arbolHMIHDContador();
+                    //arbolHMIHDconPunteros *arbolUsuario = new arbolHMIHDconPunteros();
+                    //arbolHMIHDUltimoApuntandoPadre *arbolUsuario = new arbolHMIHDUltimoApuntandoPadre();
+                    cout<<"\nÁrbol iniciado!";
+                    break;
+                }
+                case 2:
+                {    
+                    delete arbolUsuario;
+                    cout<<"\nArbol destruido!";
+                    break;
+                }
+                case 3:
+                {
+                    int etiqueta = 0;
+                    cout<<"\nIngrese la etiqueta (entero) a insertar: ";
+                    cin>>etiqueta;
+                    arbolUsuario->PonerRaiz(etiqueta);
+                    cout<<"\nRaiz puesta con la etiqueta indicada!";
+                    break;
+                }
+                case 4:
+                {
+                    int etiquetaPadre = 0;
+                    int etiquetaNuevoHijo = 0;
+                    cout<<"\nIngrese la etiqueta del nodo al que le desea agregar un hijo: ";
+                    cin>>etiquetaPadre;
 
-                     Nodo *nodoPadre = arbolUsuario->BuscarEtiqueta(etiquetaPadre);
-                     //Nodo1 *nodoPadre = arbolUsuario->BuscarEtiqueta(etiquetaPadre, arbolUsuario);
-                     //Nodo4 *nodoPadre = arbolUsuario->BuscarEtiqueta(etiquetaPadre, arbolUsuario);
-                     //Nodo5 *nodoPadre = arbolUsuario->BuscarEtiqueta(etiquetaPadre, arbolUsuario);
+                    Nodo *nodoPadre = arbolUsuario->BuscarEtiqueta(etiquetaPadre);
+                    //Nodo1 *nodoPadre = arbolUsuario->BuscarEtiqueta(etiquetaPadre, arbolUsuario);
+                    //Nodo4 *nodoPadre = arbolUsuario->BuscarEtiqueta(etiquetaPadre, arbolUsuario);
+                    //Nodo5 *nodoPadre = arbolUsuario->BuscarEtiqueta(etiquetaPadre, arbolUsuario);
 
-                     cout<<"\nIngrese la etiqueta que va a tener el nuevo hijo: ";
-                     cin>>etiquetaNuevoHijo;
-
-
-                     arbolUsuario->AgregarHijo(nodoPadre, etiquetaNuevoHijo);
-                     cout<<"\nHijo agregado al nodo!";
-                     break;
-                 }
-                 case 5:
-                 {
-                     int etiquetaPadre = 0;
-                     int etiquetaNuevoHijo = 0;
-                     cout<<"\nIngrese la etiqueta del nodo al que le desea agregar un hijo: ";
-                     cin>>etiquetaPadre;
-
-                     Nodo *nodoPadre = arbolUsuario->BuscarEtiqueta(etiquetaPadre);
-                     //Nodo1 *nodoPadre = arbolUsuario->BuscarEtiqueta(etiquetaPadre, arbolUsuario);
-                     //Nodo4 *nodoPadre = arbolUsuario->BuscarEtiqueta(etiquetaPadre, arbolUsuario);
-                     //Nodo5 *nodoPadre = arbolUsuario->BuscarEtiqueta(etiquetaPadre, arbolUsuario);
-
-                     cout<<"\nIngrese la etiqueta que va a tener el nuevo hijo mas derecho: ";
-                     cin>>etiquetaNuevoHijo;
+                    cout<<"\nIngrese la etiqueta que va a tener el nuevo hijo: ";
+                    cin>>etiquetaNuevoHijo;
 
 
-                     arbolUsuario->AgregarHijoMasDerecho(nodoPadre, etiquetaNuevoHijo);
-                     cout<<"\nHijo mas derecho agregado al nodo!";
-                     break;
-                 }
-                 // case 6:
-                 // {
+                    arbolUsuario->AgregarHijo(nodoPadre, etiquetaNuevoHijo);
+                    cout<<"\nHijo agregado al nodo!";
+                    break;
+                }
+                case 5:
+                {
+                    int etiquetaPadre = 0;
+                    int etiquetaNuevoHijo = 0;
+                    cout<<"\nIngrese la etiqueta del nodo al que le desea agregar un hijo: ";
+                    cin>>etiquetaPadre;
+
+                    Nodo *nodoPadre = arbolUsuario->BuscarEtiqueta(etiquetaPadre);
+                    //Nodo1 *nodoPadre = arbolUsuario->BuscarEtiqueta(etiquetaPadre, arbolUsuario);
+                    //Nodo4 *nodoPadre = arbolUsuario->BuscarEtiqueta(etiquetaPadre, arbolUsuario);
+                    //Nodo5 *nodoPadre = arbolUsuario->BuscarEtiqueta(etiquetaPadre, arbolUsuario);
+
+                    cout<<"\nIngrese la etiqueta que va a tener el nuevo hijo mas derecho: ";
+                    cin>>etiquetaNuevoHijo;
+
+
+                    arbolUsuario->AgregarHijoMasDerecho(nodoPadre, etiquetaNuevoHijo);
+                    cout<<"\nHijo mas derecho agregado al nodo!";
+                    break;
+                }
+                case 6:
+                {
                     
-                 // }
-                 case 7:
-                 {
-                     Nodo *raiz = arbolUsuario->Raiz();
-                     //Nodo1 *raiz = arbolUsuario->Raiz();
-                     //Nodo4 *raiz = arbolUsuario->Raiz();
-                     //Nodo5 *raiz = arbolUsuario->Raiz();
-                     cout<<"\nLa etiqueta de la raiz del arbol es: "<<arbolUsuario->Etiqueta(raiz);
-                     break;
-                 }
-                 // case 8:
-                 // {
+                }
+
                     
-                // }
+
+                case 7:
+                {
+                    Nodo *raiz = arbolUsuario->Raiz();
+                    //Nodo1 *raiz = arbolUsuario->Raiz();
+                    //Nodo4 *raiz = arbolUsuario->Raiz();
+                    //Nodo5 *raiz = arbolUsuario->Raiz();
+                    cout<<"\nLa etiqueta de la raiz del arbol es: "<<arbolUsuario->Etiqueta(raiz);
+                    break;
+                }
+                // case 8:
+                // {
+                    
+                }
                 case 9:
                 {
                     int etiquetaPadre = 0;
