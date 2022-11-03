@@ -32,6 +32,7 @@ bool arbol::EtiquetaRepetida(int etiqueta, arbol *arbol){
     int Repeticiones = EtiquetaRepetidaRec(etiqueta, arbol->Raiz(), arbol);
     if (Repeticiones >= 2){
         Repetida = true;
+        cout<<" true";
     }
     return Repetida;
 }
@@ -65,7 +66,7 @@ int arbol::numNivelesRec(int nivel, NodoArbol *nodo, arbol *arbol){
     if (hijo != nullptr){
         NumNiveles+=1;
         while (hijo != nullptr){
-            NumNivelesTemp = numNivelesRec(nivel, hijo, arbol);
+            NumNivelesTemp = numNivelesRec(NumNiveles, hijo, arbol);
             if (NumNivelesTemp > NumNiveles){
                 NumNiveles = NumNivelesTemp;
             }
@@ -98,13 +99,13 @@ void arbol::ListarEtiquetasEnUnNivelRec(int nivel, NodoArbol *nodo, arbol *arbol
 void arbol::ListarEtiquetasPorNivel(arbol *arbol){
     list<NodoArbol*> lista;
     lista.push_back(arbol->Raiz()); 
-    if (lista.size()>0){
+    while (lista.size()>0){
         NodoArbol *nodo = lista.front();
         lista.pop_front();
         cout<<arbol->Etiqueta(nodo);
         NodoArbol *nodoHijo = arbol->HijoMasIzquierdo(nodo);
-        if (nodoHijo != nullptr){
-        lista.push_back(nodoHijo);
+        while (nodoHijo != nullptr){
+          lista.push_back(nodoHijo);
           nodoHijo = arbol->HermanoDerecho(nodoHijo);
         }
     }
