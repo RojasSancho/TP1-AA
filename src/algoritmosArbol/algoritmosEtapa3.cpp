@@ -6,6 +6,7 @@
 #include "../arbol.h"
 //#include "../arbolHMIHDContador.h"
 #include "../listaIndexada.h"
+
 //Algoritmo para averiguar cuál es el hermano izquierdo de un nodo n
 NodoArbol *arbol::HermanoIzq(NodoArbol *nodo, arbol *arbol){
     NodoArbol *HermanoIzq = HermanoIzqRec(nodo, arbol->Raiz(), arbol);
@@ -220,6 +221,20 @@ NodoArbol *arbol::BuscarEtiqueta (int etiqueta, arbol *arbol)
 int contarNodos(int cont, NodoArbol *nodo, arbol *arbol) {
     
 }
+
+//Profundidad de un nodo en el arbol
+// Parámetros del algoritmo:
+// n - Nodo.
+// A - Árbol n-ario.
+
+// Efecto: Averigua la distancia que hay entre el nodo indicado y la raíz, en         término de nodos.
+
+// Requiere:
+// - Árbol inicializado.
+// - Raíz del árbol exista.
+// - Nodo indicado se encuentre dentro del árbol.
+    
+// Devuelve: El número total de nodos que hay entre el nodo indicado y la raíz.
 
 int arbol::Profundidad(NodoArbol *nodo, arbol *arbol) {
     int distancia = ProfundidadRec(nodo->etiqueta, arbol->Raiz(), arbol);

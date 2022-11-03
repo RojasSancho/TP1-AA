@@ -454,7 +454,7 @@ int main()
                         cout<<"5. Listar las etiquetas del arbol (preorden)\n";
                         cout<<"6. Averiguar numero de niveles de arbol en preorden (preorden)\n";
                         cout<<"7. Buscar una etiqueta e (para efectos del programa de prueba, dice si esta o no)\n";
-                        cout<<"8. \n";
+                        cout<<"8. Averiguar la profundidad de un nodo n\n";
                         cout<<"\n12. Volver a operadores basicos de arbol\n";
                         cin>>opcionAlgoritmos;
 
@@ -533,8 +533,23 @@ int main()
                             {
                                 cout<<"No existe ningun nodo en el arbol con esta etiqueta!";
                             } else {
-                                cout<<"Si existe un nodo al menos con esta etiqueta!";
+                                cout<<"Si existe al menos un nodo con esta etiqueta!";
                             }
+                            break;
+                        }
+
+                        case 8:
+                        {
+                            int etiqueta;
+                            cout<<"Ingrese la etiqueta del nodo del cual quiere saber su profundidad: ";
+                            cin>>etiqueta;
+                            Nodo *nodo = arbolUsuario->BuscarEtiqueta(etiqueta);
+                            //Nodo1 *nodo = arbolUsuario->BuscarEtiqueta(etiqueta);
+                            //Nodo4 *nodo = arbolUsuario->BuscarEtiqueta(etiqueta);
+                            //Nodo5 *nodo = arbolUsuario->BuscarEtiqueta(etiqueta);
+
+                            int profundidadNodo = arbolUsuario->Profundidad(nodo, arbolUsuario);
+                            cout<<"La profunidad del nodo es: "<< profundidadNodo;
                             break;
                         }
 
