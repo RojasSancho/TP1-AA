@@ -17,10 +17,10 @@ class arbol{
 
     // virtual void BorrarHoja()=0;
 
-    virtual NodoArbol *HijoMasIzquierdo(NodoArbol *nodo, arbol *arbol){
+    virtual NodoArbol *HijoMasIzquierdo(NodoArbol *nodo){
         return nodo->HijoMasIzquierdo();
     }
-    virtual NodoArbol *HermanoDerecho(NodoArbol *nodo, arbol *arbol){
+    virtual NodoArbol *HermanoDerecho(NodoArbol *nodo){
         return nodo->HermanoDerecho();
     }
 
