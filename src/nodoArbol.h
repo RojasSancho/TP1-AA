@@ -1,6 +1,8 @@
 #ifndef NODOARBOL_H
 #define NODOARBOL_H
 
+#include "arbol.h"
+
 using namespace std;
 
 class NodoArbol
@@ -10,11 +12,11 @@ class NodoArbol
     public:
     int etiqueta;
 
-    virtual NodoArbol *HijoMasIzquierdo(){
-        return HijoMasIzquierdo();
+    virtual NodoArbol *HijoMasIzquierdo(NodoArbol *nodo, arbol *arbol){
+        return HijoMasIzquierdo(nodo, arbol);
     }
-    virtual NodoArbol *HermanoDerecho(){
-        return HijoMasIzquierdo();
+    virtual NodoArbol *HermanoDerecho(NodoArbol *nodo, arbol *arbol){
+        return HijoMasIzquierdo(nodo, arbol);
     }
 
     NodoArbol(); //ESTE
