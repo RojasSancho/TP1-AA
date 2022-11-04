@@ -79,8 +79,41 @@ void Arbol5::AgregarHijoMásDerecho(Nodo5 nodo, int etiqueta){
  * 
  * @param nodo 
  */
-void Arbol5::BorrarHoja(Nodo5 nodo){
+void Arbol5::BorrarHoja(Nodo5 *nodo){
+    Nodo5 *nodoProvisional = nodo;
 
+    //Buscamos padre
+    while (nodoProvisional->HermanoDerecho() != nullptr){
+        nodoProvisional = nodoProvisional->HermanoDerecho();
+    }
+    
+    Nodo5 *nodoHijo = nodoProvisional->HijoMasIzquierdo();
+
+    if (nodoHijo == nodo){
+        if (nodoHijo->HermanoDerecho() != nullptr){
+            nodoProvisional->SetearHMI(nodo->HermanoDerecho());
+        }
+        else{
+            nodoProvisional->SetearHMI(nullptr);
+        }
+    }
+    else{
+        int cont=0;
+        Nodo5* HermanoIzquierdo;
+        Nodo5* AntepenultimoNodo;
+        while (nodoHijo != nodo){
+            if ((nodoHijo->HermanoDerecho())->HermanoDerecho() == nullptr){
+                nodoHijo->SetearHD((nodoHijo->HermanoDerecho())->HermanoDerecho());
+            }
+            HermanoIzquierdo = nodoHijo();
+            nodoHijo = nodoHijo->HermanoDerecho();
+        }
+
+        if(nodoHijo->Padre() != nullptr){
+            HermanoIzquierdo->SetearPadre(nodoHijo->Padre());
+        }
+    }
+    delete nodoHijo;
 }
 
 /**

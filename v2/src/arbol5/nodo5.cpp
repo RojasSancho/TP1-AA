@@ -1,7 +1,7 @@
 #include "nodo5.h"
 using namespace std;
 
-template<typename T>
+//template<typename T>
 
 Nodo5::Nodo5(){
 

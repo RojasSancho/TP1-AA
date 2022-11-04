@@ -5,7 +5,7 @@
 
 using namespace std;
 
-template<typename T> 
+//template<typename T> 
 
 class Nodo5{
 
@@ -35,6 +35,6 @@ class Nodo5{
 
 };
 
-//typedef Nodo5 Nodo; //!!
+typedef Nodo5 Nodo; //!!
 
 #endif
