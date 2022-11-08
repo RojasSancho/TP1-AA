@@ -10,6 +10,7 @@ Arbol1::Arbol1(){
     arreglo = new Nodo1[124];
     ultimo =124;
     actual = 0;
+    numElem = 0;
 }
 
 /**
@@ -20,6 +21,7 @@ Arbol1::Arbol1(int cantidad){
     arreglo = new Nodo1[cantidad];
     ultimo = cantidad;
     actual = 0;
+    numElem = 0;
 }
 
 /**
@@ -35,7 +37,9 @@ Arbol1::~Arbol1(){
  * @param etiqueta etiqueta tipo entero del nodo a poner
  */
 void Arbol1::PonerRaíz(int etiqueta){
-
+    arreglo[0].setIndice(0);
+    arreglo[0].setValor(etiqueta);
+    numElem+=1;
 }
 
 /**
@@ -45,7 +49,11 @@ void Arbol1::PonerRaíz(int etiqueta){
  * @param etiqueta 
  */
 void Arbol1::AgregarHijo(Nodo1 nodo, int etiqueta){
-
+    if (numElem < ultimo){
+        arreglo[NumElem].setIndice(NumElem);
+        arreglo[NumElem].setValor(etiqueta);
+        arreglo[NumElem].setPadre(nodo.getIndice());
+    }
 }
 
 /**
@@ -55,7 +63,11 @@ void Arbol1::AgregarHijo(Nodo1 nodo, int etiqueta){
  * @param etiqueta
  */
 void Arbol1::AgregarHijoMásDerecho(Nodo1 nodo, int etiqueta){
-
+    if (numElem < ultimo){
+        arreglo[NumElem].setIndice(NumElem);
+        arreglo[NumElem].setValor(etiqueta);
+        arreglo[NumElem].setPadre(nodo.getIndice());
+    }
 }
 /**
  * @brief Borra un nodo hoja del árbol
@@ -71,7 +83,7 @@ void Arbol1::BorrarHoja(Nodo1 nodo){
  * @return Nodo
  */
 Nodo1 Arbol1::Raíz(){
-
+    return arreglo[0];
 }
 
 /**
@@ -81,7 +93,8 @@ Nodo1 Arbol1::Raíz(){
  * @return Nodo1 
  */
 Nodo1 Arbol1::Padre(Nodo1 nodo){
-
+    int posPadre = nodo.getPadre();
+    return arreglo[posPadre];
 }
 
 /**
