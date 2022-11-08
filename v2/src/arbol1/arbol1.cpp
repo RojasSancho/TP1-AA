@@ -50,9 +50,10 @@ void Arbol1::PonerRaíz(int etiqueta){
  */
 void Arbol1::AgregarHijo(Nodo1 nodo, int etiqueta){
     if (numElem < ultimo){
-        arreglo[NumElem].setIndice(NumElem);
-        arreglo[NumElem].setValor(etiqueta);
-        arreglo[NumElem].setPadre(nodo.getIndice());
+        arreglo[numElem].setIndice(numElem);
+        arreglo[numElem].setValor(etiqueta);
+        arreglo[numElem].setPadre(nodo.getIndice());
+        numElem+=1;
     }
 }
 
@@ -64,9 +65,10 @@ void Arbol1::AgregarHijo(Nodo1 nodo, int etiqueta){
  */
 void Arbol1::AgregarHijoMásDerecho(Nodo1 nodo, int etiqueta){
     if (numElem < ultimo){
-        arreglo[NumElem].setIndice(NumElem);
-        arreglo[NumElem].setValor(etiqueta);
-        arreglo[NumElem].setPadre(nodo.getIndice());
+        arreglo[numElem].setIndice(numElem);
+        arreglo[numElem].setValor(etiqueta);
+        arreglo[numElem].setPadre(nodo.getIndice());
+        numElem+=1;
     }
 }
 /**
@@ -75,7 +77,39 @@ void Arbol1::AgregarHijoMásDerecho(Nodo1 nodo, int etiqueta){
  * @param nodo 
  */
 void Arbol1::BorrarHoja(Nodo1 nodo){
+    int indiceBorrado = nodo.getIndice();
 
+    if (nodo.getValor() != arreglo[numElem - 1].getValor())
+    {
+        int indiceBorrado = 0;
+        while (arreglo[indiceBorrado].getValor() != nodo.getValor())
+        {
+            ++indiceBorrado;
+        }
+
+        int indice = indiceBorrado;
+        while (indice != numElem - 1)
+        {
+
+            if (arreglo[indice + 1].getPadre() > indiceBorrado)
+            {
+                arreglo[indice] = arreglo[indice + 1];
+                arreglo[indice].setPadre(arreglo[indice + 1].getPadre() - 1);
+                arreglo[indice].setIndice(indice);
+                // hay que decrementarlo de 1
+            }
+            else
+            { 
+                arreglo[indice] = arreglo[indice + 1];
+                arreglo[indice].setIndice(indice);
+            }
+            ++indice;
+        }
+    }
+    arreglo[numElem-1].setValor(0); 
+    arreglo[numElem-1].setIndice(0); 
+    arreglo[numElem-1].setPadre(0); 
+    numElem-=1;
 }
 
 /**
@@ -104,7 +138,22 @@ Nodo1 Arbol1::Padre(Nodo1 nodo){
  * @return Nodo1 
  */
 Nodo1 Arbol1::HijoMásIzquierdo(Nodo1 nodo){
-
+    bool encontrado = false;
+    int cont=nodo.getIndice();
+    int indiceHijo;
+    while (encontrado==false && nodo.getIndice() != arreglo[cont].getPadre()){
+        if (nodo.getIndice() == arreglo[cont].getPadre()){
+            encontrado=true;
+            indiceHijo=cont;
+        }
+        cont+=1;
+    }
+    if (encontrado){
+        return arreglo[cont];
+    }
+    else {
+        return nodo;
+    }
 }
 
 /**
@@ -114,7 +163,22 @@ Nodo1 Arbol1::HijoMásIzquierdo(Nodo1 nodo){
  * @return Nodo1 
  */
 Nodo1 Arbol1::HermanoDerecho(Nodo1 nodo){
-
+    bool encontrado = false;
+    int cont=nodo.getIndice();
+    int indiceHijo;
+    while (encontrado==false && nodo.getIndice() != arreglo[cont].getPadre()){
+        if (nodo.getIndice() == arreglo[cont].getPadre()){
+            encontrado=true;
+            indiceHijo=cont;
+        }
+        cont-=1;
+    }
+    if (encontrado){
+        return arreglo[cont];
+    }
+    else {
+        return nodo;
+    }
 }
 
 /**
@@ -124,7 +188,7 @@ Nodo1 Arbol1::HermanoDerecho(Nodo1 nodo){
  * @return int 
  */
 int Arbol1::Etiqueta(Nodo1 nodo){
-
+    return nodo.getValor();
 }
 
 /**
@@ -134,7 +198,7 @@ int Arbol1::Etiqueta(Nodo1 nodo){
  * @param etiqueta 
  */
 void Arbol1::ModificaEtiqueta(Nodo1 nodo, int etiqueta){
-
+    arreglo[nodo.getIndice()].setValor(etiqueta);
 }
 
 /**
@@ -143,5 +207,5 @@ void Arbol1::ModificaEtiqueta(Nodo1 nodo, int etiqueta){
  * @return int 
  */
 int Arbol1::NumNodos(){
-
+    return numElem;
 }
