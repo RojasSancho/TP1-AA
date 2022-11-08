@@ -7,9 +7,16 @@
 
 class Arbol1 {
 
+    private:
+    Nodo1 *arreglo;
+    int ultimo;
+    int actual;
+
     public:
 
     Arbol1();
+
+    Arbol1(int cantidad);
 
     ~Arbol1();
 

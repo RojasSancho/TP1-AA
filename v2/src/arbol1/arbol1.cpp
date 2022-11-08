@@ -3,11 +3,23 @@
 using namespace std;
 
 /**
- * @brief Construye nuevo Arbol 5:: Arbol 5 object
+ * @brief Construye nuevo Arbol:: Arbol 5 object
  * 
  */
 Arbol1::Arbol1(){
+    arreglo = new Nodo1[124];
+    ultimo =124;
+    actual = 0;
+}
 
+/**
+ * @brief Construye nuevo Arbol 5:: Arbol 5 object
+ * 
+ */
+Arbol1::Arbol1(int cantidad){
+    arreglo = new Nodo1[cantidad];
+    ultimo = cantidad;
+    actual = 0;
 }
 
 /**
