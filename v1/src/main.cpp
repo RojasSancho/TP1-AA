@@ -23,12 +23,30 @@ Sánchez Cárdenas Carlos David C17235
 
 #include "./algoritmosArbol/algoritmosEtapa3.cpp"
 
+#include <stdio.h>
+#include <ctime>
+#include <unistd.h>   
+
 #include <iostream>
 
 using namespace std;
 
 int main()
 {
+
+    double tiempo_ejecucion = 0.0;
+
+    clock_t tInicio, tFinal;
+
+    tInicio = clock();
+
+    sleep(3);
+
+    tFinal = clock();
+
+    tiempo_ejecucion += (double)(tFinal - tInicio) / CLOCKS_PER_SEC;
+
+    printf("The elapsed time is %f seconds\n", tiempo_ejecucion);
     // //  bool terminar = false;
 
     // //  while(!terminar)
