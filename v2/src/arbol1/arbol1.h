@@ -11,6 +11,7 @@ class Arbol1 {
     Nodo1 *arreglo;
     int ultimo;
     int actual;
+    int numElem;
 
     public:
 

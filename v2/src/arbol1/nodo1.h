@@ -18,9 +18,9 @@ class Nodo1  {
     Nodo1(int valor,Nodo1 padre);
     ~Nodo1();
 
-    void setIndice();
-    void setPadre();
-    void setValor();
+    void setIndice(int indice);
+    void setPadre(int padre);
+    void setValor(int valor);
 
     int getIndice();
     int getPadre();

@@ -22,7 +22,7 @@ class Nodo2  {
     Nodo2(int etiqueta);
     ~Nodo2();
     ListaIndexada *getSublista();
-    void agregarElem(Nodo2 nodo);
+    void *agregarElem(Nodo2 *nodo);
     void setElemento(int etiqueta);
     int getEtiqueta();
     Nodo2 *getAnterior();
