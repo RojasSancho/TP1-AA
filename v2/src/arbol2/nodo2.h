@@ -19,9 +19,9 @@ class Nodo2  {
     Nodo2();
     Nodo2(int etiqueta);
     ~Nodo2();
-    ListaIndexada getLista();
+    ListaIndexada *getSublista();
     void agregarElem(Nodo2 nodo);
-    void setEtiqueta();
+    void setEtiqueta(int etiqueta);
     int getEtiqueta();
 
 };
