@@ -84,8 +84,8 @@ Nodo2 Arbol2::Padre(Nodo2 nodo){
  * @param nodo 
  * @return Nodo2 
  */
-Nodo2 Arbol2::HijoMásIzquierdo(Nodo2 nodo){
-
+Nodo2 *Arbol2::HijoMásIzquierdo(Nodo2 nodo){
+	return nodo.primero;
 }
 
 /**
@@ -105,7 +105,7 @@ Nodo2 Arbol2::HermanoDerecho(Nodo2 nodo){
  * @return int 
  */
 int Arbol2::Etiqueta(Nodo2 nodo){
-
+	return nodo.getEtiqueta();
 }
 
 /**
@@ -114,8 +114,8 @@ int Arbol2::Etiqueta(Nodo2 nodo){
  * @param nodo 
  * @param etiqueta 
  */
-void Arbol2::ModificaEtiqueta(Nodo2 nodo, int etiqueta){
-
+void Arbol2::ModificaEtiqueta(Nodo2 *nodo, int etiqueta){
+	nodo->setElemento(etiqueta);
 }
 
 /**
@@ -124,6 +124,6 @@ void Arbol2::ModificaEtiqueta(Nodo2 nodo, int etiqueta){
  * @return int 
  */
 int Arbol2::NumNodos(){
-
+	return lista->NumElem();
 }
 

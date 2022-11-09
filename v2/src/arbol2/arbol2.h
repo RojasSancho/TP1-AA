@@ -30,13 +30,13 @@ class Arbol2 {
 
     Nodo2 Padre(Nodo2 nodo);
 
-    Nodo2 HijoMásIzquierdo(Nodo2 nodo);
+    Nodo2 *HijoMásIzquierdo(Nodo2 nodo);
 
     Nodo2 HermanoDerecho(Nodo2 nodo);
 
     int Etiqueta(Nodo2 nodo);
 
-    void ModificaEtiqueta(Nodo2 nodo, int etiqueta);
+    void ModificaEtiqueta(Nodo2 *nodo, int etiqueta);
 
     int NumNodos();
 };
