@@ -34,8 +34,10 @@ void Arbol2::PonerRaíz(int etiqueta){
  * @param nodo 
  * @param etiqueta 
  */
-void Arbol2::AgregarHijo(Nodo2 nodo, int etiqueta){
-
+void Arbol2::AgregarHijo(Nodo2 *nodo, int etiqueta){
+	lista->agregarAlFinal(etiqueta);
+	Nodo2 *nodoHijo = new Nodo2(etiqueta);
+	nodo->agregarElem(nodoHijo);
 }
 
 /**
@@ -45,7 +47,9 @@ void Arbol2::AgregarHijo(Nodo2 nodo, int etiqueta){
  * @param etiqueta
  */
 void Arbol2::AgregarHijoMásDerecho(Nodo2 nodo, int etiqueta){
-
+	lista->agregarAlFinal(etiqueta);
+	Nodo2 *nodoHijo = new Nodo2(etiqueta);
+	nodo.agregarElem(nodoHijo);
 }
 /**
  * @brief Borra un nodo hoja del árbol

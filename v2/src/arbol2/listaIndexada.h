@@ -6,6 +6,8 @@ using namespace std;
 
 class ListaIndexada {
 
+friend class Nodo2;
+
 private:
   int n;
   Nodo2* ultimo;

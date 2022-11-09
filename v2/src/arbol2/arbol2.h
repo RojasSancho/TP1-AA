@@ -4,8 +4,8 @@
 #include <iostream>
 
 #include "nodo2.h"
-#include "../lista/listaIndexada.h"
-#include "../lista/nodoLista.h"
+#include "listaIndexada.h"
+#include "nodo2.h"
 
 class Arbol2 {
 
@@ -20,13 +20,13 @@ class Arbol2 {
 
     void PonerRaíz(int etiqueta);
 
-    void AgregarHijo(Nodo2 nodo, int etiqueta);
+    void AgregarHijo(Nodo2 *nodo, int etiqueta);
 
     void AgregarHijoMásDerecho(Nodo2 nodo, int etiqueta);
 
     void BorrarHoja(Nodo2 nodo);
 
-    NodoLista *Raíz();
+    Nodo2 *Raíz();
 
     Nodo2 Padre(Nodo2 nodo);
 

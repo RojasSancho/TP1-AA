@@ -16,6 +16,7 @@ class Nodo2  {
     ListaIndexada *sublista;
     int etiqueta;
     Nodo2 *anterior;
+    Nodo2 *primero;
 
     Nodo2();
     Nodo2(int etiqueta);
