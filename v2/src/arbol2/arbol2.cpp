@@ -75,7 +75,7 @@ Nodo2 *Arbol2::Raíz(){
  * @return Nodo2 
  */
 Nodo2 Arbol2::Padre(Nodo2 nodo){
-	
+	return nodo; //ignorar, es solo para que compile 
 }
 
 /**
@@ -95,7 +95,7 @@ Nodo2 *Arbol2::HijoMásIzquierdo(Nodo2 nodo){
  * @return Nodo2 
  */
 Nodo2 Arbol2::HermanoDerecho(Nodo2 nodo){
-
+	return nodo; //ignorar, es solo para que compile 
 }
 
 /**
