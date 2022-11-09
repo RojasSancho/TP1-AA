@@ -26,7 +26,7 @@ class Arbol2 {
 
     void BorrarHoja(Nodo2 nodo);
 
-    Nodo2 Raíz();
+    NodoLista *Raíz();
 
     Nodo2 Padre(Nodo2 nodo);
 

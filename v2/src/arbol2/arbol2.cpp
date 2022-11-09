@@ -25,7 +25,7 @@ Arbol2::~Arbol2(){
  * @param etiqueta etiqueta tipo entero del nodo a poner
  */
 void Arbol2::PonerRaíz(int etiqueta){
-
+	lista->Insertar(0, etiqueta);
 }
 
 /**
@@ -60,8 +60,8 @@ void Arbol2::BorrarHoja(Nodo2 nodo){
  * @brief Devuelve nodo raíz del árbol
  * @return Nodo
  */
-Nodo2 Arbol2::Raíz(){
-
+NodoLista Arbol2::Raíz(){
+	return lista->Recuperar(0);
 }
 
 /**
