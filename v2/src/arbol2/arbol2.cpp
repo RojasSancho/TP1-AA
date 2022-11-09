@@ -1,6 +1,6 @@
 #include "arbol2.h"
-#include "../lista/listaIndexada.h"
-#include "../lista/nodoLista.h"
+#include "listaIndexada.h"
+#include "nodo2.h"
 
 using namespace std;
 
@@ -60,7 +60,7 @@ void Arbol2::BorrarHoja(Nodo2 nodo){
  * @brief Devuelve nodo raíz del árbol
  * @return Nodo
  */
-NodoLista Arbol2::Raíz(){
+Nodo2 *Arbol2::Raíz(){
 	return lista->Recuperar(0);
 }
 
@@ -71,7 +71,7 @@ NodoLista Arbol2::Raíz(){
  * @return Nodo2 
  */
 Nodo2 Arbol2::Padre(Nodo2 nodo){
-
+	
 }
 
 /**

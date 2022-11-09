@@ -22,10 +22,18 @@ void Nodo2::agregarElem(Nodo2 nodo){
 	sublista->agregarAlFinal(nodo.getEtiqueta());
 }
 
-void Nodo2::setEtiqueta(int etiqueta){
+void Nodo2::setElemento(int etiqueta){
 	this->etiqueta = etiqueta;
 }
 
 int Nodo2::getEtiqueta(){
 	return etiqueta;
+}
+
+Nodo2* Nodo2::getAnterior() {
+  return anterior;
+}
+
+void Nodo2::setAnterior(Nodo2* anterior) {
+  this->anterior = anterior;
 }
