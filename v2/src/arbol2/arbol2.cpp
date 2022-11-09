@@ -1,4 +1,6 @@
 #include "arbol2.h"
+#include "../lista/listaIndexada.h"
+#include "../lista/nodoLista.h"
 
 using namespace std;
 
@@ -7,7 +9,7 @@ using namespace std;
  * 
  */
 Arbol2::Arbol2(){
-
+	lista = new ListaIndexada();
 }
 
 /**
@@ -120,3 +122,4 @@ void Arbol2::ModificaEtiqueta(Nodo2 nodo, int etiqueta){
 int Arbol2::NumNodos(){
 
 }
+

@@ -4,8 +4,13 @@
 #include <iostream>
 
 #include "nodo2.h"
+#include "../lista/listaIndexada.h"
+#include "../lista/nodoLista.h"
 
 class Arbol2 {
+
+    private:
+    ListaIndexada *lista;
 
     public:
 
