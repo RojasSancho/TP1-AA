@@ -1,6 +1,7 @@
 #include "arbol1.h"
 
 using namespace std;
+#include "nodo1.h"
 
 /**
  * @brief Construye nuevo Arbol:: Arbol 5 object
@@ -117,7 +118,7 @@ void Arbol1::BorrarHoja(Nodo1 nodo){
  * @return Nodo
  */
 Nodo1 *Arbol1::Raíz(){
-    return arreglo[0];
+    return &arreglo[0];
 }
 
 /**
@@ -149,10 +150,10 @@ Nodo1 *Arbol1::HijoMásIzquierdo(Nodo1 nodo){
         cont+=1;
     }
     if (encontrado){
-        return arreglo[cont];
+        return &arreglo[cont];
     }
     else {
-        return nodo;
+        return &nodo;
     }
 }
 
@@ -174,10 +175,10 @@ Nodo1 *Arbol1::HermanoDerecho(Nodo1 nodo){
         cont-=1;
     }
     if (encontrado){
-        return arreglo[cont];
+        return &arreglo[cont];
     }
     else {
-        return nodo;
+        return &nodo;
     }
 }
 
